@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
 
+  def show
+    user = current_user
+    render json: user.as_json
+  end
+
   def create
     user = User.new(
       first_name: params[:first_name],
