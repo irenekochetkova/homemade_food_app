@@ -1,0 +1,2 @@
+class CartedDishesController < ApplicationController
+end
