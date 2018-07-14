@@ -1,0 +1,2 @@
+class CartedDish < ApplicationRecord
+end
