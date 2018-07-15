@@ -17,7 +17,6 @@ var SignupPage = {
       first_name: "",
       last_name: "",
       email: "",
-      image_url: "",
       phone_number: "",
       zipcode: "",
       provider: "",
@@ -32,7 +31,6 @@ var SignupPage = {
         first_name: this.first_name,
         last_name: this.last_name,
         email: this.email,
-        image_url: this.image_url,
         phone_number: this.phone_number,
         zipcode: this.zipcode,
         provider: this.provider,
@@ -86,11 +84,20 @@ var LoginPage = {
   }
 };
 
+var LogoutPage = {
+  created: function() {
+    axios.defaults.headers.common["Authorization"] = undefined;
+    localStorage.removeItem("jwt");
+    router.push("/");
+  }
+};
+
 var router = new VueRouter({
   routes: [
   { path: "/", component: HomePage },
   { path: "/signup", component: SignupPage },
-  { path: "/login", component: LoginPage }
+  { path: "/login", component: LoginPage },
+  { path: "/logout", component: LogoutPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
