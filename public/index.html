@@ -7,10 +7,9 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="css/bootstrap.css" /> <!-- Call Bootstrap first -->
-<link rel="stylesheet" href="css/bootstrap-override.css" /> 
+  
 
- <!--  <link rel="shortcut icon" href="http://example.com/favicon.ico"> -->
+ <link rel="stylesheet" href="dish.css">
 
   <title>Homemade food</title>
 
@@ -56,15 +55,22 @@
 
     <router-view></router-view>
 
+  <footer class="main-footer">
+    <div class="bg-dark">
+      <span><p class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova</a>All rights reserved.</p></span>
+    </div>    
+  </footer>
+
   </div>
 </body>
 </html>
 
 <template id="home-page">
   <div class="vue-component">
+    <div class="container">
 
     <h1>{{ message }}</h1>
-
+    </div>
   </div>
 </template>
 
@@ -144,8 +150,9 @@
 </template>
 
 <template id="profile-show-page">
+  <div class="vue-component">
   <div class="container">
     <h5>{{current_user.first_name}} {{current_user.last_name}}</h5>
   </div>
-  
+  </div>
 </template>
