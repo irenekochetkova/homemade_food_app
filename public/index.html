@@ -6,6 +6,7 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
  <!--  <link rel="shortcut icon" href="http://example.com/favicon.ico"> -->
 
@@ -28,12 +29,28 @@
   <script src="index.js" defer></script>
 </head>
 <body>
-  <div id="vue-app">
-     <a href="/#/">Home</a>
-     <a href="/#/signup">Signup</a>
-      <a href="/#/login">Login</a>
-      <a href="/#/logout">Logout</a>
-
+  <div id="vue-app">     
+    <div class="container-fluid">
+      <header class="header">
+        <div class="">
+          <nav class="navbar  bg-dark">
+            <div>
+              <ul class="nav ">
+                <li class="nav-item" ><a class="nav-link" href="/#/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#/">Menu</a></li>
+              </ul>
+            </div>     
+            <div class="nav">
+              <span > <a class="nav-link" href="/#/signup"><i class="fa fa-user-plus"></i></a></span>
+              <span > <a class="nav-link" href="/#/login"><i class="fa fa-sign-in"></i></a></span>
+              <span > <a class="nav-link" href="/#/logout"><i class="fa fa-sign-out"></i></a></span>
+              <span > <a class="nav-link" href="/#/carted_dish"><i class="fa fa-shopping-cart"></i></a></span>
+              <span > <a class="nav-link" href="/#/current_user"><i class="fa fa-user-circle"></i></a></span>
+            </div>
+          </nav>
+        </div>
+      </header>   
+    </div>
 
     <router-view></router-view>
 
@@ -69,7 +86,11 @@
         <label>Email:</label>
         <input type="email" class="form-control" v-model="email">
       </div>
-        <div class="form-group">
+      <div class="form-group">
+        <label>Photo:</label>
+        <input type="text" class="form-control" v-model="image_url">
+      </div>
+      <div class="form-group">
         <label>Phone Number:</label>
         <input type="text" class="form-control" v-model="phone_number">
       </div>
@@ -118,4 +139,11 @@
     </div>
 
   </div>
+</template>
+
+<template id="profile-show-page">
+  <div class="container">
+    <h5>{{current_user.first_name}} {{current_user.last_name}}</h5>
+  </div>
+  
 </template>
