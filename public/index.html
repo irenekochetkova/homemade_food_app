@@ -7,6 +7,8 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bootstrap.css" /> <!-- Call Bootstrap first -->
+<link rel="stylesheet" href="css/bootstrap-override.css" /> 
 
  <!--  <link rel="shortcut icon" href="http://example.com/favicon.ico"> -->
 
@@ -24,33 +26,33 @@
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-
   <!-- Custonm JS -->
   <script src="index.js" defer></script>
 </head>
 <body>
   <div id="vue-app">     
-    <div class="container-fluid">
+    <!-- <div class="container-fluid"> -->
       <header class="header">
         <div class="">
-          <nav class="navbar  bg-dark">
-            <div>
-              <ul class="nav ">
-                <li class="nav-item" ><a class="nav-link" href="/#/">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="/#/">Menu</a></li>
+          <nav class="navbar navbar-dark bg-dark">
+            <div >
+              <ul  class="nav">
+                <li class="nav-item" ><a  class="target1 nav-link" href="/#/">Home</a></li>
+                <li class="nav-item"><a class="target1 nav-link" href="/#/">Menu</a></li>
               </ul>
             </div>     
             <div class="nav">
-              <span > <a class="nav-link" href="/#/signup"><i class="fa fa-user-plus"></i></a></span>
-              <span > <a class="nav-link" href="/#/login"><i class="fa fa-sign-in"></i></a></span>
-              <span > <a class="nav-link" href="/#/logout"><i class="fa fa-sign-out"></i></a></span>
-              <span > <a class="nav-link" href="/#/carted_dish"><i class="fa fa-shopping-cart"></i></a></span>
-              <span > <a class="nav-link" href="/#/current_user"><i class="fa fa-user-circle"></i></a></span>
+              <span > <a class="target1 nav-link" href="/#/signup"><i class="fa fa-user-plus"></i></a></span>
+              <span > <a class="target1 nav-link" href="/#/login"><i class="fa fa-sign-in"></i></a></span>
+              <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out"></i></a></span>
+              <span > <a class="target1 nav-link" href="/#/carted_dish"><i class="fa fa-shopping-cart"></i></a></span>
+              <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle"></i></a></span>
             </div>
           </nav>
         </div>
+
       </header>   
-    </div>
+    <!-- </div> -->
 
     <router-view></router-view>
 

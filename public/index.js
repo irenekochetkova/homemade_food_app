@@ -1,3 +1,10 @@
+// $(document).ready(function() {
+//       $("#target1").css("background-color", "#9055A2");
+//     });
+$(document).ready(function() {
+      $(".target1").css("color", "white");
+    });
+
 var HomePage = {
   template: "#home-page",
   data: function() {
@@ -136,3 +143,5 @@ var app = new Vue({
      
   }
 });
+
+
