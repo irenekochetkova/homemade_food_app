@@ -1,6 +1,4 @@
-// $(document).ready(function() {
-//       $("#target1").css("background-color", "#9055A2");
-//     });
+
 $(document).ready(function() {
       $(".target1").css("color", "white");
     });
@@ -8,9 +6,7 @@ $(document).ready(function() {
 var HomePage = {
   template: "#home-page",
   data: function() {
-    return {
-      message: "Welcome to homemade food"
-    };
+    return {};
   },
   created: function() {},
   methods: {},
