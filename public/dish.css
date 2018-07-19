@@ -140,13 +140,29 @@ body {
     border-top-right-radius: 1.25rem;
     padding: 2rem;
 }
+p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
 .d-inline-block {
-    display: inline-block!important;
+    display: inline-block;
 }
 
 .customer-profile a {
     color: #9055A2;
     text-decoration: none;
+}
+
+/*.name-user {
+    margin-bottom: 0.5rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+    line-height: 1.1;
+    color: inherit;
+}*/
+
+.text-small {
+    font-size: 0.7rem;
 }
 
 .customer-image {
@@ -165,7 +181,7 @@ body {
     /*max-width: 100%;*/
     height: auto;
 }
-img {
+.img-user {
     vertical-align: middle;
     /*border-style: none;*/
 }
