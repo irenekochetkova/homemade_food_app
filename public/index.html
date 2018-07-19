@@ -190,6 +190,9 @@
 <template id="profile-show-page">
   <div class="vue-component">
     <div class="container">
+      <div>
+        <h2>Your profile</h2>
+      </div>
       <div class="padding-small block">
         <div class="row">
           <div class="col-xl-3 col-lg-4 mb-md-5">
@@ -203,7 +206,17 @@
             </div>
             <div>
               <nav class="list-group customer-nav">
-                <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span>Create new Dish</span></a>
+                <div v-if="current_user.provider === true">
+                  <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Create new Dish</span></a>
+                  <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Your dishes</span></a>
+                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
+                </div>
+                <div v-if="current_user.provider === false">
+                  <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
+                  <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-shopping-cart"></span>Your cart</span></a>
+                  <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o"></span>Your order</span></a>
+                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
+                </div>
               </nav>
             </div>
           </div>
@@ -239,6 +252,53 @@
                 <button type="submit" class="sign-new">
                   <i class=""></i>Change password 
                 </button>
+              </div>
+            </div>
+            <div class="block-header mb-5">
+              <h5>Personal details</h5>
+            </div>
+            <div class="content-block">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="first_name" class="form-label">First Name</label>
+                    <input id="firs_name" type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="last_name" class="form-label">Last Name</label>
+                    <input id="last_name" type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="photo" class="form-label">Photo</label>
+                    <input id="photo" type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="phone_number" class="form-label">Phone Number</label>
+                    <input id="phone_number" type="text" class="form-control">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="zipcode" class="form-label">Zipcode</label>
+                    <input id="zipcode" type="text" class="form-control">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
