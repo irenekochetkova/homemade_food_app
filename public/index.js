@@ -117,12 +117,24 @@ var ProfileShowPage = {
     axios.get("/current_user/" ).then(function(response) {// displaying Data from an API
       console.log(response.data);
       this.current_user = response.data;
+      this.first_name = response.data.first_name;
+      this.last_name = response.data.last_name;
+      this.email = response.data.email;
+      this.image_url = response.data.image_url;
+      this.phone_number = response.data.phone_number;
+      this.zipcode = response.data.zipcode;
     }.bind(this));
   },
 
   methods: { 
     submit: function() {
       var params = {
+        first_name: this.first_name,
+        last_name: this.last_name,
+        email: this.email,
+        image_url: this.image_url,
+        phone_number: this.phone_number,
+        zipcode: this.zipcode,
         password: this.password,
         password_confirmation: this.passwordConfirmation
       };

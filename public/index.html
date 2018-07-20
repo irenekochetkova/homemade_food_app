@@ -253,44 +253,47 @@
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="first_name" class="form-label">First Name</label>
-                    <input id="firs_name" type="text" class="form-control">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" v-model="first_name">
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="last_name" class="form-label">Last Name</label>
-                    <input id="last_name" type="text" class="form-control">
+                    <label class="form-label">Last Name</label>
+                    <input  type="text" class="form-control" v-model="last_name">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="email" class="form-label">Email</label>
-                    <input id="email" type="text" class="form-control">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" v-model="email">
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="photo" class="form-label">Photo</label>
-                    <input id="photo" type="text" class="form-control">
+                    <label class="form-label">Photo</label>
+                    <input type="text" class="form-control" v-model="image_url">
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="phone_number" class="form-label">Phone Number</label>
-                    <input id="phone_number" type="text" class="form-control">
+                    <label class="form-label">Phone Number</label>
+                    <input type="text" class="form-control" v-model="phone_number">
                   </div>
                 </div>
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label for="zipcode" class="form-label">Zipcode</label>
-                    <input id="zipcode" type="text" class="form-control">
+                    <label class="form-label">ZIP</label>
+                    <input type="text" class="form-control" v-model="zipcode">
                   </div>
                 </div>
+              </div>
+              <div class="text-center">
+                <button type="submit" class="sign-new" v-on:click="submit()">Save</button>
               </div>
             </div>
           </div>
