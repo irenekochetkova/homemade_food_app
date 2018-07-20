@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/current_user" => "users#show"
 
   post "/users" => "users#create"
+  patch "/current_user" => "users#update"
 
   get "/categories" => "categories#index"
 

@@ -101,15 +101,43 @@ var ProfileShowPage = {
   template: "#profile-show-page",
   data: function() {
     return {
-      current_user: {}
+      current_user: {},
+      first_name: "",
+      last_name: "",
+      email: "",
+      image_url: "",
+      phone_number: "",
+      zipcode: "",
+      password: "",
+      passwordConfirmation: "",
+      errors: []
     };
   },
   created: function() {
-    axios.get("/current_user/").then(function(response) {// displaying Data from an API
+    axios.get("/current_user/" ).then(function(response) {// displaying Data from an API
       console.log(response.data);
       this.current_user = response.data;
     }.bind(this));
   },
+
+  methods: { 
+    submit: function() {
+      var params = {
+        password: this.password,
+        password_confirmation: this.passwordConfirmation
+      };
+      axios
+      .patch("/current_user", params)
+        .then(function(response) {
+          router.push("/current_user/");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;           
+          }.bind(this)
+        );
+  }
+}
   
 };
 
