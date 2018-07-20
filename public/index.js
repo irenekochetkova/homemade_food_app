@@ -174,6 +174,40 @@ var ProfileDeletePage = {
   }
 };
 
+var DishesIndexPage = {
+  template: "#dish-index-page",
+  data: function() {
+    return {
+      dishes: [],
+      currentDish: {},      
+      users: [],
+      categories: [],
+      current_user: {},
+      quantity: ""
+    };
+  },
+  created: function() {
+    axios.get("/dishes").then(function(response) {
+      this.dishes = response.data;
+      console.log(response.data);
+    }.bind(this));
+    axios.get("/categories").then(function(response) {
+      this.categories = response.data; 
+      console.log(response.data);
+    }.bind(this));
+    axios.get("/current_user").then(function(response) {
+      console.log(response.data);
+    }.bind(this));
+  },
+
+  method: {
+    setCurrentDish: function(dish) {
+      this.currentDish = dish;
+      console.log(this.currentDish);
+    }
+  },
+};
+
 var router = new VueRouter({
   routes: [
   { path: "/", component: HomePage },
@@ -181,7 +215,8 @@ var router = new VueRouter({
   { path: "/login", component: LoginPage },
   { path: "/logout", component: LogoutPage },
   { path: "/current_user", component: ProfileShowPage },
-  { path: "/current_user/delete", component: ProfileDeletePage }
+  { path: "/current_user/delete", component: ProfileDeletePage },
+  { path: "/dishes", component: DishesIndexPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

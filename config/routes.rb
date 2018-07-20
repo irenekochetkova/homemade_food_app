@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get "/dishes" => "dishes#index"
   post "/dishes" => "dishes#create"
+  patch "/dishes/:id" => "dishes#update"
 
 
  

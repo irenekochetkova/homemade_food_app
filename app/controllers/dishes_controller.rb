@@ -21,4 +21,25 @@ class DishesController < ApplicationController
       render json: {errors: dish.errors.full_message}, status: 422
     end
   end
+
+  def update
+      dish = Dish.find_by(id: params[:id])
+        if dish.user == current_user
+          dish.update(
+            name: params[:name] || dish.name,
+            price: params[:price] || dish.price,
+            image_url: params[:image_url] || dish.image_url,
+            description: params[:description] || dish.description,  
+            category_id: params[:category_id] || dish.category_id
+          )
+        if dish.save
+        render json: dish.as_json     
+        else
+        render json: {errors: dish.errors.full_messages }, status: 422       
+        end      
+   
+      else render json: {errors: "This is not your dish"}, status: 422
+    end
+  end
+  
 end
