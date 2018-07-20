@@ -40,4 +40,10 @@ class UsersController < ApplicationController
     render json: user.as_json
   end
 
+  def destroy
+    user = current_user
+    user.destroy
+    render json: {message: "Account successfully delete."}
+  end
+
 end

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   post "/users" => "users#create"
   patch "/current_user" => "users#update"
+  delete "/current_user" => "users#destroy"
 
   get "/categories" => "categories#index"
 

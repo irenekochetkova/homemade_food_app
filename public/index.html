@@ -210,12 +210,14 @@
                   <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Create new Dish</span></a>
                   <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Your dishes</span></a>
                   <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
+                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times"></span>Delete account</span></a>
                 </div>
                 <div v-if="current_user.provider === false">
                   <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
                   <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-shopping-cart"></span>Your cart</span></a>
                   <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o"></span>Your order</span></a>
                   <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
+                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times"></span>Delete account</span></a>
                 </div>
               </nav>
             </div>
@@ -301,6 +303,11 @@
          
       </div>   
     </div>
+  </div>
+</template>
+
+<template id="profile-delete-page">
+  <div class="vue-component">
   </div>
 </template>
 

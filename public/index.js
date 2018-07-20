@@ -146,13 +146,33 @@ var ProfileShowPage = {
         .catch(
           function(error) {
             this.errors = error.response.data.errors;           
-          }.bind(this)
-        );
+          }.bind(this));
+    },
   }
-}
   
 };
 
+var ProfileDeletePage = {
+  template: "#profile-delete-page",
+  data: function() {
+    return {
+      current_user: {},
+      error: []
+    };
+  },
+  created: function() {
+    axios.delete("/current_user").then(function(response) {
+      this.current_user = response.data.delete;
+      router.push("/current_user");
+    })
+    .catch(
+      function(error) {
+        this.error = error.response.data.errors;
+        router.push("/");
+      }.bind(this));
+    
+  }
+};
 
 var router = new VueRouter({
   routes: [
@@ -160,7 +180,8 @@ var router = new VueRouter({
   { path: "/signup", component: SignupPage },
   { path: "/login", component: LoginPage },
   { path: "/logout", component: LogoutPage },
-  { path: "/current_user", component: ProfileShowPage }
+  { path: "/current_user", component: ProfileShowPage },
+  { path: "/current_user/delete", component: ProfileDeletePage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
