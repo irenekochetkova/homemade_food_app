@@ -9,7 +9,7 @@ body {
 
 .main-footer {
    left: 0;
-   margin-top:5px;
+   margin-top:20px;
    bottom: 0;
    width: 100%;
    color: #888;
@@ -41,7 +41,7 @@ body {
     background-repeat: no-repeat;
     background-size: 100% ;
     color: #A33A80;
-    min-height: 82.5%;
+    min-height: 50%;
     
 }
 
@@ -79,7 +79,9 @@ body {
    line-height: 0.8;
    border-radius: 50px;
    margin: 0 14px;
+   outline: none!important;
 }
+
 
  
 .sign-new {
@@ -92,6 +94,7 @@ body {
    border-radius: 50px;
    color: white;
    margin: auto;
+   outline: none!important;
 }
 
 .lead {
