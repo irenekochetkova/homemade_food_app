@@ -191,7 +191,7 @@ var DishesIndexPage = {
       this.dishes = response.data;
       console.log(response.data);
     }.bind(this));
-    axios.get("/categories").then(function(response) {
+    axios.get("http://localhost:3000/categories").then(function(response) {
       this.categories = response.data; 
       console.log(response.data);
     }.bind(this));

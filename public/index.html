@@ -313,17 +313,19 @@
   <div class="vue-component">
     <div class="container">
 
-      <div class="products-grid col-xl-4 col-md-6"> 
-        <div class="row">
-          <div  v-for="dish in dishes">
-
-
-     <!-- Button trigger modal -->
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">More info</button>
-
-         </div>
-       </div>
-     </div>
+      <div class="row">
+        <div v-for="dish in dishes" class="col-xl-4 col-md-6"> 
+          <div class="is-gray">           
+            <img :src="dish.image_url" alt="product" class="img-fluid">
+            <button type="button" v-on:click="setCurrentDish(dish)"  class="" data-toggle="modal" data-target="#exampleModalCenter">More info</button>                 
+            <div class="title">
+              <small class="text-muted text-small">Cuisine: {{   }}</small><br><small class="text-muted text-small" >Chef: {{   }}</small>
+               <h3 class=" text-uppercase " style="font-size: 15px;">{{  dish.name }}</h3><span style="font-size: 15px;" class="price text-muted">${{  dish.price }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+     
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
