@@ -5,6 +5,10 @@ class Dish < ApplicationRecord
   has_many :carted_dishes
   has_many :orders, through: :carted_dishes
 
+  validates :name, presence: true, uniqueness: true, length: {minimum: 2}
+  validates :price, presence: true
+  validates :description, length: {in: 3..500}
+
   def as_json
     {
       id: id,
