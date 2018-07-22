@@ -315,72 +315,84 @@
 <template id="dish-index-page">
   <div class="vue-component">
     <div class="container">
+      <div class="block">
 
-      <!-- Search form -->
-     <div class="section-search"  >
-       <div class="input-group"  >
-         <span class="input-group-addon" >
-         <i class="glyphicon glyphicon-search"  ></i>
-         </span>
-         <input type="text"  style="font-size: 15px; " class="form-control"  placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
-       </div>
-     </div><br>
-     <!-- end search form -->
+        <!-- Search form -->
+        <div class="section-search">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
+          </div>
+        </div><br>
+       <!-- end search form -->
 
 
-      <!-- Hide cuisine -->
-     <div>
-       <div class="cuisine">
-         <button class="sign-new"  v-on:click="toggle()">Choose cuisine here</button>
-         <div class="hidden" id="categories">      
-         <hr>     
-           <button type="button"  class="btn" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
-           <div align="center">
-             <button  type="button"  class=" btn" v-on:click="categoryFilter('all')">All cuisine</button>        
-           </div>
-           <hr>
-         </div>
-       </div>
-    </div>
- <!-- end hide cuisin -->  
-
-      <div class="row">
-        <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
-          <div class=" is-gray">                       
-            <div class="ribbon text-uppercase">
-              <a v-on:click="setCurrentDish(dish)"  class="" data-toggle="modal" data-target="#exampleModalCenter">More info</a> 
+        <!-- Hide cuisine -->
+        <div>
+          <div class="cuisine">
+            <button class="sign-new"  v-on:click="toggle()">Choose cuisine here</button>
+            <div class="hidden" id="categories">      
+            <hr>     
+              <button type="button"  class="btn" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+              <div align="center">
+                <button  type="button"  class=" btn" v-on:click="categoryFilter('all')">All cuisine</button>        
+              </div>
+              <hr>
             </div>
-            <img :src="dish.image_url" alt="product" class="img-fluid">                          
-            <div class="text-muted cuisine2 text-small">Cuisine: {{ dish.category.title }}</div>
-            <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
-            <h3 class=" text-uppercase text-middle" >{{ dish.name }}</h3>
-            <div class=" text-middle price text-muted">${{  dish.price }}</div>
           </div>
         </div>
-      </div>
+        <!-- end hide cuisin -->  
+
+        <div class="row">
+          <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
+            <div class=" is-gray">                       
+              <div class="ribbon text-uppercase">
+                <a v-on:click="setCurrentDish(dish)"  class="" data-toggle="modal" data-target="#exampleModalCenter">More info</a> 
+              </div>
+              <img :src="dish.image_url" alt="product" class="img-fluid">                          
+              <div class="text-muted cuisine2 text-small">Cuisine: {{ dish.category.title }}</div>
+              <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
+              <h3 class=" text-uppercase text-middle" >{{ dish.name }}</h3>
+              <div class=" text-middle price text-muted">${{  dish.price }}</div>
+            </div>
+          </div>
+        </div>
     
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <img class="img-fluid"  :src="currentDish.image_url" alt="Card image cap">
+                <p>{{ currentDish.description }}</p>       
+              </div>
+              <div class="modal-footer">
+                <form class="form-inline">
+                  <div v-if="currentDish.user_id === current_user.id">
+                    <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type="button"  class="sign">Edit Dish</button></a>           
+                    <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="button" class="sign">Delete Dish</button></a>
+                  </div>   
+                  <div v-if="current_user.provider === false" >
+                    <input  type="number"  v-model="quantity" class="form-control" placeholder="Quantity">
+                    <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="button" data-dismiss="modal" data-backdrop="false" class="sign">Add to cart</button></a>    
+                  </div>                                                     
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="sign" data-dismiss="modal">Close</button>                
+              </div>
+            </div>
+          </div>
+        </div>
 
+      </div>
     </div>
   </div>
 </template>
