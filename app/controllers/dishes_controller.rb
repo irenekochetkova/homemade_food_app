@@ -41,5 +41,16 @@ class DishesController < ApplicationController
       else render json: {errors: "This is not your dish"}, status: 422
     end
   end
+
+   def destroy
+    
+    dish = Dish.find_by(id: params[:id])
+    if  dish.user == current_user
+    dish.destroy
+    render json: {message: "Successfully delete dish."}
+    
+    else render json: {errors: "This is not your dish"}, status: 422
+    end
+  end
   
 end
