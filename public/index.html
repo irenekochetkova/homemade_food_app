@@ -316,27 +316,36 @@
   <div class="vue-component">
     <div class="container">
 
+      <!-- Search form -->
+     <div class="section-search"  >
+       <div class="input-group"  >
+         <span class="input-group-addon" >
+         <i class="glyphicon glyphicon-search"  ></i>
+         </span>
+         <input type="text"  style="font-size: 15px; " class="form-control"  placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
+       </div>
+     </div><br>
+     <!-- end search form -->
+
 
       <!-- Hide cuisine -->
      <div>
        <div class="cuisine">
-         <button class="sign-new" style="font-size: 15px;" v-on:click="toggle()">Choose cuisine here</button>
-           <div class="hidden" id="categories">
-      
-         <hr class="">
-     
-             <button type="button" style="font-size: 15px;"  class="btn" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
-        
+         <button class="sign-new"  v-on:click="toggle()">Choose cuisine here</button>
+         <div class="hidden" id="categories">      
+         <hr>     
+           <button type="button"  class="btn" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
            <div align="center">
-             <button  type="button" style="font-size: 15px;" class=" btn" v-on:click="categoryFilter('all')">All cuisine</button>        
+             <button  type="button"  class=" btn" v-on:click="categoryFilter('all')">All cuisine</button>        
            </div>
+           <hr>
          </div>
        </div>
     </div>
  <!-- end hide cuisin -->  
 
       <div class="row">
-        <div v-for="dish in dishes" class="col-xl-4 col-md-6"> 
+        <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
           <div class=" is-gray">                       
             <div class="ribbon text-uppercase">
               <a v-on:click="setCurrentDish(dish)"  class="" data-toggle="modal" data-target="#exampleModalCenter">More info</a> 

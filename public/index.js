@@ -182,6 +182,7 @@ var DishesIndexPage = {
       currentDish: {},      
       users: [],
       categories: [],
+      nameDishFilter: "",
       current_user: {},
       quantity: ""
     };
@@ -209,6 +210,10 @@ var DishesIndexPage = {
     toggle: function() {
       var listCategories = document.getElementById('categories');
       listCategories.classList.toggle('hidden');  
+    },
+
+    isValidDish: function(dish) {
+      return dish.name.toLowerCase().includes(this.nameDishFilter.toLowerCase());
     },
 
     categoryFilter: function(category) {
