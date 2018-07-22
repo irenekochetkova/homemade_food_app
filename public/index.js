@@ -190,22 +190,47 @@ var DishesIndexPage = {
     axios.get("/dishes").then(function(response) {
       this.dishes = response.data;
       console.log(response.data);
-    }.bind(this));
-    axios.get("http://localhost:3000/categories").then(function(response) {
+    }.bind(this)),
+    axios.get("/categories").then(function(response) {
       this.categories = response.data; 
       console.log(response.data);
-    }.bind(this));
+    }.bind(this)),
     axios.get("/current_user").then(function(response) {
       console.log(response.data);
     }.bind(this));
   },
 
-  method: {
+  methods: {
     setCurrentDish: function(dish) {
       this.currentDish = dish;
       console.log(this.currentDish);
-    }
+    },
+
+    toggle: function() {
+      var listCategories = document.getElementById('categories');
+      listCategories.classList.toggle('hidden');  
+    },
+
+    categoryFilter: function(category) {
+      axios.get("http://localhost:3000/dishes").then(function(response) {
+      this.dishes = response.data;
+      if (category !== 'all') {
+        filtedDishes = [];
+        this.dishes.forEach(function(dish) {
+          if (dish.category.id === category.id) { 
+            filtedDishes.push(dish);
+          }
+        });
+        this.dishes = filtedDishes;
+      }       
+      console.log(this.dishes); 
+      console.log(response.data);
+    }.bind(this));
+      
+  }
+
   },
+
 };
 
 var router = new VueRouter({

@@ -4,4 +4,20 @@ class Dish < ApplicationRecord
 
   has_many :carted_dishes
   has_many :orders, through: :carted_dishes
+
+  def as_json
+    {
+      id: id,
+      name: name,
+      price: price,
+      image_url: image_url,
+      description: description,
+      user: user,
+      user_id: user_id,
+      category: category
+      
+
+    }
+  end
+
 end
