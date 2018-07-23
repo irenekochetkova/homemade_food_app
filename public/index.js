@@ -293,10 +293,10 @@ var DishesEditPage = {
     };
   },
   created: function() {
-    $('#exampleModal').modal('hide');
+    $('#exampleModalCenter').modal('hide');
     axios.get("/dishes/" + this.$route.params.id).then(
       function(response) {
-           $('#exampleModal').modal('hide');
+           $('#exampleModalCenter').modal('hide');
            $('body').removeClass('modal-open');
            $('.modal-backdrop').remove();
         this.name = response.data.name;
@@ -322,7 +322,7 @@ var DishesEditPage = {
         availability: this.availability
       };
       axios
-        .patch("/dishes" + this.$route.params.id, params)
+        .patch("/dishes/" + this.$route.params.id, params)
         .then(function(response) {
           router.push("/dishes");
         })
