@@ -1,19 +1,24 @@
 Rails.application.routes.draw do
 
   get "/categories" => "categories#index"
-
-  post '/user_token' => 'user_token#create'  
-  get "/current_user" => "users#show"
-  post "/users" => "users#create"
-  patch "/current_user" => "users#update"
-  delete "/current_user" => "users#destroy"  
-
+     
   get "/dishes" => "dishes#index"
+  get "/dishes/:id" => "dishes#show"
   post "/dishes" => "dishes#create"
   patch "/dishes/:id" => "dishes#update"
   delete "/dishes/:id" => "dishes#destroy"
 
+  post '/user_token' => 'user_token#create'
+  get "/current_user" => "users#show"
+  post "/users" => "users#create"
+  patch "/users/:id" => "users#update"
+  delete "/users/:id" => "users#destroy"
+
+  get "/categories" => "categories#index"
+  get "/categories/:id" => "categories#show"
+
   get "/orders" => "orders#index"
+  get "/orders/:id" => "orders#show"
   post "/orders" => "orders#create"
   delete "/orders/:id" => "orders#destroy"
 

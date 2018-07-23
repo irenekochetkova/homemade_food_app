@@ -375,14 +375,14 @@
               </div>
               <div class="modal-footer">
                 <form class="form-inline">
-                  <div v-if="currentDish.user_id === current_user.id">
+                  <!-- <div v-if="currentDish.user_id === current_user.id"> -->
                     <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type="button"  class="sign">Edit Dish</button></a>           
                     <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="button" class="sign">Delete Dish</button></a>
-                  </div>   
-                  <div v-if="current_user.provider === false" >
+                  <!-- </div>    -->
+                  <!-- <div v-if="current_user.provider === false" > -->
                     <input  type="number"  v-model="quantity" class="form-control" placeholder="Quantity">
                     <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="button" data-dismiss="modal" data-backdrop="false" class="sign">Add to cart</button></a>    
-                  </div>                                                     
+                  <!-- </div>                                                      -->
                 </form>
               </div>
               <div class="modal-footer">
@@ -432,6 +432,45 @@
             <input type="text" class="form-control" v-model="image_url">
           </div>
           <button class="sign-new" v-on:click="submit()">Submit</button>       
+      </div>
+    </div>
+  </div>
+</template>
+
+<template id="dishes-edit-page">
+  <div class="vue-component">
+    <div class="container block">
+      <div>
+        <h1>Edit Dish</h1>
+        <ul>
+          <li class="text-danger" v-for="error in errors">{{ error }}</li>
+        </ul>
+        <div class="form-group">
+          <label>Name:</label> 
+          <input type="text" class="form-control" v-model="name">
+        </div>
+        <div class="form-group">
+          <label>Price:</label>
+          <input type="decimal" class="form-control" v-model="price">
+        </div>
+        <div class="form-group">
+          <label>Description:</label>
+          <input type="text" class="form-control" v-model="description">
+        </div>
+        <div>  
+          <label>Cuisine:</label>
+          <div class="form-group">       
+            <input type="text" class="form-control"  v-model="category_id" list="titles" >
+            <datalist id="titles">
+              <option v-for="category in categories">{{ category.id + " " + category.title }}</option>
+            </datalist>
+          </div>
+        </div>
+      <div class="form-group">
+        <label>Image:</label>
+        <input type="text"  class="form-control" v-model="image_url">
+      </div>      
+      <button class="sign-new" data-dismiss="modal" data-backdrop="false" v-on:click="submit()">Submit</button>
       </div>
     </div>
   </div>

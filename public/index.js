@@ -277,6 +277,64 @@ var DishesNewPage = {
   }
 };
 
+var DishesEditPage = {
+  template: "#dishes-edit-page",
+  data: function() {
+    return {
+      name: "",
+      price: "",
+      description: "",
+      category_id: "",
+      image_url: "",
+      user_id: "",
+      errors: [],
+      categories: []
+
+    };
+  },
+  created: function() {
+    $('#exampleModal').modal('hide');
+    axios.get("/dishes/" + this.$route.params.id).then(
+      function(response) {
+           $('#exampleModal').modal('hide');
+           $('body').removeClass('modal-open');
+           $('.modal-backdrop').remove();
+        this.name = response.data.name;
+        this.price = response.data.price;
+        this.description = response.data.description;
+        this.image_url = response.data.image_url;
+        this.user_id = response.data.user_id;
+      }.bind(this));
+    axios.get("/categories/").then(function(response) {
+      this.categories = response.data; 
+      console.log(response.data);
+      }.bind(this));    
+  },
+  
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.name,
+        price: this.price,
+        description: this.description,
+        category_id: this.category_id,
+        image_url: this.image_url,
+        availability: this.availability
+      };
+      axios
+        .patch("/dishes" + this.$route.params.id, params)
+        .then(function(response) {
+          router.push("/dishes");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;           
+          }.bind(this));
+    }
+  },
+};
+
+
 var router = new VueRouter({
   routes: [
   { path: "/", component: HomePage },
@@ -286,7 +344,8 @@ var router = new VueRouter({
   { path: "/current_user", component: ProfileShowPage },
   { path: "/current_user/delete", component: ProfileDeletePage },
   { path: "/dishes", component: DishesIndexPage },
-  { path: "/dishes/new", component: DishesNewPage }
+  { path: "/dishes/new", component: DishesNewPage },
+  { path: "/dishes/:id/edit", component: DishesEditPage },
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

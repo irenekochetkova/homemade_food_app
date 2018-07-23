@@ -1,8 +1,13 @@
 class DishesController < ApplicationController
-# before_action :authenticate_provider, except: [:index]
+
   def index
     dishes = Dish.all
     render json: dishes.as_json
+  end
+
+  def show
+    dish = Dish.find_by(id: params[:id])
+    render json: dish.as_json
   end
 
   def create
@@ -24,22 +29,21 @@ class DishesController < ApplicationController
 
   def update
       dish = Dish.find_by(id: params[:id])
-        if dish.user == current_user
-          dish.update(
-            name: params[:name] || dish.name,
-            price: params[:price] || dish.price,
-            image_url: params[:image_url] || dish.image_url,
-            description: params[:description] || dish.description,  
-            category_id: params[:category_id] || dish.category_id
-          )
+      if dish.user == current_user
+        dish.update(
+          name: params[:name] || dish.name,
+          price: params[:price] || dish.price,
+          image_url: params[:image_url] || dish.image_url,
+          description: params[:description] || dish.description,  
+          category_id: params[:category_id] || dish.category_id
+        )
         if dish.save
-        render json: dish.as_json     
+          render json: dish.as_json     
         else
-        render json: {errors: dish.errors.full_messages }, status: 422       
-        end      
-   
+          render json: {errors: dish.errors.full_messages }, status: 422       
+        end 
       else render json: {errors: "This is not your dish"}, status: 422
-    end
+      end
   end
 
    def destroy
@@ -52,5 +56,5 @@ class DishesController < ApplicationController
     else render json: {errors: "This is not your dish"}, status: 422
     end
   end
-  
+ 
 end
