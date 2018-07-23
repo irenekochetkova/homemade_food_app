@@ -219,23 +219,62 @@ var DishesIndexPage = {
     categoryFilter: function(category) {
       axios.get("http://localhost:3000/dishes").then(function(response) {
       this.dishes = response.data;
-      if (category !== 'all') {
-        filtedDishes = [];
-        this.dishes.forEach(function(dish) {
-          if (dish.category.id === category.id) { 
-            filtedDishes.push(dish);
-          }
-        });
-        this.dishes = filtedDishes;
-      }       
-      console.log(this.dishes); 
+        if (category !== 'all') {
+          filtedDishes = [];
+          this.dishes.forEach(function(dish) {
+            if (dish.category.id === category.id) { 
+               filtedDishes.push(dish);
+            } 
+          });
+          this.dishes = filtedDishes;
+        }       
+        console.log(this.dishes); 
+        console.log(response.data);
+      }.bind(this));      
+    }
+  },
+};
+
+var DishesNewPage = {
+  template: "#dishes-new-page",
+  data: function() {
+    return {
+      name: "",
+      price: "",
+      description: "",
+      category_id: "",
+      image_url: "",     
+      errors: [],
+      categories: []
+    };
+  },
+  created: function() {
+    axios.get("/categories").then(function(response) {
+      this.categories = response.data; 
       console.log(response.data);
     }.bind(this));
-      
-  }
-
   },
 
+  methods: {
+    submit: function() {
+      var params = {
+        name: this.name,
+        price: this.price,
+        description: this.description,
+        category_id: this.category_id,
+        image_url: this.image_url       
+      };
+      axios
+        .post("/dishes", params)
+        .then(function(response) {
+          router.push("/dishes");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+          }.bind(this));
+    }
+  }
 };
 
 var router = new VueRouter({
@@ -246,7 +285,8 @@ var router = new VueRouter({
   { path: "/logout", component: LogoutPage },
   { path: "/current_user", component: ProfileShowPage },
   { path: "/current_user/delete", component: ProfileDeletePage },
-  { path: "/dishes", component: DishesIndexPage }
+  { path: "/dishes", component: DishesIndexPage },
+  { path: "/dishes/new", component: DishesNewPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

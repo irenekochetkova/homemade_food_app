@@ -11,7 +11,6 @@ Rails.application.routes.draw do
   get "/dishes" => "dishes#index"
   post "/dishes" => "dishes#create"
   patch "/dishes/:id" => "dishes#update"
-  patch "/dishes/:id" => "dishes#update"
   delete "/dishes/:id" => "dishes#destroy"
 
   get "/orders" => "orders#index"

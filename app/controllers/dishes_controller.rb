@@ -1,8 +1,8 @@
 class DishesController < ApplicationController
-
+# before_action :authenticate_provider, except: [:index]
   def index
     dishes = Dish.all
-    render json:dishes.as_json
+    render json: dishes.as_json
   end
 
   def create
