@@ -334,6 +334,32 @@ var DishesEditPage = {
   },
 };
 
+var DishesDeletePage = {
+  template: "#dishes-delete-page",
+  data: function() {
+    return {
+      dish: {},
+      message: {},
+      error: []
+    };
+  },
+  created: function() {
+    $('#exampleModalCenter').modal('hide');
+    axios.delete("/dishes/" + this.$route.params.id).then(function(response) {
+      console.log(response.data);
+      this.dish = response.data.delete;
+           $('#exampleModalCenter').modal('hide');
+           $('body').removeClass('modal-open');
+           $('.modal-backdrop').remove();
+      router.push("/dishes");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+            router.push("/");
+    }.bind(this));
+  }
+};
 
 var router = new VueRouter({
   routes: [
@@ -346,6 +372,7 @@ var router = new VueRouter({
   { path: "/dishes", component: DishesIndexPage },
   { path: "/dishes/new", component: DishesNewPage },
   { path: "/dishes/:id/edit", component: DishesEditPage },
+  { path: "/dishes/:id/delete", component: DishesDeletePage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
