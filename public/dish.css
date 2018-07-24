@@ -125,11 +125,12 @@ body {
 }
 
 .block {
-  min-height: auto
+  min-height:100%;
 }
 
 .padding-small {
   padding: 30px 0;
+  margin:15px;
 }
 
 .customer-profile {
@@ -301,19 +302,24 @@ body {
 
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
+    /*border-collapse: collapse;*/
     width: 100%;
     text-align: center;
 
 }
 
-#customers td, #customers th {
-    border: 1px solid #ddd;
+#customers td {
+    border-bottom: 1px solid #ddd;
     padding: 8px;
     background-color: white;
 }
 
-#customers tr:nth-child(even){background-color: lemonchiffon;}
+ #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: white;
+}
+/*#customers tr:nth-child(even){background-color: lemonchiffon;}*/
 
 #customers tr:hover {background-color: #ddd;}
 
@@ -324,3 +330,13 @@ body {
     background-color: #A33A80;;
     color: white;
 }
+
+#dish {
+  width: 25%;
+}
+
+#price, #quantity, #subtotal, #remove {
+  width: 15%;
+}
+
+

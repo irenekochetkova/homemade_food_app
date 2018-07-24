@@ -483,49 +483,37 @@
 
 <template id="carted_dish-index-page">
   <div class="vue-component">
-    <div class="container block">
+    <div class="container">
       <div class="padding-small">
         <h3>Shopping cart</h3>
       </div>
+    </div>
+     <div class="container block">
       <div class="basket-body">
         <div class="basket">
           <div class="basket-holder">
-            <div class="block-header">
-              <div class="row text-left">
-                <div class="col-5">Dish</div>
-                <div class="col-2">Price</div>
-                <div class="col-2">Quantity</div>
-                <div class="col-2">Subtotal</div>
-                <div class="col-1 text-center">Remove</div>
-              </div>
-            </div>
-            <div class="block-body">
-              <div v-for="carted_dish in carted_dishes">
-                <div class="item">
-                  <div class="row d-flex align-items-center">
-                     <div class="col-5">
-                       <div class="d-flex align-items-center"><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted">
-                         <div class="title">
-                            <h5 class="lead">{{ carted_dish.dish.name }}</h5>
-                         </div>
-                       </div>
-                     </div>
-                     <div class="col-2"><span>${{  carted_dish.dish.price }}</span></div>
-                     <div class="col-1">                       
-                       <div class="text-center">                        
-                         <span>{{ carted_dish.quantity }}</span>
-                       </div>                       
-                     </div>
-                     <div class="col-3">                       
-                       <div class="text-center">                        
-                         <span>{{ carted_dish.subtotal_carted }}</span>
-                       </div>                       
-                     </div>
-                     <div class="col-1 text-center"><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="button" class=" " ><i class="delete fa fa-trash"></i></button></a>
-                     </div>
-                  </div>
-                </div>
-              </div>
+            <div class="container">
+              <table id="customers">
+                <thead>
+                  <tr>
+                    <th id="dish">Dish</th>
+                    <th id="price">Price</th>
+                    <th id="quantity">Quantity</th>
+                    <th id="subtotal">Subtotal</th>
+                    <th id="remove">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="carted_dish in carted_dishes">
+
+                    <td><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted"><br>{{ carted_dish.dish.name }}</td>
+                    <td>${{ carted_dish.dish.price }}</td>
+                    <td>{{ carted_dish.quantity }}</td>
+                    <td>{{ carted_dish.subtotal_carted }}</td>
+                    <td><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="button" class="btn-remove" ><i class="fa fa-trash"></i></button></a></td>        
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
@@ -539,43 +527,46 @@
 
 <template id="cartedDishes-delete-page">
   <div class="vue-component">
+     <a href="/#/carted_dishes">Back to your cart</a>
   </div>
 </template>
 
 <template id="orders-index-page">
   <div class="vue-component">
     <div class="container">
-    <div class="padding-small">
+      <div class="padding-small">
         <h3>Orders</h3>
+      </div>        
+      <div class="container">
+        <table id="customers">
+          <thead>
+            <tr>
+              <th>Order</th>
+              <th>Subtotal</th>
+              <th>Tax</th>
+              <th>Total</th>
+              <th>Cancel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="order in orders">
+              <td> #{{ order.id }}</td>
+              <td>{{ order.subtotal }}</td>
+              <td>{{ order.tax }}</td>
+              <td>{{ order.total }}</td>
+              <td><a :href="'/#/orders/' + order.id + '/delete'"><button type="button" class="btn-remove" ><i class="fa fa-trash"></i></button></a></td>        
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-  <div class="container">
-  <table class="table" >   
-    <table id="customers">
-      <thead>
-        <tr>
-          <th>Order</th>
-          <th>Subtotal</th>
-          <th>Tax</th>
-          <th>Total</th>
-          <th>Cancel</th>
-        </tr>
-      </thead>
-        <tbody>
-          <tr v-for="order in orders">
-            <td> #{{ order.id }}</td>
-            <td>{{ order.subtotal }}</td>
-            <td>{{ order.tax }}</td>
-            <td>{{ order.total }}</td>
-            <td><a :href="'/#/orders/' + order.id + '/delete'"><button type="button" class="btn-remove" ><i class="fa fa-trash"></i></button></a></td>        
-          </tr>
-        </tbody>
-      </table>
-    </table>
   </div>
+</template>
 
+<template id="orders-delete-page">
+  <div class="vue-component">
+    <a href="/#/orders">Back to orders</a>
   </div>
-</div>
 </template>
 
 

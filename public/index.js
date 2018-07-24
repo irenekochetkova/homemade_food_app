@@ -473,6 +473,29 @@ var OrdersIndexPage = {
   },     
 };
 
+  var OrdersDeletePage = {
+  template: "#orders-delete-page",
+  data: function() {
+    return {
+      order: {},
+       error: []
+    };
+  },
+  created: function() {  
+    axios.delete("/orders/" + this.$route.params.id).then(function(response) {
+      console.log(response.data);
+      this.order = response.data.delete;
+      router.push("/orders");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+            router.push("/");
+    }.bind(this));
+  }
+};
+
+
 var router = new VueRouter({
   routes: [
   { path: "/", component: HomePage },
@@ -487,7 +510,8 @@ var router = new VueRouter({
   { path: "/dishes/:id/delete", component: DishesDeletePage },
   { path: "/carted_dishes", component: CartedDishesIndexPage },
   { path: "/carted_dishes/:id/delete", component: CartedDishesDeletePage },
-  { path: "/orders", component: OrdersIndexPage }
+  { path: "/orders", component: OrdersIndexPage },
+  { path: "/orders/:id/delete", component: OrdersDeletePage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
