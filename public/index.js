@@ -448,6 +448,31 @@ var CartedDishesDeletePage = {
   }
 };
 
+var OrdersIndexPage = {
+  template: "#orders-index-page",
+  data: function() {
+    return {
+      orders: [],
+      carted_dishes: [],
+      dishes: []            
+    };
+  },
+  created: function() {
+    axios.get("/carted_dishes").then(function(response) {
+      this.carted_dishes = response.data; 
+      console.log(response.data);
+    }.bind(this)),
+     axios.get("/dishes").then(function(response) {
+      this.dishes = response.data; 
+      console.log(response.data);
+    }.bind(this)),
+    axios.get("/orders/").then(function(response) {
+      this.orders = response.data; 
+      // console.log(response.data);
+    }.bind(this));    
+  },     
+};
+
 var router = new VueRouter({
   routes: [
   { path: "/", component: HomePage },
@@ -461,7 +486,8 @@ var router = new VueRouter({
   { path: "/dishes/:id/edit", component: DishesEditPage },
   { path: "/dishes/:id/delete", component: DishesDeletePage },
   { path: "/carted_dishes", component: CartedDishesIndexPage },
-  { path: "/carted_dishes/:id/delete", component: CartedDishesDeletePage }
+  { path: "/carted_dishes/:id/delete", component: CartedDishesDeletePage },
+  { path: "/orders", component: OrdersIndexPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

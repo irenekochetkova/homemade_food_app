@@ -125,7 +125,7 @@ body {
 }
 
 .block {
-  min-height: 82.5%;
+  min-height: auto
 }
 
 .padding-small {
@@ -299,4 +299,28 @@ body {
   margin-left: 15px!important;
 }
 
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
 
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: white;
+}
+
+#customers tr:nth-child(even){background-color: lemonchiffon;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #A33A80;;
+    color: white;
+}

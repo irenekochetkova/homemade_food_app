@@ -542,6 +542,42 @@
   </div>
 </template>
 
+<template id="orders-index-page">
+  <div class="vue-component">
+    <div class="container">
+    <div class="padding-small">
+        <h3>Orders</h3>
+      </div>
+    </div>
+  <div class="container">
+  <table class="table" >   
+    <table id="customers">
+      <thead>
+        <tr>
+          <th>Order</th>
+          <th>Subtotal</th>
+          <th>Tax</th>
+          <th>Total</th>
+          <th>Cancel</th>
+        </tr>
+      </thead>
+        <tbody>
+          <tr v-for="order in orders">
+            <td> #{{ order.id }}</td>
+            <td>{{ order.subtotal }}</td>
+            <td>{{ order.tax }}</td>
+            <td>{{ order.total }}</td>
+            <td><a :href="'/#/orders/' + order.id + '/delete'"><button type="button" class="btn-remove" ><i class="fa fa-trash"></i></button></a></td>        
+          </tr>
+        </tbody>
+      </table>
+    </table>
+  </div>
+
+  </div>
+</div>
+</template>
+
 
 
 
