@@ -207,6 +207,26 @@ var DishesIndexPage = {
       console.log(this.currentDish);
     },
 
+    submit: function() {
+      var params = {
+        quantity: this.quantity,
+        dish_id:  this.currentDish.id 
+      };
+      axios
+        .post("/carted_dishes", params)
+        .then(function(response) {
+          console.log(response.data)
+           $('#exampleModalCenter').modal('hide');
+           $('body').removeClass('modal-open');
+           $('.modal-backdrop').remove();         
+          router.push("/dishes");
+        })
+        .catch(
+          function(error) {
+            this.errors = error.response.data.errors;
+          }.bind(this));    
+    },
+
     toggle: function() {
       var listCategories = document.getElementById('categories');
       listCategories.classList.toggle('hidden');  
@@ -361,6 +381,50 @@ var DishesDeletePage = {
   }
 };
 
+var CartedDishesIndexPage = {
+  template: "#carted_dish-index-page",
+  data: function() {
+    return {
+      carted_dishes: [],
+      dishes: [],
+      errors: []
+    };
+  },
+
+  created: function() {
+    axios.get("/carted_dishes").then(function(response) {
+      this.carted_dishes = response.data; 
+      console.log(response.data);
+    }.bind(this));
+    axios.get("/dishes").then(function(response) {
+      this.dishes = response.data; 
+      console.log(response.data);
+    }.bind(this));
+    axios.get("/current_user").then(function(response) {
+      console.log(response.data);
+    }.bind(this));
+  },
+
+  methods: {
+    checkout: function() {
+        var params = {
+          carted_dishes: this.carted_dishes,
+        };
+        axios
+          .post("/orders", params)
+          .then(function(response) {
+            router.push("/orders");
+          })
+          .catch(
+            function(error) {
+              this.errors = error.response.data.errors;
+              router.push("/login");
+            }.bind(this));
+      }
+  },
+      
+};
+
 var router = new VueRouter({
   routes: [
   { path: "/", component: HomePage },
@@ -372,7 +436,8 @@ var router = new VueRouter({
   { path: "/dishes", component: DishesIndexPage },
   { path: "/dishes/new", component: DishesNewPage },
   { path: "/dishes/:id/edit", component: DishesEditPage },
-  { path: "/dishes/:id/delete", component: DishesDeletePage }
+  { path: "/dishes/:id/delete", component: DishesDeletePage },
+  { path: "/carted_dishes", component: CartedDishesIndexPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };

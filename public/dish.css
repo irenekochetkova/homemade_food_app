@@ -130,7 +130,7 @@ body {
 }
 
 .padding-small {
-  padding: 70px 0;
+  padding: 30px 0;
 }
 
 .customer-profile {
@@ -275,5 +275,35 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }*/
+
+.basket .basket-header {
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 20px 30px;
+    border-radius: 50px;
+    background: #f5f5f5;
+}
+.basket .basket-body {
+    padding: 0 30px;
+}
+
+.img-carted {
+     width: 100px;
+     height: 100px;
+    
+}
+
+.basket .item {
+    padding: 25px 0;
+    border-bottom: 1px solid #ddd;
+}
+.basket .title {
+    margin-left: 20px;
+}
+
+.dish-name {
+   font-size: 15px;
+}
+
 
 
