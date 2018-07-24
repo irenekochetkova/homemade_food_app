@@ -487,56 +487,59 @@
       <div class="padding-small">
         <h3>Shopping cart</h3>
       </div>
-        <div class="container">
-          <div class="basket-body">
-            <div class="basket">
-              <div class="basket-holder">
-                <div class="basket-header">
-                  <div class="row">
-                    <div class="col-5">Dish</div>
-                    <div class="col-2">Price</div>
-                    <div class="col-2">Quantity</div>
-                    <div class="col-2">Subtotal</div>
-                    <div class="col-1 text-center">Remove</div>
-                  </div>
-                </div>
-                <div class="basket-body">
-                  <div v-for="carted_dish in carted_dishes">
-                    <div class="item">
-                      <div class="row d-flex align-items-center">
-                        <div class="col-5">
-                          <div class="d-flex align-items-center"><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted">
-                           <div class="title">
-                              <h5 class="dish-name">{{ carted_dish.dish.name }}</h5>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-2"><span>${{  carted_dish.dish.price }}</span></div>
-                        <div class="col-1">                       
-                          <div class="text-center">                        
-                            <span>{{ carted_dish.quantity }}</span>
-                          </div>                       
-                        </div>
-                        <div class="col-3">                       
-                          <div class="text-center">                        
-                            <span>{{ carted_dish.subtotal_carted }}</span>
-                          </div>                       
-                        </div>
-                        <div class="col-1 text-center"><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="button" class="" ><i class="delete fa fa-trash"></i></button></a>
-                        </div>
-                      </div>
-                    </div>
+      <div class="basket-body">
+        <div class="basket">
+          <div class="basket-holder">
+            <div class="block-header">
+              <div class="row text-left">
+                <div class="col-5">Dish</div>
+                <div class="col-2">Price</div>
+                <div class="col-2">Quantity</div>
+                <div class="col-2">Subtotal</div>
+                <div class="col-1 text-center">Remove</div>
+              </div>
+            </div>
+            <div class="block-body">
+              <div v-for="carted_dish in carted_dishes">
+                <div class="item">
+                  <div class="row d-flex align-items-center">
+                     <div class="col-5">
+                       <div class="d-flex align-items-center"><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted">
+                         <div class="title">
+                            <h5 class="lead">{{ carted_dish.dish.name }}</h5>
+                         </div>
+                       </div>
+                     </div>
+                     <div class="col-2"><span>${{  carted_dish.dish.price }}</span></div>
+                     <div class="col-1">                       
+                       <div class="text-center">                        
+                         <span>{{ carted_dish.quantity }}</span>
+                       </div>                       
+                     </div>
+                     <div class="col-3">                       
+                       <div class="text-center">                        
+                         <span>{{ carted_dish.subtotal_carted }}</span>
+                       </div>                       
+                     </div>
+                     <div class="col-1 text-center"><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="button" class=" " ><i class="delete fa fa-trash"></i></button></a>
+                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>       
-      <div class="container">
-        <div class=" d-flex   justify-content-md-end"><a href="/#/dishes" class="sign">Continue Shopping</a><a href="/#/orders" class="sign" v-on:click="checkout()">Checkout</a></div>
       </div>
-    </div> 
+      <div class=" basket-check">
+        <div class="d-flex carted justify-content-md-end"><a href="/#/dishes" class="sign">Continue Shopping</a><a href="/#/orders" class="sign" v-on:click="checkout()">Checkout</a></div>
+      </div>
+    </div>
+  </div> 
+</template>
+
+<template id="cartedDishes-delete-page">
+  <div class="vue-component">
+  </div>
 </template>
 
 
