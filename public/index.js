@@ -191,13 +191,15 @@ var DishesIndexPage = {
     axios.get("/dishes").then(function(response) {
       this.dishes = response.data;
       console.log(response.data);
-    }.bind(this)),
-    axios.get("/categories").then(function(response) {
+    }.bind(this));
+    axios.get("http://localhost:3000/categories").then(function(response) {
       this.categories = response.data; 
       console.log(response.data);
-    }.bind(this)),
+    }.bind(this));
     axios.get("/current_user").then(function(response) {
       console.log(response.data);
+       this.current_user = response.data;
+       // this.current_user.provider =  response.data;
     }.bind(this));
   },
 

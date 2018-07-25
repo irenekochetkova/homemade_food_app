@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   post '/user_token' => 'user_token#create'
   get "/current_user" => "users#show"
   post "/users" => "users#create"
-  patch "/users/:id" => "users#update"
-  delete "/users/:id" => "users#destroy"
+  patch "/current_user" => "users#update"
+  delete "/current_user" => "users#destroy"
 
   get "/categories" => "categories#index"
   get "/categories/:id" => "categories#show"

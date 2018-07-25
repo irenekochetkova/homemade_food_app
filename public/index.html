@@ -210,16 +210,14 @@
                 <div v-if="current_user.provider === true">
                   <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Create new Dish</span></a>
                   <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Your dishes</span></a>
-                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
-                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times"></span>Delete account</span></a>
                 </div>
                 <div v-if="current_user.provider === false">
                   <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
                   <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-shopping-cart"></span>Your cart</span></a>
                   <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o"></span>Your order</span></a>
-                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
-                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times"></span>Delete account</span></a>
                 </div>
+                <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
+                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times"></span>Delete account</span></a>
               </nav>
             </div>
           </div>
@@ -354,6 +352,7 @@
               <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
               <h3 class=" text-uppercase text-middle" >{{ dish.name }}</h3>
               <div class=" text-middle price text-muted">${{  dish.price }}</div>
+
             </div>
           </div>
         </div>
@@ -371,19 +370,22 @@
               </div>
               <div class="modal-body">
                 <img class="img-fluid"  :src="currentDish.image_url" alt="Card image cap">
-                <p>{{ currentDish.description }}</p>       
+                <p>{{ currentDish.description }} </p>     
               </div>
               <div class="modal-footer">
-                <form class="form-inline">
-                  <!-- <div v-if="currentDish.user_id === current_user.id"> -->
+                <div class="form-inline">
+                  <div v-if="currentDish.user_id === current_user.id">
+                  
+                  
                     <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type="button"  class="sign">Edit Dish</button></a>           
                     <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="button" class="sign">Delete Dish</button></a>
-                  <!-- </div>    -->
-                  <!-- <div v-if="current_user.provider === false" > -->
+                  </div>   
+                    <div v-if="current_user.provider === false">
+                    
                     <input  type="number"  v-model="quantity" class="form-control" placeholder="Quantity">
                     <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="button" data-dismiss="modal" data-backdrop="false" class="sign">Add to cart</button></a>    
-                  <!-- </div>                                                      -->
-                </form>
+                  </div>                                                     
+                </div>
               </div>
               <div class="modal-footer">
                 <button type="button" class="sign" data-dismiss="modal">Close</button>                
