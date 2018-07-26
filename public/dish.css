@@ -106,6 +106,12 @@ body {
     background: #f5f5f5;
 }
 
+.change-password {
+  font-size: 30px!important;
+  margin-top: 0;
+    margin-bottom: 0!important;
+}
+
 .block-body {
     padding: 20px 30px;
 }

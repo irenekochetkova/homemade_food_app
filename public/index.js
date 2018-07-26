@@ -239,7 +239,7 @@ var DishesIndexPage = {
         })
         .catch(
           function(error) {
-            this.errors = error.response.data.errors;
+            this.errors = error.response.data.errors;            
           }.bind(this));    
     },
 
