@@ -148,6 +148,20 @@ var ProfileShowPage = {
             this.errors = error.response.data.errors;           
           }.bind(this));
     },
+
+    dishFilter: function(dish) {
+      axios.get("http://localhost:3000/dishes").then(function(response) {
+        this.dishes = response.data;
+          currentUserDishes = [];
+          this.dishes.forEach(function(dish) {
+            if (currentDish.user_id === current_user.id) {
+              currentUserDishes.push(dish);
+            }
+          });
+          this.dishes = currentUserDishes;
+      }.bind(this));
+    }
+
   }
   
 };
@@ -183,6 +197,7 @@ var DishesIndexPage = {
       users: [],
       categories: [],
       nameDishFilter: "",
+    
       current_user: {},
       quantity: ""
     };
@@ -199,7 +214,6 @@ var DishesIndexPage = {
     axios.get("/current_user").then(function(response) {
       console.log(response.data);
        this.current_user = response.data;
-       // this.current_user.provider =  response.data;
     }.bind(this));
   },
 
@@ -253,7 +267,30 @@ var DishesIndexPage = {
         console.log(this.dishes); 
         console.log(response.data);
       }.bind(this));      
+    },
+
+    toggleDish: function() {
+      var listDishes = document.getElementById('userDishes');
+      listDishes.classList.toggle('hidden');  
+    },
+
+    dishFilter: function(current_user) {
+      axios.get("http://localhost:3000/dishes").then(function(response) {
+      this.dishes = response.data;
+        if (current_user !== 'all') {
+          userDishes = [];
+          this.dishes.forEach(function(dish) {
+            if (dish.user_id === current_user.id) { 
+               userDishes.push(dish);
+            } 
+          });
+          this.dishes = userDishes;
+        }       
+        console.log(this.dishes); 
+        console.log(response.data);
+      }.bind(this));    
     }
+
   },
 };
 

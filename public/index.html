@@ -209,7 +209,7 @@
               <nav class="list-group customer-nav">
                 <div v-if="current_user.provider === true">
                   <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Create new Dish</span></a>
-                  <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Your dishes</span></a>
+                  <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass" ></span>Your dishes</span></a>
                 </div>
                 <div v-if="current_user.provider === false">
                   <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
@@ -324,9 +324,9 @@
         </div><br>
        <!-- end search form -->
 
-
+<div class="row">
         <!-- Hide cuisine -->
-        <div>
+        <div class="col-xl-6 col-md-6">
           <div class="cuisine">
             <button class="sign-new"  v-on:click="toggle()">Choose cuisine here</button>
             <div class="hidden" id="categories">      
@@ -340,6 +340,26 @@
           </div>
         </div>
         <!-- end hide cuisin -->  
+
+
+
+          <div class="col-xl-4 col-md-6">
+          <div class="cuisine">
+            <button class="sign-new"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
+            <div class="hidden" id="userDishes">      
+            <hr>     
+              <button type="button"  class="btn" v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
+              <div align="center">
+                <button  type="button"  class=" btn" v-on:click="dishFilter('all')">All dishes</button>        
+              </div>
+              <hr>
+            </div>
+          </div>
+        </div>
+       
+       </div>
+
+
 
         <div class="row">
           <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
@@ -374,14 +394,11 @@
               </div>
               <div class="modal-footer">
                 <div class="form-inline">
-                  <div v-if="currentDish.user_id === current_user.id">
-                  
-                  
-                    <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type="button"  class="sign">Edit Dish</button></a>           
+                  <div v-if="currentDish.user_id === current_user.id">  
+                    <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type="button"  class="sign">Edit Dish</button></a>    
                     <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="button" class="sign">Delete Dish</button></a>
                   </div>   
-                    <div v-if="current_user.provider === false">
-                    
+                    <div v-if="current_user.provider === false">              
                     <input  type="number"  v-model="quantity" class="form-control" placeholder="Quantity">
                     <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="button" data-dismiss="modal" data-backdrop="false" class="sign">Add to cart</button></a>    
                   </div>                                                     
