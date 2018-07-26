@@ -254,7 +254,7 @@ body {
 }
 
 .cuisine {
-  padding: 10px;
+  padding: 1px;
   margin: 0 auto;
   text-align: center;
   font-family:  Cardo;
@@ -264,6 +264,10 @@ body {
 .cuisine2 {
   margin-top: .5rem;
 }
+
+/*.cuisine-user {
+  padding-bottom: 130px;
+}*/
 
 .hidden {
   display: none;
@@ -319,7 +323,7 @@ body {
     padding: 8px;
     background-color: white;
 }
-/*#customers tr:nth-child(even){background-color: lemonchiffon;}*/
+
 
 #customers tr:hover {background-color: #ddd;}
 

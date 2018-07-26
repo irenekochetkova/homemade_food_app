@@ -209,14 +209,15 @@
               <nav class="list-group customer-nav">
                 <div v-if="current_user.provider === true">
                   <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Create new Dish</span></a>
-                  <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass" ></span>Your dishes</span></a>
+                 <!--  <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass" ></span>Your dishes</span></a> -->
                 </div>
                 <div v-if="current_user.provider === false">
-                  <a href="/#/" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
+                  
                   <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-shopping-cart"></span>Your cart</span></a>
                   <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o"></span>Your order</span></a>
                 </div>
-                <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
+                  <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
+                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
                   <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times"></span>Delete account</span></a>
               </nav>
             </div>
@@ -313,55 +314,59 @@
 <template id="dish-index-page">
   <div class="vue-component">
     <div class="container">
-      <div class="block">
+      <div class="block">      
+
+        <!-- filter -->
+        <div class="row padding-small">
+
+        <!-- cuisine -->
+          <div class="col-xl-6 col-md-6 ">
+            <div class="cuisine">
+              <button class="sign-new"  v-on:click="toggle()">Choose cuisine here</button>
+              <div class="hidden" id="categories">      
+              <hr>     
+                <button type="button"  class="btn" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+                <div align="center">
+                  <button  type="button"  class=" btn" v-on:click="categoryFilter('all')">All cuisine</button>        
+                </div>
+                <hr>
+              </div>
+            </div>
+          </div>
+        <!-- end  cuisin -->  
+
+
+       <!-- currentUserDishes -->
+         <div class="col-xl-6 col-md-6 ">
+           <div class="cuisine">
+             <button class="sign-new"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
+             <div class="hidden" id="userDishes">      
+             <hr>     
+               <button type="button"  class="btn" v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
+               <div align="center">
+                 <button  type="button"  class=" btn" v-on:click="dishFilter('all')">All dishes</button>        
+               </div>
+               <hr>
+             </div>
+           </div>
+         </div>
+         <!-- end currentUserDishes -->
+       </div>
+       <!-- end filter -->
+       
 
         <!-- Search form -->
-        <div class="section-search">
+        <div class="section-search padding-small">
           <div class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
             <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
           </div>
         </div><br>
        <!-- end search form -->
-
-<div class="row">
-        <!-- Hide cuisine -->
-        <div class="col-xl-6 col-md-6">
-          <div class="cuisine">
-            <button class="sign-new"  v-on:click="toggle()">Choose cuisine here</button>
-            <div class="hidden" id="categories">      
-            <hr>     
-              <button type="button"  class="btn" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
-              <div align="center">
-                <button  type="button"  class=" btn" v-on:click="categoryFilter('all')">All cuisine</button>        
-              </div>
-              <hr>
-            </div>
-          </div>
-        </div>
-        <!-- end hide cuisin -->  
+ 
 
 
-
-          <div class="col-xl-4 col-md-6">
-          <div class="cuisine">
-            <button class="sign-new"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
-            <div class="hidden" id="userDishes">      
-            <hr>     
-              <button type="button"  class="btn" v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
-              <div align="center">
-                <button  type="button"  class=" btn" v-on:click="dishFilter('all')">All dishes</button>        
-              </div>
-              <hr>
-            </div>
-          </div>
-        </div>
-       
-       </div>
-
-
-
-        <div class="row">
+        <div class="row ">
           <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
             <div class=" is-gray">                       
               <div class="ribbon text-uppercase">
@@ -372,7 +377,6 @@
               <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
               <h3 class=" text-uppercase text-middle" >{{ dish.name }}</h3>
               <div class=" text-middle price text-muted">${{  dish.price }}</div>
-
             </div>
           </div>
         </div>
