@@ -225,7 +225,7 @@
 
           <div class="col-lg-8 col-xl-9 pl-lg-3">
             <div class="block-header mb-5">
-              <h5 class="change-password">Change password</h5>
+              <h5 >Change password</h5>
             </div>
             <div class="content-block">
               <div class="row">
@@ -404,10 +404,7 @@
                     <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type="button"  class="sign">Edit Dish</button></a>    
                     <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="button" class="sign">Delete Dish</button></a>
                   </div>   
-                    <div v-if="current_user.provider === false"> 
-  <!-- <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
-        </ul>   -->  
+                    <div v-if="current_user.provider === false">
                     <input  type="number"  v-model="quantity" class="form-control"  placeholder="Quantity">
                     <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="button" data-dismiss="modal" data-backdrop="false" class="sign">Add to cart</button></a>    
                   </div>                                                     
