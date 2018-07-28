@@ -533,7 +533,12 @@
 
                     <td><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted"><br>{{ carted_dish.dish.name }}</td>
                     <td>${{ carted_dish.dish.price }}</td>
-                    <td>{{ carted_dish.quantity }}</td>
+                    <!-- <td>{{ carted_dish.quantity }}</td> -->
+                    <td> 
+                      <div class="form-group change d-flex align-items-center ">         
+                        <input type="integer" class="change-quantity form-control" v-model="quantity"><a href="'/#/carted_dishes/' + carted_dish.id + '/edit'"><button v-on:click="submit()" type="button" class=" sign-change">Change </button></a>
+                      </div>
+                    </td>
                     <td>{{ carted_dish.subtotal_carted }}</td>
                     <td><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="button" class="btn-remove" ><i class="fa fa-trash"></i></button></a></td>        
                   </tr>
