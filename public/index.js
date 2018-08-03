@@ -3,6 +3,13 @@ $(document).ready(function() {
       $(".target1").css("color", "white");
     });
 
+$(document).ready(function(){
+  $("#reload").click(function(){
+ location.reload();
+  });
+});
+
+
 var HomePage = {
   template: "#home-page",
   data: function() {
@@ -148,19 +155,6 @@ var ProfileShowPage = {
             this.errors = error.response.data.errors;           
           }.bind(this));
     },
-
-    dishFilter: function(dish) {
-      axios.get("http://localhost:3000/dishes").then(function(response) {
-        this.dishes = response.data;
-          currentUserDishes = [];
-          this.dishes.forEach(function(dish) {
-            if (currentDish.user_id === current_user.id) {
-              currentUserDishes.push(dish);
-            }
-          });
-          this.dishes = currentUserDishes;
-      }.bind(this));
-    }
 
   }
   
@@ -424,7 +418,6 @@ var CartedDishesIndexPage = {
   template: "#carted_dish-index-page",
   data: function() {
     return {
-      quantity: "",
       carted_dishes: [],
       dishes: [],
       errors: []
@@ -433,9 +426,8 @@ var CartedDishesIndexPage = {
 
   created: function() {
     axios.get("/carted_dishes").then(function(response) {
-      this.carted_dishes = response.data;
-      this.quantity = response.data.quantity; 
-      console.log(response.data);
+      this.carted_dishes = response.data;      
+      console.log(response.data);     
     }.bind(this));
     axios.get("/dishes").then(function(response) {
       this.dishes = response.data; 
@@ -444,17 +436,14 @@ var CartedDishesIndexPage = {
     axios.get("/current_user").then(function(response) {
       console.log(response.data);
     }.bind(this));
-
-    axios.get("/carted_dishes/" + this.$route.params.id).then(
-      function(response) {
-        this.quality = response.data.quality;
-        this.dish_id = response.data.dish_id;
-      }.bind(this));
+     
 
   },
 
   methods: {
     checkout: function() {
+       // $('#exampleModalCenter').modal('hide');
+       $(window).on('load');
         var params = {
           carted_dishes: this.carted_dishes
         };
@@ -468,64 +457,11 @@ var CartedDishesIndexPage = {
               this.errors = error.response.data.errors;
               router.push("/login");
             }.bind(this));
-      }
-  },
-
-  submit: function() {
-      var params = {
-        quantity: this.quantity,
-        dish_id:  this.dish.id 
-      };
-      axios
-        .patch("/carted_dishes", params)
-        .then(function(response) {
-          console.log(response.data)     
-          router.push("/curted_dishes");
-        })
-        .catch(
-          function(error) {
-            this.errors = error.response.data.errors;            
-          }.bind(this));    
-    }
       
+    }
+ } 
 };
 
-// var CartedDishesEditPage = {
-//   template: "#carted_dishes-edit-page",
-//   data: function() {
-//     return {
-//       quantity: "",
-//       errors: []
-     
-
-//     };
-//   },
-//   created: function() {
-//     axios.get("/carted_dishes/" + this.$route.params.id).then(
-//       function(response) {
-//         this.quantity = response.data.quantity;
-//       }.bind(this));
-     
-//   },
-  
-//   methods: {
-//     submit: function() {
-//       var params = {
-//         quantity: this.quantity
-        
-//       };
-//       axios
-//         .patch("/carted_dishes/" + this.$route.params.id, params)
-//         .then(function(response) {
-//           router.push("/carted_dishes");
-//         })
-//         .catch(
-//           function(error) {
-//             this.errors = error.response.data.errors;           
-//           }.bind(this));
-//     }
-//   },
-// };
 
 var CartedDishesDeletePage = {
   template: "#cartedDishes-delete-page",
@@ -570,12 +506,12 @@ var OrdersIndexPage = {
     }.bind(this)),
     axios.get("/orders/").then(function(response) {
       this.orders = response.data; 
-      // console.log(response.data);
+      console.log(response.data);
     }.bind(this));    
   },     
 };
 
-  var OrdersDeletePage = {
+var OrdersDeletePage = {
     template: "#orders-delete-page",
     data: function() {
       return {
@@ -612,7 +548,6 @@ var router = new VueRouter({
   { path: "/dishes/:id/delete", component: DishesDeletePage },
   { path: "/carted_dishes", component: CartedDishesIndexPage },
   { path: "/carted_dishes/:id/delete", component: CartedDishesDeletePage },
-  // { path: "/carted_dishes/:id/edit", component: CartedDishesEditPage },
   { path: "/orders", component: OrdersIndexPage },
   { path: "/orders/:id/delete", component: OrdersDeletePage }
   ],
