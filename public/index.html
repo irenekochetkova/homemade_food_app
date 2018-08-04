@@ -15,22 +15,7 @@
 
   <title>Homemade food</title>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   
-  <!-- VueJS Scripts -->
-  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-  <!-- Custonm JS -->
-  <script src="index.js" defer></script>
 </head>
 <body>
   <div id="vue-app">     
@@ -54,16 +39,34 @@
       </div>
     </header>   
 
-
+  <div class="container">
     <router-view></router-view>
+  </div>
 
-  <footer class="main-footer">
-    <div class="bg-dark">
-      <span><p class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova</a>All rights reserved.</p></span>
+  <footer >
+    <div >
+      <div class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova</a>All rights reserved.</div>
     </div>    
   </footer>
 
   </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  
+  <!-- VueJS Scripts -->
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <!-- Custonm JS -->
+  <script src="index.js" defer></script>
 </body>
 </html>
 
@@ -374,7 +377,7 @@
               <img :src="dish.image_url" alt="product" class="img-fluid">                          
               <div class="text-muted cuisine2 text-small">Cuisine: {{ dish.category.title }}</div>
               <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
-              <h3 class=" text-uppercase text-middle" >{{ dish.name }}</h3>
+              <h3 class="text-middle" >{{ dish.name }}</h3>
               <div class=" text-middle price text-muted">${{  dish.price }}</div>
             </div>
           </div>

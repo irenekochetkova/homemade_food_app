@@ -9,14 +9,25 @@ body {
 }
 
 .main-footer {
-   left: 0;
-   margin-top:20px;
-   bottom: 0;
+ 
+  
    width: 100%;
    color: #888;
    text-align: center;
    display: block;
 
+}
+
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #343a40;
+   color: white;
+   text-align: center;
+   color: #888;
+   
 }
 
 .copyright a {
@@ -25,50 +36,39 @@ body {
 }
 
 .copyright {
-   font-size: 8px; 
+   font-size: 1vw; 
    padding: 20px 0;  
 }
 
 
-.main-footer p {
-   margin: 0;
-}
 
 .container {
     position: relative;
-    text-align: center;
-    color: white;
 }
 .centered {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .img-top {
-   
-    /*padding: 150px;*/
     margin: 0 auto;
-    /*background: url(/pictures/purple.jpg);*/
-    /*background-repeat: no-repeat;*/
     background-size: 100% ;
     color: #A33A80;
-    /*min-height: 50%;*/
     width:100%;
+
 }
 
 .font-top {
-     color: #A33A80;
+    color: #A33A80;
     font-family: Lobster, Times new roman;
-    /*text-align: center;*/
-    /*margin: 20px 0;*/
-    /*padding: 0 30px;*/
     text-shadow: 2px 2px white;
   }
 
 .font-top h3 {
-   font-size: 5vw;
+   font-size: 4.5vw;
    font-weight: 800;
    line-height: 1.1;
 }
@@ -249,7 +249,8 @@ h5 {
 .is-gray {
   background: #f5f5f5;
   padding:10px;
-  margin:10px;   
+  margin:10px;
+
 }
 
 .is-gray img {
@@ -297,10 +298,6 @@ h5 {
 .cuisine2 {
   margin-top: .5rem;
 }
-
-/*.cuisine-user {
-  padding-bottom: 130px;
-}*/
 
 .hidden {
   display: none;
