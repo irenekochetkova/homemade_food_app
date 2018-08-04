@@ -335,6 +335,7 @@
 
 
        <!-- currentUserDishes -->
+       <div v-if="current_user.provider === true">
          <div class="col-xl-6 col-md-6 ">
            <div class="cuisine">
              <button class="sign-new"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
@@ -348,18 +349,19 @@
              </div>
            </div>
          </div>
+       </div>
          <!-- end currentUserDishes -->
        </div>
        <!-- end filter -->
        
 
-        <!-- Search form -->
-        <div class="section-search padding-small">
-          <div class="input-group">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-            <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
-          </div>
-        </div><br>
+        <!-- Search form -->       
+         <div class="section-search padding-small">
+           <div class="input-group">
+             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+             <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
+           </div>        
+       </div><br>
        <!-- end search form -->
  
 
