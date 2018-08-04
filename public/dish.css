@@ -2,33 +2,24 @@ body {
     margin:0;
 }
 
+.page {
+  min-height: 80%;
+}
 
 .navbar {
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
 
-.main-footer {
- 
-  
-   width: 100%;
+.fax-bot {  
    color: #888;
    text-align: center;
    display: block;
-
-}
-
-footer {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
    background-color: #343a40;
-   color: white;
-   text-align: center;
-   color: #888;
-   
+   margin-top: 20px;
+
 }
+
 
 .copyright a {
    color: #888;
@@ -44,6 +35,7 @@ footer {
 
 .container {
     position: relative;
+
 }
 .centered {
     position: absolute;

@@ -38,23 +38,19 @@
         </nav>
       </div>
     </header>   
-
-  <div class="container">
+  
+    <div  class="page">
     <router-view></router-view>
   </div>
 
-  <footer >
-    <div >
+   <div class="fax-bot">
       <div class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova</a>All rights reserved.</div>
-    </div>    
-  </footer>
+    </div> 
 
   </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
@@ -216,7 +212,7 @@
                 <div v-if="current_user.provider === false">
                   
                   <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-shopping-cart"></span>Your cart</span></a>
-                  <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o"></span>Your order</span></a>
+                  <a href="/#/orders" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o"></span>Your order</span></a>
                 </div>
                   <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
                   <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
