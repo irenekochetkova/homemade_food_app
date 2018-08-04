@@ -70,12 +70,10 @@
 <template id="home-page">
   <div class="vue-component">
     <div class="container">
-    <div  class="img-top">
-       <div class="font-top">
-
+      <img src="pictures/purple.jpg" class="img-top">
+       <div class="centered font-top">
          <h3 >Welcome to the world of homemade food</h3><br>
          <h4 >Are you a chef or a customer?</h4><br>
-       </div>
        <div align="center"> 
          <a href="/#/signup"><button class="sign">SignUp</button></a>
          <a href="/#/login"><button class="sign">LogIn</button></a>
@@ -546,8 +544,8 @@
       </div>
       <div class=" basket-check">
         <div class="d-flex carted justify-content-md-end">
-          <button type="button" class="sign"><a href="/#/dishes" >Continue Shopping</a></button>
-          <button type="button" id="reload" class="sign"><a href="/#/orders"  v-on:click="checkout()">Checkout</a></button>
+         <a href="/#/dishes" class="sign-new">Continue Shopping</a>
+          <a href="/#/orders" class="sign-new" id="reload" v-on:click="checkout()">Checkout</a>
         </div>
       </div>
     </div>
@@ -583,7 +581,7 @@
               <td>{{ order.subtotal }}</td>
               <td>{{ order.tax }}</td>
               <td>{{ order.total }}</td>
-              <td><a :href="'/#/orders/' + order.id + '/delete'"><button type="button" class="btn-remove" ><i class="fa fa-trash"></i></button></a></td>        
+              <td><a :href="'/#/orders/' + order.id + '/delete'" class="customers-order"><i class="fa fa-trash"></i></a></td>        
             </tr>
           </tbody>
         </table>
