@@ -374,3 +374,19 @@ h5 {
   color: #A33A80!important;
 }
 
+.top {
+
+  width: 10vw;
+  height: 6vw;
+
+}
+
+.picture {
+   display: flex;
+}
+
+.picture img {
+
+   width: 15vw;
+   height: 7vw;
+}
