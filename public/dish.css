@@ -281,7 +281,15 @@ h5 {
 
 .cuisine {
   padding: 1px;
-  margin: 0 auto;
+  /*margin: 0 auto;*/
+  text-align: center;
+  font-family:  Cardo;
+  font-size: 20px;  
+}
+
+.cuisine3 {
+  padding: 1px;
+  margin-right: 0;
   text-align: center;
   font-family:  Cardo;
   font-size: 20px;  
@@ -374,19 +382,61 @@ h5 {
   color: #A33A80!important;
 }
 
-.top {
+.picture  {
+   
+   background-size: 100% ;
+   background-image:  url('/pictures/beans.jpg');
+   padding: 40px;
+   background-repeat: repeat-x;
+   text-align: center;
+   font-size: 4vw;
+   color: #A33A80;
+   font-family: Lobster, Times new roman;
+   text-shadow: 2px 2px white;
+   font-weight: 800;
+   border-radius: 5px;
+}
 
-  width: 10vw;
-  height: 6vw;
+.button-filter {
+   line-height: 1;
+   border-radius: 50px;
+   border: 1px solid #ced4da;
+   box-shadow: #A33A80;
+   font-size: 0.8rem;
+   outline: none!important;
 
 }
 
-.picture {
-   display: flex;
+
+.button-filter:focus {
+  border-color: #A33A80;
+  box-shadow: 0 0 8px #A33A80;
+  text-align: center;
 }
 
-.picture img {
-
-   width: 15vw;
-   height: 7vw;
+.button-dishes {
+  display: flex;
+  padding: 25px 0;
+  margin:15px;
 }
+
+
+.sign-filter  {
+   background-color: #A33A80;
+   font-weight: normal;
+   border: 1px solid transparent;
+   padding: 0.5rem 3rem;
+   font-size: 0.80rem;
+   line-height: 1;
+   border-radius: 50px;
+   color: white!important;
+   outline: none!important;
+}
+
+
+
+
+
+
+
+

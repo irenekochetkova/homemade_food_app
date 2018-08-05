@@ -443,7 +443,7 @@ var CartedDishesIndexPage = {
   methods: {
     checkout: function() {
        // $('#exampleModalCenter').modal('hide');
-       $(window).on('load');
+       // $(window).on('load');
         var params = {
           carted_dishes: this.carted_dishes
         };

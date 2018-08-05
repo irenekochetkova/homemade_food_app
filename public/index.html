@@ -8,7 +8,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- <link rel="shortcut icon" href="img/favicon.ico"> -->
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
   
 
  <link rel="stylesheet" href="dish.css">
@@ -207,7 +207,6 @@
               <nav class="list-group customer-nav">
                 <div v-if="current_user.provider === true">
                   <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Create new Dish</span></a>
-                 <!--  <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass" ></span>Your dishes</span></a> -->
                 </div>
                 <div v-if="current_user.provider === false">
                   
@@ -293,7 +292,7 @@
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="sign-new" v-on:click="submit()">Save</button>
+                <button type="submit" id="reload" class="sign-new" v-on:click="submit()">Save</button>
               </div>
             </div>
           </div>
@@ -315,24 +314,28 @@
       <div class="block"> 
 
       <!-- top -->
-        <div class="picture">
-          <div v-for="dish in dishes"> <img :src="dish.image_url" alt="product" class="img-fluid"></div>
+        <!-- <div class="picture">
+          <div>  <img src="/pictures/mix.jpg" alt="product" class="img-fluid"></div>
+        </div> -->
+        <div >
+          <p class="picture">Choose your favorite dish!</p>
         </div>
+
       <!-- End top-->
 
 
         <!-- filter -->
-        <div class=" padding-small">
+        <div class="button-dishes">
 
         <!-- cuisine -->
-          <!-- <div class="col-xl-2 col-md-2 "> -->
+          <div class="container">
             <div class="cuisine">
-              <button class="sign-new"  v-on:click="toggle()">Choose cuisine here</button>
+              <button class="sign-filter"  v-on:click="toggle()">Choose cuisine here</button>
               <div class="hidden" id="categories">      
               <hr>     
-                <button type="button"  class="btn" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+                <button type=""  class="button-filter" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
                 <div align="center">
-                  <button  type="button"  class=" btn" v-on:click="categoryFilter('all')">All cuisine</button>        
+                  <button  type=""  class="button-filter" v-on:click="categoryFilter('all')">All cuisine</button>        
                 </div>
                 <hr>
               </div>
@@ -342,21 +345,21 @@
 
 
        <!-- currentUserDishes -->
-       <div v-if="current_user.provider === true">
-         <div class="padding-small ">
-           <div class="cuisine">
-             <button class="sign-new"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
-             <div class="hidden" id="userDishes">      
-             <hr>     
-               <button type="button"  class="btn" v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
-               <div align="center">
-                 <button  type="button"  class=" btn" v-on:click="dishFilter('all')">All dishes</button>        
+         <div class="container">
+           <div v-if="current_user.provider === true">
+             <div class="cuisine">
+               <button class="sign-filter"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
+               <div class="hidden" id="userDishes">      
+               <hr>     
+                 <button type=""  class="button-filter " v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
+                 <div >
+                   <button  type=""  class="button-filter " v-on:click="dishFilter('all')">All dishes</button>        
+                 </div>
+                 <hr>
                </div>
-               <hr>
              </div>
            </div>
-         <!-- </div> -->
-       </div>
+         </div>
          <!-- end currentUserDishes -->
        </div>
        <!-- end filter -->
