@@ -35,6 +35,7 @@ body {
 
 .container {
     position: relative;
+    
 
 }
 .centered {
@@ -339,6 +340,7 @@ h5 {
     /*border-collapse: collapse;*/
     width: 100%;
     text-align: center;
+    min-height: 60% !important;
 
 }
 

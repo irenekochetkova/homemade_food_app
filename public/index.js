@@ -10,6 +10,9 @@ $(document).ready(function(){
 });
 
 
+
+
+
 var HomePage = {
   template: "#home-page",
   data: function() {
@@ -135,6 +138,7 @@ var ProfileShowPage = {
 
   methods: { 
     submit: function() {
+        $(window).on('load');
       var params = {
         first_name: this.first_name,
         last_name: this.last_name,
@@ -145,6 +149,7 @@ var ProfileShowPage = {
         password: this.password,
         password_confirmation: this.passwordConfirmation
       };
+        $(window).on('load');
       axios
       .patch("/current_user", params)
         .then(function(response) {
@@ -442,15 +447,18 @@ var CartedDishesIndexPage = {
 
   methods: {
     checkout: function() {
-       // $('#exampleModalCenter').modal('hide');
-       // $(window).on('load');
+       
+       $(window).on('load');
+
         var params = {
           carted_dishes: this.carted_dishes
         };
+        $(window).on('load');
         axios
           .post("/orders", params)
           .then(function(response) {
             router.push("/orders");
+            
           })
           .catch(
             function(error) {
@@ -498,6 +506,7 @@ var OrdersIndexPage = {
   created: function() {
     axios.get("/carted_dishes").then(function(response) {
       this.carted_dishes = response.data; 
+      $(window).on('load');
       console.log(response.data);
     }.bind(this)),
      axios.get("/dishes").then(function(response) {
