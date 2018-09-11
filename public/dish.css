@@ -1,80 +1,109 @@
+
+ /*color-primary: #8E44AD;*/
+   /*color-grey-dark: #333;*/
+
+
+/*BASIC*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+}
+
 body {
-    margin:0;
+  box-sizing: border-box;
+  background-color:  #fff;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  color: #333;
 }
 
-.page {
-  min-height: 80%;
+/*NAVIGATION*/
+
+.navbar {  
+  font-size: 1.5rem;  
 }
 
-.navbar {
-  margin-bottom: 20px;
-  border: 1px solid transparent;
+.nav-link {
+  margin-left: 1.5rem;
 }
 
-.fax-bot {  
+/*FOOTER*/
+
+.footer {  
    color: #888;
    text-align: center;
    display: block;
-   background-color: #343a40;
-   margin-top: 20px;
+ }
 
-}
-
-
-.copyright a {
+ .copyright a {
    color: #888;
-
 }
 
 .copyright {
-   font-size: 1vw; 
-   padding: 20px 0;  
+   font-size: 1.1rem; 
+   padding: 2rem 0;  
 }
 
+/*========================================================*/
 
+/*SECTION HOME*/
 
-.container {
-    position: relative;
+.section-home {
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pictures/purple.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
     
-
-}
-.centered {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
 }
 
-.img-top {
-    margin: 0 auto;
-    background-size: 100% ;
-    color: #A33A80;
-    width:100%;
-
+.text-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
 }
 
-.font-top {
-    color: #A33A80;
-    font-family: Lobster, Times new roman;
-    text-shadow: 2px 2px white;
-  }
-
-.font-top h3 {
-   font-size: 4.5vw;
-   font-weight: 800;
-   line-height: 1.1;
+.font-top--main {
+  display: block;
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1.1;
 }
 
-.font-top h4 {
-   font-size: 3vw;
-   font-weight: 800;
-   line-height: 1.1;
+.font-top--sub {
+  display: block;
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 3.1;
 }
-
 
 .sign {
-   background-color: #A33A80;
+  margin-left: 3.5rem;
+  margin-right: 3.5rem;
+}
+
+
+
+
+
+/*BUTTONS*/
+
+
+/*.sing {
+   background-color: #8E44AD;
    font-weight: normal;
    border: 1px solid transparent;
    padding: 0.5rem 2rem;
@@ -84,7 +113,56 @@ body {
    color: white;
    margin: 0 14px;
    outline: none!important;
+}*/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+  display: inline-block;
+  padding: .5rem 3rem;
+  font-weight: 300;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5rem;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
+
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+  background-color: #e67e22;
+  border: 1px solid #e67e22;
+  color: #fff;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+  border: 1px solid #e67e22;
+  color: #e67e22;
+}
+
+
+.btn:hover,
+.btn:active {
+   background-color: #cf6d17;
+}
+
+.btn-full:hover,
+.btn-full:active, 
+input[type=submit]:hover,
+input[type=submit]:active {
+  border: 1px solid #cf6d17;
+  
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+  border: 1px solid #cf6d17;
+  color: #fff;
+}
+
+
+
 
 
  

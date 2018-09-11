@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400">
   
 
  <link rel="stylesheet" href="dish.css">
@@ -22,7 +22,7 @@
   <div id="vue-app">     
     <header class="header">
       <div class="">
-        <nav class="navbar  navbar-dark bg-dark">
+        <nav class="navbar bg-dark">
           <div >
             <ul  class="nav">
               <li class="nav-item" ><a class="target1 nav-link" href="/#/">Home</a></li>
@@ -40,12 +40,12 @@
       </div>
     </header>   
   
-    <div  class="page">
+    <!-- <div id="vue-app"> -->
     <router-view></router-view>
-  </div>
+  <!-- </div> -->
 
-   <div class="fax-bot">
-      <div class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova</a>All rights reserved.</div>
+   <div class="footer bg-dark">
+      <div class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova. &mdash;</a>All rights reserved.</div>
     </div> 
 
   </div>
@@ -69,17 +69,26 @@
 
 <template id="home-page">
   <div class="vue-component">
-    <div class="container">
-      <img src="pictures/purple.jpg" class="img-top">
-       <div class="centered font-top">
-         <h3 >Welcome to the world of homemade food</h3><br>
-         <h4 >Are you a chef or a customer?</h4><br>
-       <div align="center"> 
-         <a href="/#/signup"><button class="sign">SignUp</button></a>
-         <a href="/#/login"><button class="sign">LogIn</button></a>
-       </div>
-     </div> 
-    </div>
+    <section class="section-home">
+      <!-- <img src="pictures/purple.jpg" class="img-top"> -->
+      <div class="text-box">
+        <h1 class="font-top">
+          <span class="font-top--main">Welcome to the world of</span>
+          <span class="font-top--main">homemade food</span>
+          <span class="font-top--sub">Are you a chef or a customer?</span>
+        </h1>
+
+        <!--  <h3 >Welcome to the world of homemade food</h3><br>
+         <h4 >Are you a chef or a customer?</h4><br> -->
+     
+
+       <!-- <div class="sign">  -->
+         <a href="/#/signup" class="btn btn-ghost sign">SignUp</a>
+         <a href="/#/login" class="btn btn-ghost sign">LogIn</a>
+       <!-- </div> -->
+    </div> 
+    
+    </section>
   </div>
 </template>
 
