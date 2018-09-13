@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700">
   
 
  <link rel="stylesheet" href="dish.css">
@@ -21,7 +21,6 @@
 <body>
   <div id="vue-app">     
     <header class="header">
-      <div class="">
         <nav class="navbar bg-dark">
           <div >
             <ul  class="nav">
@@ -37,7 +36,6 @@
             <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle"></i></a></span>
           </div>
         </nav>
-      </div>
     </header>   
   
     <!-- <div id="vue-app"> -->
@@ -70,25 +68,81 @@
 <template id="home-page">
   <div class="vue-component">
     <section class="section-home">
-      <!-- <img src="pictures/purple.jpg" class="img-top"> -->
       <div class="text-box">
         <h1 class="font-top">
           <span class="font-top--main">Welcome to the world of</span>
           <span class="font-top--main">homemade food</span>
           <span class="font-top--sub">Are you a chef or a customer?</span>
         </h1>
-
-        <!--  <h3 >Welcome to the world of homemade food</h3><br>
-         <h4 >Are you a chef or a customer?</h4><br> -->
-     
-
-       <!-- <div class="sign">  -->
          <a href="/#/signup" class="btn btn-ghost sign">SignUp</a>
          <a href="/#/login" class="btn btn-ghost sign">LogIn</a>
-       <!-- </div> -->
-    </div> 
-    
+      </div>    
     </section>
+
+    <section class="section-about">
+      <div class="heading u-center-text">
+        <h2 class="heading--main">We unite chefs and customers</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <div class="text-about-box">
+            <p class="font-about--main">Do you want <br>to cook and sell homemade food?</p>
+            <p class="font-about--sub">Create an account as a chef:</p>
+            <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
+          </div>
+        </div>
+        <div class="col-6 u-center-text">
+           <img src="/pictures/chef-1.png" alt="chef-1" class="about-img ">
+          <!-- <h3>Do you want to buy homemade food?</h3> -->
+        </div>
+      </div>
+
+      <div class="row">       
+        <div class="col-6 u-center-text">
+           <img src="/pictures/customer-2.jpg" alt="chef-1" class="about-img ">
+        </div>
+        <div class="col-6">
+          <div class="text-about-box">
+            <p class="font-about--main">Do you want <br>to buy homemade food?</p>
+            <p class="font-about--sub">Create an account as a customer:</p>
+            <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <section class="section-prefooter-1">
+        <div class="heading u-center-text">
+          <h3 class="heading-prefooter">
+              Why choose us
+          </h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-4">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-heart-o"></i>
+              <p>We care about every client and it is important for us to know that everyone is happy with our service.</p>      
+            </div>
+          </div>
+          <div class="col-4">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-diamond"></i>
+              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
+            </div>
+          </div>
+          <div class="col-4">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-gift"></i>
+              <p>Do not miss the chance! We offer bonuses if you are a regular customer of our site.</p>      
+            </div>
+          </div>
+        </div>
+      </section>
+      
+    </section>
+
+
   </div>
 </template>
 

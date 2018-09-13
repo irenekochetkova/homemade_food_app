@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-      $(".target1").css("color", "#150734");
+      $(".target1").css("color", "#fff");
     });
 
 $(document).ready(function(){
