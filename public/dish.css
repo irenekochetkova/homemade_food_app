@@ -86,7 +86,7 @@ h2:after {
   margin-top: 3rem;
 }
 
-/*SECTION HOME*/
+/*HOME-PAGE*/
 
 .section-home {
   height: 80vh;
@@ -161,13 +161,53 @@ section {
 }
 
 .feature-box_icon {
-    font-size: 4rem;
+    font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    display: inline-block;
-    /*background-image: linear-gradient(to right,  #e67e22, #cf6d17);*/
-   
+    display: inline-block;   
     color: #cf6d17;  
-    /*color: transparent;*/
+}
+
+/*SIGN-UP PAGE*/
+
+.section-sign_up {
+  position: relative;
+  padding: 8rem 40rem 40rem 40rem;
+  margin-left: 8rem;
+  margin-right: 8rem;
+  margin-bottom: 8rem;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /*z-index: -1;*/
+  /*opacity: .3;*/
+  overflow: hidden;
+
+  
+}
+
+.bg-video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  }
+
+.text-sign-box {
+  font-size: ;
+}
+
+.font-sign--main {
+  font-size: 2rem;
+  font-weight: 300;
+}
+.font-sign--sub {
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  font-size: 1.5rem;
 }
 
 /*BUTTONS*/
