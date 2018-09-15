@@ -85,29 +85,25 @@
       </div>
 
       <div class="row">
-        <div class="col-6">
-          <div class="text-about-box">
+        <div class="col-md-3 u-center-text">
+          <div class="">
             <p class="font-about--main">Do you want <br>to cook and sell homemade food?</p>
             <p class="font-about--sub">Create an account as a chef:</p>
             <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
           </div>
         </div>
-        <div class="col-6 u-center-text">
+        <div class="col-md-3 u-center-text">
            <img src="/pictures/chef-1.png" alt="chef-1" class="about-img ">
-          <!-- <h3>Do you want to buy homemade food?</h3> -->
         </div>
-      </div>
-
-      <div class="row">       
-        <div class="col-6 u-center-text">
-           <img src="/pictures/customer-2.jpg" alt="chef-1" class="about-img ">
-        </div>
-        <div class="col-6">
-          <div class="text-about-box">
+        <div class="col-md-3 u-center-text">
+          <div class="">
             <p class="font-about--main">Do you want <br>to buy homemade food?</p>
             <p class="font-about--sub">Create an account as a customer:</p>
             <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
           </div>
+        </div>
+        <div class="col-md-3 u-center-text">
+          <img src="/pictures/customer-2.jpg" alt="chef-1" class="about-img ">
         </div>
       </div>
     </section>
@@ -120,25 +116,25 @@
         </div>
         
         <div class="row">
-          <div class="col-3">
+          <div class="col-md-3">
              <div class="feature-box">
               <i class="feature-box_icon fa fa-heart-o"></i>
               <p>We care about every client and it is important for us to know that everyone is happy with our service.</p>      
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-md-3">
              <div class="feature-box">
               <i class="feature-box_icon fa fa-diamond"></i>
               <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-md-3">
              <div class="feature-box">
               <i class="feature-box_icon fa fa-truck"></i>
               <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-md-3">
              <div class="feature-box">
               <i class="feature-box_icon fa fa-gift"></i>
               <p>Do not miss the chance! We offer bonuses if you are a regular customer of our site.</p>      
@@ -153,37 +149,155 @@
   <div class="vue-component">
 
     <section class="section-new_account">     
-    <div class="heading u-center-text">
-      <h2 class="heading--main">New account</h2>
-    </div>
-    <div class="u-center-text" >
-      <div class="row"> 
-        <div class="col-6">
-          <p class="font-sign--main">Do you want to use this web site to sell your food?</p>
-        </div>
-        <div class="col-6">
-          <p class="font-sign--main">Do you want to use this web site to buy homemade food?</p>
-        </div>
+      <div class="heading u-center-text">
+        <h2 class="heading--main">New account</h2>
       </div>
-      <div class="row">
-        <div class="col-6">
-          <p class="font-sign--sub">Create your account as a chef and choose the “chef” option.</p>
-        </div>  
-        <div class="col-6">      
-          <p class="font-sign--sub">Create your account as a customer and choose the “customer” option.</p>
+      <div class="u-center-text" >
+        <div class="row"> 
+          <div class="col-6">
+            <p class="font-sign--main">Do you want to use this web site to sell your food?</p>
+          </div>
+          <div class="col-6">
+            <p class="font-sign--main">Do you want to use this web site to buy homemade food?</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <p class="font-sign--sub">Create your account as a chef and choose the “chef” option.</p>
+          </div>  
+          <div class="col-6">      
+            <p class="font-sign--sub">Create your account as a customer and choose the “customer” option.</p>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section-sign_up">
-     <div class="bg-video">
-      <video autoplay muted loop>
-        <source src="pictures/video-sign.mp4" type="video/mp4">
-        <source src="pictures/video-sign.webm" type="video/webm">
-          Your browser is not supported!
-      </video>
-    </div>
+      <div class="bg-video">
+        <video autoplay muted loop>
+          <source src="pictures/video-sign.mp4" type="video/mp4">
+          <source src="pictures/video-sign.webm" type="video/webm">
+            Your browser is not supported!
+        </video>
+      </div>
+
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-box-main">
+        <div class="row ">
+          <div class="col-md-6">
+            <div class="form-group">            
+              <input type="text" class="form-input"  id="first_name" v-model="first_name" placeholder="First Name">
+              <label for="first_name" class="form-label">First Name</label> 
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">            
+              <input type="text" class="form-input " id="last_name" v-model="last_name" placeholder="Last Name">
+              <label for="last_name" class="form-label">Last Name</label> 
+            </div>
+          </div>
+        </div>
+         
+        <div class="form-group">          
+          <input type="email" id="email" class="form-input" v-model="email" placeholder="Email">
+          <label for="email" class="form-label">Email</label>
+        </div>
+         
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">           
+              <input type="text" id="phone" class="form-input" v-model="phone_number" placeholder="Phone Number">
+            <label for="phone" class="form-label">Phone Number</label>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">          
+              <input type="text" id="zip" class="form-input" v-model="zipcode" placeholder="Zipcode">
+              <label for="zip" class="form-label">Zipcode</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">           
+          <input type="password" id="password" class="form-input" v-model="password" placeholder="Password">
+          <label for="password" class="form-label">Password</label>
+        </div>
+         
+        <div class="form-group">            
+          <input id="password-confirm" type="password" class="form-input" v-model="passwordConfirmation" placeholder="Password confirmation">
+          <label for="password-confirm" class="form-label">Password confirmation</label>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 form-box">
+            <div class="form-group">
+              <div class="form-radio-group">
+                <input type="radio" class="form-radio-input" id="small" name="provider"  value="true" v-model="provider">
+                <label for="small" class="form-radio-label">
+                  <span class="form-radio-button"></span>
+                    <strong class="font">Chef</strong>
+                </label>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 form-box">
+            <div class="form-group">
+              <div class="form-radio-group">
+                <input type="radio" class="form-radio-input" id="large" name="provider" value="false" v-model="provider">
+                <label for="large" class="form-radio-label">
+                  <span class="form-radio-button"></span>
+                    <strong class="font">Customer</strong>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="u-center-text">
+          <input type="submit" class="btn  " v-on:click="submit()"></input>
+        </div>
+      </div>
+
     </section>
+
+    <section class="section-prefooter-1">
+        <div class="heading u-center-text">
+          <h3 class="heading-prefooter">
+              Why choose us
+          </h2>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-heart-o"></i>
+              <p>We care about every client and it is important for us to know that everyone is happy with our service.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-diamond"></i>
+              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-truck"></i>
+              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-gift"></i>
+              <p>Do not miss the chance! We offer bonuses if you are a regular customer of our site.</p>      
+            </div>
+          </div>
+        </div>
+      </section>
+
 
   </div>
 </template>
