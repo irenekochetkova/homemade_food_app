@@ -21,28 +21,30 @@
 <body>
   <div id="vue-app">     
     <header class="header">
-        <nav class="navbar bg-dark">
+        <nav class="navbar back-nav">
           <div >
             <ul  class="nav">
               <li class="nav-item" ><a class="target1 nav-link" href="/#/">Home</a></li>
               <li class="nav-item"><a class="target1 nav-link" href="/#/dishes">Menu</a></li>
             </ul>
-          </div>     
+          </div>   
           <div class="nav">
-            <span > <a class="target1 nav-link" href="/#/signup"><i class="fa fa-user-plus"></i></a></span>
-            <span > <a class="target1 nav-link" href="/#/login"><i class="fa fa-sign-in"></i></a></span>
-            <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out"></i></a></span>
-            <span > <a class="target1 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart"></i></a></span>
-            <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle"></i></a></span>
+            <span > <a class="target1 nav-link" href="/#/signup"><i class="fa fa-user-plus nav-icon"></i></a></span>
+            <span > <a class="target1 nav-link" href="/#/login"><i class="fa fa-sign-in nav-icon"></i></a></span>
+            <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out nav-icon"></i></a></span>
+            <span > <a class="target1 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart nav-icon"></i></a></span>
+            <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span>
           </div>
         </nav>
     </header>   
+
+
   
     <!-- <div id="vue-app"> -->
     <router-view></router-view>
   <!-- </div> -->
 
-   <div class="footer bg-dark">
+   <div class="footer back-nav">
       <div class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova. &mdash;</a>All rights reserved.</div>
     </div> 
 
@@ -74,8 +76,8 @@
           <span class="font-top--main">homemade food</span>
           <span class="font-top--sub">Are you a chef or a customer?</span>
         </h1>
-         <a href="/#/signup" class="btn btn-ghost sign">SignUp</a>
-         <a href="/#/login" class="btn btn-ghost sign">LogIn</a>
+         <a href="/#/signup" class="btn btn-full">SignUp</a>
+         <a href="/#/login" class="btn btn-ghost">LogIn</a>
       </div>    
     </section>
 
@@ -148,11 +150,11 @@
 <template id="signup-page">
   <div class="vue-component">
 
-    <section class="section-new_account">     
-      <div class="heading u-center-text">
-        <h2 class="heading--main">New account</h2>
-      </div>
-      <div class="u-center-text" >
+    <!-- <section class="section-new_account">      -->
+     <!--  <div class="heading u-center-text">
+       <h2 class="heading--main">New account</h2>
+     </div> -->
+      <!-- <div class="u-center-text" >
         <div class="row"> 
           <div class="col-6">
             <p class="font-sign--main">Do you want to use this web site to sell your food?</p>
@@ -169,8 +171,8 @@
             <p class="font-sign--sub">Create your account as a customer and choose the “customer” option.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </div> -->
+    <!-- </section> -->
 
     <section class="section-sign_up">
       <div class="bg-video">
@@ -180,8 +182,11 @@
             Your browser is not supported!
         </video>
       </div>
+      <div class="heading u-center-text">
+        <h2 class="heading--main" style="color: #fff;">New account</h2>
+      </div>
 
-      <ul>
+      <ul class="u-center-text">
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
       <div class="form-box-main">
@@ -263,7 +268,7 @@
 
     </section>
 
-    <section class="section-prefooter-1">
+    <!-- <section class="section-prefooter-1">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
               Why choose us
@@ -296,7 +301,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
 
 
   </div>
