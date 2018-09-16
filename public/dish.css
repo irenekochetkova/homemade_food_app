@@ -231,7 +231,7 @@ h2:after {
 
 /*SIGN-UP PAGE*/
 
-.section-sign_up {
+.section-sign_up, .section-log_in {
   position: relative;
   /*padding: 8rem 4rem 8rem 4rem;*/
   padding-left: 35%;
@@ -246,6 +246,7 @@ h2:after {
 .section-sign_up ul {
   list-style: none;
 }
+
 .login {
   color: #e67e22;
 }
@@ -417,6 +418,8 @@ h2:after {
 /*BUTTONS*/
 
 /*btn - 1*/
+
+
 .btn:link,
 .btn:visited,
 input[type=submit] {
@@ -505,6 +508,11 @@ input[type=submit]:active {
 
 .btn-sign {
   background-color: #e67e22;
+  color: #fff;
+}
+
+.btn-cancel {
+  background-color: rgba(209, 46, 46, 0.8); 
   color: #fff;
 }
 
