@@ -38,7 +38,7 @@ var HomePage = {
       axios
         .post("/user_token", params)
         .then(function(response) {
-
+          $('#exampleModal').modal('hide'); 
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
@@ -48,10 +48,8 @@ var HomePage = {
         .catch(
           function(error) {
             this.errors = ["Invalid email or password."];
-
             this.email = "";
             this.password = "";
-            $('#myModal').modal(options); 
           }.bind(this)
 
         );
@@ -584,7 +582,7 @@ var router = new VueRouter({
   routes: [
   { path: "/", component: HomePage },
   { path: "/signup", component: SignupPage },
-  { path: "/login", component: LoginPage },
+  // { path: "/login", component: LoginPage },
   { path: "/logout", component: LogoutPage },
   { path: "/current_user", component: ProfileShowPage },
   { path: "/current_user/delete", component: ProfileDeletePage },
