@@ -92,19 +92,19 @@
                   <li class="text-danger" v-for="error in errors" >{{ error }}</li>
                 </ul>
                 <div class="form-group">
-                  <label  class="col-form-label">Email:</label>
-                  <input type="email" class="form-control" v-model="email">
+                  <!-- <label  class="col-form-label">Email:</label> -->
+                  <input type="email" class="form-control" v-model="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                  <label class="col-form-label">Password:</label>
-                  <input type="password" class="form-control" v-model="password">
+                  <!-- <label class="col-form-label">Password:</label> -->
+                  <input type="password" class="form-control" v-model="password" placeholder="Password">
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-ghost btn-modal-close" data-dismiss="modal">Cancel</button>
 
-              <button type="button" class="btn btn-primary show-modal" v-on:click="submit()"   data-backdrop="static">Submit</button>
+              <button type="button" class="btn btn-ghost btn-modal" v-on:click="submit()"   data-backdrop="static">Submit</button>
             </div>
           </div>
         </div>
@@ -182,21 +182,28 @@
 <template id="signup-page">
   <div class="vue-component">
     <section class="section-sign_up">
-      <div class="bg-video">
+     <!--  <div class="bg-video">
         <video autoplay muted loop>
           <source src="pictures/video-sign.mp4" type="video/mp4">
           <source src="pictures/video-sign.webm" type="video/webm">
             Your browser is not supported!
         </video>
-      </div>
+      </div> -->
       <div class="heading u-center-text">
-        <h2 class="heading--secondary">New account</h2>
+        <h2 class="heading--main">Create user account</h2>
+      </div>
+      <div class="u-center-text">
+        <p><strong>Are you a member?</strong><a href="/#/login" class="login">&nbsp; <strong>LogIn</strong></a></p>
       </div>
 
       <ul class="u-center-text">
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul>
+      
       <div class="form-box-main">
+        <div class="header-sign u-center-text">
+          <p class="font-form" >Sign Up</p>
+        </div>
         <div class="row ">
           <div class="col-md-6">
             <div class="form-group">            
@@ -237,7 +244,7 @@
           <label for="password" class="form-label">Password</label>
         </div>
          
-        <div class="form-group">            
+        <div class="form-group-1">            
           <input id="password-confirm" type="password" class="form-input" v-model="passwordConfirmation" placeholder="Password confirmation">
           <label for="password-confirm" class="form-label">Password confirmation</label>
         </div>
@@ -269,7 +276,7 @@
         </div>
 
         <div class="u-center-text">
-          <input type="submit" class="btn  " v-on:click="submit()"></input>
+          <button type="submit" class="btn btn-lg btn-sign btn-block " v-on:click="submit()">Create account</button>
         </div>
       </div>
 
@@ -353,7 +360,7 @@
   </div>
 </template> -->
 
-<!-- <template id="login-page">
+<template id="login-page">
   <div class="vue-component">
     <div class="container">
       <div class="block">
@@ -379,7 +386,7 @@
       </div>
     </div>
   </div>
-</template> -->
+</template>
 
 <template id="profile-show-page">
   <div class="vue-component">
