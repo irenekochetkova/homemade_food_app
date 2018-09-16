@@ -9,17 +9,54 @@ $(document).ready(function(){
   });
 });
 
-
+// $(document).ready(function(){
+//     $(".show-modal").click(function(){
+//         $("#success").modal({
+//             backdrop: 'static',
+//             keyboard: false
+//         });
+//     });
+// });
 
 
 
 var HomePage = {
   template: "#home-page",
   data: function() {
-    return {};
+    return {
+      email: "",
+      password: "",
+      errors: []
+    };
   },
   created: function() {},
-  methods: {},
+  methods: {
+    submit: function() {
+      var params = {
+        auth: { email: this.email, password: this.password }
+      };
+      axios
+        .post("/user_token", params)
+        .then(function(response) {
+
+          axios.defaults.headers.common["Authorization"] =
+            "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+
+          router.push("/");
+        })
+        .catch(
+          function(error) {
+            this.errors = ["Invalid email or password."];
+
+            this.email = "";
+            this.password = "";
+            $('#myModal').modal(options); 
+          }.bind(this)
+
+        );
+    }
+  },
   computed: {}
 };
 
@@ -66,38 +103,38 @@ var SignupPage = {
   }
 };
 
-var LoginPage = {
-  template: "#login-page",
-  data: function() {
-    return {
-      email: "",
-      password: "",
-      errors: []
-    };
-  },
-  methods: {
-    submit: function() {
-      var params = {
-        auth: { email: this.email, password: this.password }
-      };
-      axios
-        .post("/user_token", params)
-        .then(function(response) {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
-          localStorage.setItem("jwt", response.data.jwt);
-          router.push("/");
-        })
-        .catch(
-          function(error) {
-            this.errors = ["Invalid email or password."];
-            this.email = "";
-            this.password = "";
-          }.bind(this)
-        );
-    }
-  }
-};
+// var LoginPage = {
+//   template: "#login-page",
+//   data: function() {
+//     return {
+//       email: "",
+//       password: "",
+//       errors: []
+//     };
+//   },
+//   methods: {
+//     submit: function() {
+//       var params = {
+//         auth: { email: this.email, password: this.password }
+//       };
+//       axios
+//         .post("/user_token", params)
+//         .then(function(response) {
+//           axios.defaults.headers.common["Authorization"] =
+//             "Bearer " + response.data.jwt;
+//           localStorage.setItem("jwt", response.data.jwt);
+//           router.push("/");
+//         })
+//         .catch(
+//           function(error) {
+//             this.errors = ["Invalid email or password."];
+//             this.email = "";
+//             this.password = "";
+//           }.bind(this)
+//         );
+//     }
+//   }
+// };
 
 var LogoutPage = {
   created: function() {

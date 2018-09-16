@@ -29,10 +29,6 @@
             </ul>
           </div>   
           <div class="nav">
-            <span > <a class="target1 nav-link" href="/#/signup"><i class="fa fa-user-plus nav-icon"></i></a></span>
-            <span > <a class="target1 nav-link" href="/#/login"><i class="fa fa-sign-in nav-icon"></i></a></span>
-            <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out nav-icon"></i></a></span>
-            <span > <a class="target1 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart nav-icon"></i></a></span>
             <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span>
           </div>
         </nav>
@@ -76,9 +72,45 @@
           <span class="font-top--main">homemade food</span>
           <span class="font-top--sub">Are you a chef or a customer?</span>
         </h1>
-         <a href="/#/signup" class="btn btn-full">SignUp</a>
-         <a href="/#/login" class="btn btn-ghost">LogIn</a>
-      </div>    
+         <a href="/#/signup" class="btn btn-full sign">SignUp</a>
+         <a href="/#/login"   class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal" >LogIn</a>
+      </div> 
+
+      <!-- Modal    -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">LogIn</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <ul>
+                  <li class="text-danger" v-for="error in errors" >{{ error }}</li>
+                </ul>
+                <div class="form-group">
+                  <label  class="col-form-label">Email:</label>
+                  <input type="email" class="form-control" v-model="email">
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label">Password:</label>
+                  <input type="password" class="form-control" v-model="password">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+              <button type="button" class="btn btn-primary show-modal" v-on:click="submit()"  data-dismiss="modal" data-backdrop="false">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- End Modal -->
     </section>
 
     <section class="section-about">
@@ -149,31 +181,6 @@
 
 <template id="signup-page">
   <div class="vue-component">
-
-    <!-- <section class="section-new_account">      -->
-     <!--  <div class="heading u-center-text">
-       <h2 class="heading--main">New account</h2>
-     </div> -->
-      <!-- <div class="u-center-text" >
-        <div class="row"> 
-          <div class="col-6">
-            <p class="font-sign--main">Do you want to use this web site to sell your food?</p>
-          </div>
-          <div class="col-6">
-            <p class="font-sign--main">Do you want to use this web site to buy homemade food?</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-6">
-            <p class="font-sign--sub">Create your account as a chef and choose the “chef” option.</p>
-          </div>  
-          <div class="col-6">      
-            <p class="font-sign--sub">Create your account as a customer and choose the “customer” option.</p>
-          </div>
-        </div>
-      </div> -->
-    <!-- </section> -->
-
     <section class="section-sign_up">
       <div class="bg-video">
         <video autoplay muted loop>
@@ -183,7 +190,7 @@
         </video>
       </div>
       <div class="heading u-center-text">
-        <h2 class="heading--main" style="color: #fff;">New account</h2>
+        <h2 class="heading--secondary">New account</h2>
       </div>
 
       <ul class="u-center-text">
@@ -267,43 +274,6 @@
       </div>
 
     </section>
-
-    <!-- <section class="section-prefooter-1">
-        <div class="heading u-center-text">
-          <h3 class="heading-prefooter">
-              Why choose us
-          </h2>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-heart-o"></i>
-              <p>We care about every client and it is important for us to know that everyone is happy with our service.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-diamond"></i>
-              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-truck"></i>
-              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-gift"></i>
-              <p>Do not miss the chance! We offer bonuses if you are a regular customer of our site.</p>      
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-
   </div>
 </template>
 
@@ -383,7 +353,7 @@
   </div>
 </template> -->
 
-<template id="login-page">
+<!-- <template id="login-page">
   <div class="vue-component">
     <div class="container">
       <div class="block">
@@ -409,7 +379,7 @@
       </div>
     </div>
   </div>
-</template>
+</template> -->
 
 <template id="profile-show-page">
   <div class="vue-component">

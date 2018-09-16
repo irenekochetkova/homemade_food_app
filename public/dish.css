@@ -47,7 +47,7 @@ body {
 }
 
 .back-nav {
-  background-color: #0D1429 !important;
+  background-color: #25222B !important;
 }
 
 
@@ -149,7 +149,9 @@ h2:after {
   line-height: 3.1;
 }
 
-
+.sign {
+  margin-right: 1rem;
+}
 
 section {
   padding-top: .5rem;
@@ -464,6 +466,19 @@ input[type=submit]:active {
   animation-duration: 1s;
   transition: all .2s;
   word-spacing: .6rem;
+
+}
+
+.heading--secondary {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  display: inline-block;
+  animation-name: moveInRight; 
+  animation-duration: 1s;
+  transition: all .2s;
+  word-spacing: .6rem;
+  color: #fff;
 
 }
 
