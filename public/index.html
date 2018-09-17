@@ -21,17 +21,19 @@
 <body>
   <div id="vue-app">     
     <header class="header">
-        <nav class="navbar back-nav">
-          <div >
-            <ul  class="nav">
-              <li class="nav-item" ><a class="target1 nav-link" href="/#/">Home</a></li>
-              <li class="nav-item"><a class="target1 nav-link" href="/#/dishes">Menu</a></li>
-            </ul>
-          </div>   
-          <div class="nav">
-            <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span>
-          </div>
-        </nav>
+      <nav class="navbar back-nav">
+        <div >
+          <ul  class="nav">
+            <li class="nav-item" ><a class="target1 nav-link" href="/#/">Home</a></li>
+            <li class="nav-item"><a class="target1 nav-link" href="/#/dishes">Menu</a></li>
+          </ul>
+        </div>   
+        <div class="nav">
+          <span > <a class="target1 nav-link" href="/#/login"><i class="fa fa-sign-in nav-icon"></i></a></span>
+          <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out nav-icon"></i></a></span>
+          <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span>
+        </div>
+      </nav>
     </header>   
 
 
@@ -114,6 +116,7 @@
     </section>
 
     <section class="section-about">
+      <div class="container">
       <div class="heading u-center-text">
         <h2 class="heading--main">We unite chefs and customers</h2>
       </div>
@@ -140,13 +143,15 @@
           <img src="/pictures/customer-2.jpg" alt="chef-1" class="about-img ">
         </div>
       </div>
+    </div>
     </section>
 
       <section class="section-prefooter-1">
+        <div class="container">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
               Why choose us
-          </h2>
+          </h3>
         </div>
         
         <div class="row">
@@ -175,6 +180,7 @@
             </div>
           </div>
         </div>
+      </div>
       </section>
   </div>
 </template>
@@ -284,82 +290,6 @@
   </div>
 </template>
 
-<!-- <template id="signup-page">
-  <div class="vue-component">
-   <div class="block">
-    <div class="container">
-      <div class="block-header">
-        <h4>New account</h4>
-      </div>
-      <div class="block-body" >
-      <div class="row"> 
-        <div class="col-6">
-          <p class="lead"><strong>Do you want to use this web site to sell your food?</strong></p>
-        </div>
-        <div class="col-6">
-          <p class="lead"><strong>Do you want to use this web site to buy homemade food?</strong></p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <p class="lead">Create your account as a chef and choose the “chef” option.</p>
-        </div>  
-        <div class="col-6">      
-          <p class="lead">Create your account as a customer and choose the “customer” option.</p>
-        </div>
-      </div>
-        <hr>
-
-      <ul>
-        <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
-      <div class="form-group">
-        <label>First Name:</label> 
-        <input type="text" class="form-control" v-model="first_name">
-      </div>
-      <div class="form-group">
-        <label>Last Name:</label> 
-        <input type="text" class="form-control" v-model="last_name">
-      </div>
-      <div class="form-group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
-      </div>
-      <div class="form-group">
-        <label>Photo:</label>
-        <input type="text" class="form-control" v-model="image_url">
-      </div>
-      <div class="form-group">
-        <label>Phone Number:</label>
-        <input type="text" class="form-control" v-model="phone_number">
-      </div>
-      <div class="form-group">
-        <label>Zipcode:</label>
-        <input type="text" class="form-control" v-model="zipcode">
-      </div>
-      <div class="form-group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
-      </div>
-      <div class="form-group">
-        <label>Password confirmation:</label>
-        <input type="password" class="form-control" v-model="passwordConfirmation">
-      </div>
-      <div class="col-6 ">
-        <label class="form-label">Chef:
-        <input type="radio" name="provider"  value="true" v-model="provider"></label>
-        <label class="form-label">Customer:
-        <input type="radio" name="provider" value="false" v-model="provider"></label>
-      </div>
-      <div class="form-group text-center">
-      <button class="sign-new" v-on:click="submit()">Signup</button>
-      </div><br>
-    </div>
-    </div>
-   </div> 
-  </div>
-</template> -->
-
 <template id="login-page">
   <div class="vue-component">
     <section class="section-log_in">
@@ -397,11 +327,11 @@
 
 <template id="profile-show-page">
   <div class="vue-component">
-    <div class="container block">
-      <div class="padding-small ">
-        <h2>Your profile</h2>
+    <div class="container ">
+       <div class="heading u-center-text">
+        <h2 class="heading--main">Your profile</h2>
       </div>
-      <div >
+      <div class="u-margin-bottom-big">
         <div class="row">
           <div class="col-xl-3 col-lg-4 mb-md-5">
             <div class="customer-profile">
@@ -412,96 +342,100 @@
                 <p class="text-muted text-small">zipcode: {{ current_user.zipcode }}</p>
                 <p class="text-muted text-small">phone number: {{ current_user.phone_number }}</p>
             </div>
+
             <div>
               <nav class="list-group customer-nav">
                 <div v-if="current_user.provider === true">
-                  <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Create new Dish</span></a>
+                  <a href="/#/dishes/new" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass profile-icon"></span>Create new Dish</span></a>
+                   <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-file-text profile-icon"></span>Menu</span></a>
+                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out profile-icon"></span>Logout</span></a>
+                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times profile-icon"></span>Delete account</span></a>
                 </div>
-                <div v-if="current_user.provider === false">
-                  
-                  <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-shopping-cart"></span>Your cart</span></a>
-                  <a href="/#/orders" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o"></span>Your order</span></a>
+
+                <div v-if="current_user.provider === false">                
+                  <a href="/#/index-dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-shopping-cart profile-icon"></span>Your cart</span></a>
+                  <a href="/#/orders" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-newspaper-o profile-icon"></span>Your order</span></a>
+                   <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-file-text profile-icon"></span>Menu</span></a>
+                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out profile-icon"></span>Logout</span></a>
+                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times profile-icon"></span>Delete account</span></a>
                 </div>
-                  <a href="/#/dishes" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-glass"></span>Menu</span></a>
-                  <a href="/#/logout" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-sign-out"></span>Logout</span></a>
-                  <a href="/#/current_user/delete" class="list-group-item d-flex justify-content-between align-items-center"><span><span class="fa fa-user-times"></span>Delete account</span></a>
               </nav>
             </div>
           </div>
 
           <div class="col-lg-8 col-xl-9 pl-lg-3">
-            <div class="block-header mb-5">
-              <h5 >Change password</h5>
+            <div class="u-margin-bottom-small">
+              <h5 class="font-form ">Change password</h5>
             </div>
-            <div class="content-block">
+            <div class="u-margin-bottom-small">
               <div class="row">
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <div class="form-group">
+                  <div class="form-group">                    
+                    <input  type="password" class="form-input" v-model="password" placeholder="New password">
                     <label  class="form-label">New password</label>
-                    <input  type="password" class="form-control" v-model="password">
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group">
+                  <div class="form-group">                    
+                    <input  type="password" class="form-input" v-model="passwordConfirmation" placeholder="Retype new password">
                     <label class="form-label">Retype new password</label>
-                    <input  type="password" class="form-control" v-model="passwordConfirmation">
                   </div>
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="sign-new" v-on:click="submit()">Change password</button>
+                <input type="submit" class="btn" v-on:click="submit()"></input>
               </div>
             </div>
-            <div class="block-header mb-5">
-              <h5>Personal details</h5>
+            <div class="u-margin-bottom-small">
+              <h5 class="font-form ">Personal details</h5>
             </div>
-            <div class="content-block">
+            <div class="">
               <div class="row">
                 <div class="col-sm-6">
                   <div class="form-group">
-                    <label class="form-label">First Name</label>
-                    <input type="text" class="form-control" v-model="first_name">
+                    <input type="text" id="first_name" class="form-input" v-model="first_name" placeholder="First Name">
+                    <label for="first_name" class="form-label">First Name</label>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group">
-                    <label class="form-label">Last Name</label>
-                    <input  type="text" class="form-control" v-model="last_name">
+                  <div class="form-group">                    
+                    <input  type="text" id="last_name" class="form-input" v-model="last_name" placeholder="Last Name">
+                    <label for="last_name" class="form-label">Last Name</label>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <div class="form-group">
-                    <label class="form-label">Email</label>
-                    <input type="text" class="form-control" v-model="email">
+                  <div class="form-group">                    
+                    <input type="text" id="email" class="form-input" v-model="email" placeholder="Email">
+                    <label for="email" class="form-label">Email</label>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group">
-                    <label class="form-label">Photo</label>
-                    <input type="text" class="form-control" v-model="image_url">
+                  <div class="form-group">                    
+                    <input type="text" id="photo" class="form-input" v-model="image_url">
+                    <label for="photo" class="form-label">Photo</label>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <div class="form-group">
-                    <label class="form-label">Phone Number</label>
-                    <input type="text" class="form-control" v-model="phone_number">
+                  <div class="form-group">                    
+                    <input type="text" id="phone" class="form-input" v-model="phone_number" placeholder="Phone Number">
+                    <label for="phone" class="form-label">Phone Number</label>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group">
-                    <label class="form-label">ZIP</label>
-                    <input type="text" class="form-control" v-model="zipcode">
+                  <div class="form-group">                    
+                    <input type="text" id="zip" class="form-input" v-model="zipcode">
+                    <label for="zip" class="form-label">ZIP</label>
                   </div>
                 </div>
               </div>
               <div class="text-center">
-                <button type="submit" id="reload" class="sign-new" v-on:click="submit()">Save</button>
+                <input type="submit" id="reload" class="btn" v-on:click="submit()"></input>
               </div>
             </div>
           </div>

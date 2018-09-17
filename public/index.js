@@ -9,15 +9,10 @@ $(document).ready(function(){
   });
 });
 
-// $(document).ready(function(){
-//     $(".show-modal").click(function(){
-//         $("#success").modal({
-//             backdrop: 'static',
-//             keyboard: false
-//         });
-//     });
-// });
 
+ // $("input[type='image']").click(function() {
+ //    $("input[id='my_file']").focus().click();
+ //  });
 
 
 var HomePage = {
@@ -188,6 +183,7 @@ var ProfileShowPage = {
       axios
       .patch("/current_user", params)
         .then(function(response) {
+          $(window).on('load');
           router.push("/current_user/");
         })
         .catch(
@@ -231,7 +227,7 @@ var DishesIndexPage = {
       users: [],
       categories: [],
       nameDishFilter: "",
-    
+      
       current_user: {},
       quantity: ""
     };
