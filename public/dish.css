@@ -396,6 +396,33 @@ h2:after {
   opacity: 1;
 }
 
+/*DISHES PAGE*/
+
+.section-top-menu {
+  height: 70vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(pictures/back-2.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-attachment: fixed;
+    
+}
+
+.font-top-menu {
+  display: block;
+  font-size: 4rem;
+  font-weight: 300;
+  line-height: 1;
+  margin-bottom: 1.3rem;
+}
+
+.font-top--sub-menu {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 300;
+  /*line-height: 3.1;*/
+}
+
 /*BUTTONS*/
 
 /*btn - 1*/
