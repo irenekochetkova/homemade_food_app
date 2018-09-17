@@ -137,16 +137,20 @@ h2:after {
 
 .font-top--main {
   display: block;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: 300;
   line-height: 1.1;
+  text-transform: uppercase;
+  word-spacing: .65rem;
 }
 
 .font-top--sub {
   display: block;
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 300;
   line-height: 3.1;
+  /*text-transform: uppercase;*/
+  word-spacing: .65rem;
 }
 
 .sign {
@@ -232,14 +236,14 @@ h2:after {
   color: #e67e22;
 }
 
-.bg-video {
+/*.bg-video {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   z-index: -999;
-  /*opacity: .8;*/
+  opacity: .8;
   overflow: hidden;
  
 }
@@ -249,7 +253,7 @@ h2:after {
   width: 100%;
   object-fit: cover;
 
-  }
+  }*/
 
 .text-sign-box {
   font-size: ;
@@ -412,16 +416,82 @@ h2:after {
   display: block;
   font-size: 4rem;
   font-weight: 300;
-  line-height: 1;
-  margin-bottom: 1.3rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  word-spacing: .65rem;
 }
 
 .font-top--sub-menu {
   display: block;
   font-size: 2.5rem;
   font-weight: 300;
-  /*line-height: 3.1;*/
+  /*text-transform: uppercase;*/
+  word-spacing: .65rem;
 }
+
+/*form-search*/
+
+
+.search {
+  /*align-items: center;
+  justify-content: center;
+  */
+  margin-top: 4rem;
+}
+
+.search_input {
+    /*font-family: inherit;*/
+    font-size: 1.3rem;
+    color: #333;
+    /*background-color: #f4f2f2;*/
+    background: rgba(244, 242, 242, 0.7);
+    border: none;
+    padding: .7rem 2rem;
+    border-radius: 100px;
+    width: 80%;
+    transition: all .2s;
+    margin-right: -3.25rem;
+}
+
+.search_input:focus {
+    outline: none;
+    width: 90%;
+    background-color: #f0eeee;  }
+
+.search_input::-webkit-input-placeholder {
+  font-weight: 400;
+  color: #999;
+}
+
+
+.search_input:focus + .search_button {
+  background-color: #f0eeee;
+}
+
+.search_button {
+  border: none;
+  /*background-color: #f4f2f2;*/
+  /*background: rgba(244, 242, 242, 0.1);*/
+  background-color: transparent;
+}
+
+.search_button:focus {
+    outline: none;
+}
+
+.search_button:active {
+    transform: translateY(2px);
+}
+  
+
+.search_icon {
+  height: 2rem;
+  width: 2rem;
+  fill: #999;
+}
+
+
 
 /*BUTTONS*/
 

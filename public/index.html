@@ -458,12 +458,27 @@
 
         <section class="section-top-menu">
           <div class="text-box">
-           <h1 class="font-top">
-          <span class="font-top-menu">Our chefs offer menu from organic ingredients</span>
-          <!-- <span class="font-top-menu">homemade food</span> -->
-          <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite food</span>
-        </h1>
-        </div>
+            <h1 class="font-top">
+              <span class="font-top-menu">Chefs use organic ingredients</span>
+              <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite food</span>
+            </h1>
+            <form action="#" class="search">
+              <input type="text" class="search_input" placeholder="Search dish" v-model="nameDishFilter">
+              <button class="search_button">
+                <svg class="search_icon">
+                  <use xlink:href="SVG/sprite.svg#icon-magnifying-glass"></use>
+                </svg>
+              </button>
+            </form>
+            <!-- Search form -->       
+         <!-- <div class="section-search padding-small">
+           <div class="input-group">
+             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+             <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
+           </div>        
+         </div><br> -->
+       <!-- end search form -->
+          </div>
         </section>
        
 
