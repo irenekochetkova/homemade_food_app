@@ -24,8 +24,8 @@
       <nav class="navbar back-nav">
         <div >
           <ul  class="nav">
-            <li class="nav-item" ><a class="target1 nav-link" href="/#/">Home</a></li>
-            <li class="nav-item"><a class="target1 nav-link" href="/#/dishes">Menu</a></li>
+            <li class="nav-item" ><a class="target1 nav-link" href="/#/">HOME</a></li>
+            <li class="nav-item"><a class="target1 nav-link" href="/#/dishes">MENU</a></li>
           </ul>
         </div>   
         <div class="nav">
@@ -453,47 +453,103 @@
 
 <template id="dish-index-page">
   <div class="vue-component">
-    <!-- <div class="container"> -->
+    
       <div class=""> 
 
         <section class="section-top-menu">
           <div class="text-box">
             <h1 class="font-top">
-              <span class="font-top-menu">Chefs use organic ingredients</span>
+              <span class="font-top-menu">Everyone likes good food.</span>
               <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite food</span>
             </h1>
+
+             <!-- Search form --> 
             <form action="#" class="search">
-              <input type="text" class="search_input" placeholder="Search dish" v-model="nameDishFilter">
+              <input type="search" class="btn btn-ghost search_input" placeholder="Search dish" v-model="nameDishFilter">
               <button class="search_button">
                 <svg class="search_icon">
                   <use xlink:href="SVG/sprite.svg#icon-magnifying-glass"></use>
                 </svg>
               </button>
             </form>
-            <!-- Search form -->       
-         <!-- <div class="section-search padding-small">
-           <div class="input-group">
-             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-             <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
-           </div>        
-         </div><br> -->
-       <!-- end search form -->
+            <!-- end search form -->
+    
           </div>
         </section>
-       
 
-       <!--  <div >
-          <p class="picture">Choose your favorite dish!</p>
-        </div> -->
+        <section class="section-menu">
+          <div class="container">
+            <div class="heading u-center-text">
+              <h2 class="heading--main">Great menu from chefs</h2>
+            </div>  
+          </div>
 
-      <!-- End top-->
+          <!-- filter -->
+
+          <!-- cuisine -->
+          <div class="container">
+
+            <div v-if="current_user.provider === true">
+              <div class="row u-margin-bottom-big">
+                <div class="col-6 u-center-text">
+                  <button type="button" class="btn btn-full"  v-on:click="toggle()">Choose cuisine here</button>
+                  <div class="hidden" id="categories"> 
+
+                  <hr>     
+                    <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+                    <div >
+                      <button  type=""  class="btn btn-ghost font" v-on:click="categoryFilter('all')">All cuisine</button>        
+                    </div>
+                    <hr>
+                  </div>
+                </div>
+                <div class="col-6 u-center-text">
+               <button type="button" class="btn btn-full"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
+               <div class="hidden" id="userDishes">      
+               <hr>     
+                 <button type=""  class="btn btn-ghost font " v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
+                 <div >
+                   <button  type=""  class="btn btn-ghost font " v-on:click="dishFilter('all')">All dishes</button>        
+                 </div>
+                 <hr>
+               </div>
+             </div>
+              </div>
+            </div>
+
+
+
+            <div v-if="current_user.provider === false">
+              <div class="u-center-text u-margin-bottom-big ">
+              <button type="button" class="btn btn-full "  v-on:click="toggle()">Choose cuisine here</button>
+              <div class="hidden" id="categories"> 
+
+              <hr>     
+                <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+                <div >
+                  <button  type=""  class="btn btn-ghost font" v-on:click="categoryFilter('all')">All cuisine</button>        
+                </div>
+                <hr>
+              </div>
+            </div>
+</div>
+          </div>
+        <!-- end  cuisin -->  
+          <!-- end filter -->
+
+        </section>
+
+
+
+
+
 
 
         <!-- filter -->
         <div class="button-dishes">
 
         <!-- cuisine -->
-          <div class="container">
+         <!--  <div class="container">
             <div class="cuisine">
               <button class="sign-filter"  v-on:click="toggle()">Choose cuisine here</button>
               <div class="hidden" id="categories">      
@@ -505,12 +561,12 @@
                 <hr>
               </div>
             </div>
-          </div>
+          </div> -->
         <!-- end  cuisin -->  
 
 
        <!-- currentUserDishes -->
-         <div class="container">
+         <!-- <div class="container">
            <div v-if="current_user.provider === true">
              <div class="cuisine">
                <button class="sign-filter"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
@@ -524,19 +580,19 @@
                </div>
              </div>
            </div>
-         </div>
+         </div> -->
          <!-- end currentUserDishes -->
        </div>
        <!-- end filter -->
        
 
         <!-- Search form -->       
-         <div class="section-search padding-small">
+        <!--  <div class="section-search padding-small">
            <div class="input-group">
              <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
              <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
            </div>        
-       </div><br>
+       </div><br> -->
        <!-- end search form -->
  
 
