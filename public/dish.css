@@ -87,7 +87,10 @@ body {
 
 .u-margin-bottom-big {
   margin-bottom: 4rem;
+}
 
+.u-margin-top-big {
+  margin-top: 4rem;
 }
 
 .text-danger {
@@ -157,7 +160,17 @@ h2:after {
   margin-right: 1rem;
 }
 
-
+.section-sentence {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(pictures/back-3-large.jpeg);
+  background: cover;
+  background-position: center;
+  color: #fff;
+  background-attachment: fixed;
+ 
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 3rem;
+}
 
 /*LOGIN*/
 .modal-dialog {
@@ -183,7 +196,7 @@ h2:after {
 }
 
 .font-about--main {
-  margin-top: 5rem;
+  /*margin-top: 5rem;*/
   font-size: 1.8rem;
   font-weight: 300;
 }
@@ -655,9 +668,9 @@ input[type=search] {
 }
 
 .btn-cancel {
-  background-color: rgba(207, 109, 23, 0.3); 
-  /*background-color: #cf6d17;*/
-  color: #333;
+  /*background-color: rgba(207, 109, 23, 0.3); */
+  background-color: #2E1A00;
+  color: #fff;
   width: 100%;
   font-size: 1.2rem;
   font-weight: 700;
@@ -691,8 +704,8 @@ input[type=search] {
 }
 
 .heading {
-  margin-top: 3rem;
-  margin-bottom: 2.5rem;
+  padding: 3rem;
+  padding-bottom: 2.5rem;
 }
 
 .heading--main {

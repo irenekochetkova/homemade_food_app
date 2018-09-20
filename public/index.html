@@ -117,37 +117,53 @@
 
     <section class="section-about">
       <div class="container">
-      <div class="heading u-center-text">
-        <h2 class="heading--main">We unite chefs and customers</h2>
-      </div>
+        <div class="heading u-center-text">
+          <h2 class="heading--main">We unite chefs and customers</h2>
+        </div>
 
-      <div class="row">
-        <div class="col-md-3 u-center-text">
-          <div class="">
-            <p class="font-about--main">Do you want <br>to cook and sell homemade food?</p>
-            <p class="font-about--sub">Create an account as a chef:</p>
-            <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
+        <div class="row u-margin-bottom-small">
+          <div class="col-md-3 u-center-text">
+            <div class="">
+              <p class="font-about--main u-margin-top-big">Do you want <br>to cook and sell homemade food?</p>
+              <p class="font-about--sub">Create an account as a chef:</p>
+              <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
+            </div>
           </div>
-        </div>
-        <div class="col-md-3 u-center-text">
-           <img src="/pictures/chef-1.png" alt="chef-1" class="about-img ">
-        </div>
-        <div class="col-md-3 u-center-text">
-          <div class="">
-            <p class="font-about--main">Do you want <br>to buy homemade food?</p>
-            <p class="font-about--sub">Create an account as a customer:</p>
-            <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
+          <div class="col-md-3 u-center-text">
+             <img src="/pictures/chef-1.png" alt="chef-1" class="about-img ">
           </div>
-        </div>
-        <div class="col-md-3 u-center-text">
-          <img src="/pictures/customer-2.jpg" alt="chef-1" class="about-img ">
+          <div class="col-md-3 u-center-text">
+            <div class="">
+              <p class="font-about--main u-margin-top-big">Do you want <br>to buy homemade food?</p>
+              <p class="font-about--sub">Create an account as a customer:</p>
+              <a href="/#/signup" class="btn-text">Sign Up &rarr;</a>
+            </div>
+          </div>
+          <div class="col-md-3 u-center-text">
+            <img src="/pictures/customer-2.jpg" alt="chef-1" class="about-img ">
+          </div>
         </div>
       </div>
-    </div>
     </section>
 
-      <section class="section-prefooter-1">
-        <div class="container">
+    <section class="section-sentence">
+      <div class="heading u-center-text">
+        <h2 class="heading--main">COOK LESS, EAT SMART, SAVE MONEY</h2>
+      </div>
+
+      <div class="u-center-text">
+        <p class="font-about--main">Choice makes us different, like having a personal chef making your meals. Our chef prepared meals help you cook less and save you valuable time!  Eat smart with meals made fresh to order using the freshest, locally sources ingredients.  Save money with fairly priced prepared meals made personally and delivered to your door.</p>
+        <div class="u-margin-bottom-big u-margin-top-big">
+          <a href="/#/dishes" class="btn btn-ghost">Choose your meals</a>
+        </div>        
+        <p class="font-about--main">Our meals are perfect for diabetic, low sodium and many other therapeutic diets, as well as for seniors and those looking to loose weight by following either a portion controlled or Paleo diet. </p> 
+
+      </div>
+       
+    </section>
+
+    <section class="section-prefooter-1">
+      <div class="container">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
               Why choose us
@@ -170,7 +186,7 @@
           <div class="col-md-3">
              <div class="feature-box">
               <i class="feature-box_icon fa fa-truck"></i>
-              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
+              <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300. </p>      
             </div>
           </div>
           <div class="col-md-3">
@@ -181,7 +197,9 @@
           </div>
         </div>
       </div>
-      </section>
+    </section>
+
+
   </div>
 </template>
 
@@ -454,7 +472,7 @@
 <template id="dish-index-page">
   <div class="vue-component">
     
-      <div class=""> 
+      
 
         <section class="section-top-menu">
           <div class="text-box">
@@ -488,6 +506,7 @@
 
           <!-- cuisine -->
           <div class="container">
+
 
             <div v-if="current_user.provider === true">
               <div class="row u-margin-bottom-big">
@@ -551,10 +570,7 @@
               </div>
             </div>
           </div>
-
-
-
-        </section>
+        
 
        <!-- <div class="container">    -->
         <!-- <div class="row ">
@@ -610,8 +626,44 @@
         <!-- end Modal -->
       <!-- </div> -->
 
-      </div>
+      </section>
     <!-- </div> -->
+    <section class="section-prefooter-1">
+        <div class="container">
+        <div class="heading u-center-text">
+          <h3 class="heading-prefooter">
+              Why choose us
+          </h3>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-heart-o"></i>
+              <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-diamond"></i>
+              <p>Pick and custom tailor your gourmet meals to your desires from our large menu options.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-truck"></i>
+              <p>Our chefs fully prepare your meals, saving you hours of shopping, prepping and cooking each week.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-gift"></i>
+              <p>Just heat and enjoy your healthy meal ready in minutes. Clean up is simply tossing our tray in your recycling.</p>      
+            </div>
+          </div>
+        </div>
+      </div>
+      </section>
   </div>
 </template>
 
