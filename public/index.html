@@ -84,7 +84,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalLabel">LogIn</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
@@ -104,9 +104,9 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-cancel btn-modal-close" data-dismiss="modal">Cancel</button>
-
-              <button type="button" class="btn btn-sign btn-modal" v-on:click="submit()"   data-backdrop="static">LogIn</button>
+             
+                <button type="submit" class="btn  btn-sign btn-block " v-on:click="submit()"   data-backdrop="static">LogIn</button>
+             
             </div>
           </div>
         </div>
@@ -491,7 +491,7 @@
 
             <div v-if="current_user.provider === true">
               <div class="row u-margin-bottom-big">
-                <div class="col-6 u-center-text">
+                <div class="col-xl-6 col-md-6 u-center-text">
                   <button type="button" class="btn btn-full"  v-on:click="toggle()">Choose cuisine here</button>
                   <div class="hidden" id="categories"> 
 
@@ -503,101 +503,61 @@
                     <hr>
                   </div>
                 </div>
-                <div class="col-6 u-center-text">
-               <button type="button" class="btn btn-full"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
-               <div class="hidden" id="userDishes">      
-               <hr>     
-                 <button type=""  class="btn btn-ghost font " v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
-                 <div >
-                   <button  type=""  class="btn btn-ghost font " v-on:click="dishFilter('all')">All dishes</button>        
-                 </div>
-                 <hr>
-               </div>
-             </div>
+                <div class="col-xl-6 col-md-6 u-center-text">
+                  <button type="button" class="btn btn-full"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
+                  <div class="hidden" id="userDishes">      
+                  <hr>     
+                   <button type=""  class="btn btn-ghost font " v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
+                    <button  type=""  class="btn btn-ghost font " v-on:click="dishFilter('all')">All dishes</button>        
+                  <hr>
+                  </div>
+                </div>
               </div>
             </div>
-
-
 
             <div v-if="current_user.provider === false">
               <div class="u-center-text u-margin-bottom-big ">
-              <button type="button" class="btn btn-full "  v-on:click="toggle()">Choose cuisine here</button>
-              <div class="hidden" id="categories"> 
-
-              <hr>     
-                <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
-                <div >
+                <button type="button" class="btn btn-full "  v-on:click="toggle()">Choose cuisine here</button>
+                <div class="hidden" id="categories">
+                  <hr>     
+                  <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
                   <button  type=""  class="btn btn-ghost font" v-on:click="categoryFilter('all')">All cuisine</button>        
+                  <hr>
                 </div>
-                <hr>
               </div>
             </div>
-</div>
           </div>
         <!-- end  cuisin -->  
           <!-- end filter -->
 
-        </section>
-
-
-
-
-
-
-
-        <!-- filter -->
-        <div class="button-dishes">
-
-        <!-- cuisine -->
-         <!--  <div class="container">
-            <div class="cuisine">
-              <button class="sign-filter"  v-on:click="toggle()">Choose cuisine here</button>
-              <div class="hidden" id="categories">      
-              <hr>     
-                <button type=""  class="button-filter" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
-                <div align="center">
-                  <button  type=""  class="button-filter" v-on:click="categoryFilter('all')">All cuisine</button>        
-                </div>
-                <hr>
+          <div class="container">
+            <div class="row">
+              <div v-for="dish in dishes" class="col-xl-3 col-md-4 box" v-if="isValidDish(dish)">
+                <img :src="dish.image_url" alt="product" class="">
+                <div class="dish-box">
+                  
+                  <h3>{{ dish.name }}</h3>
+                  <div class="grid-box">
+                    <div class="item-chef" >
+                      <strong>Chef:</strong> {{ dish.user.first_name }}
+                    </div>                
+                    <div class="font item-price">${{  dish.price }}</div>
+                    <div class="item-btn">
+                       <!-- <button><i class="fa fa-info-circle grid-icon" v-on:click="setCurrentDish(dish)" data-toggle="modal" data-target="#exampleModalCenter"></i></button> -->
+                        <button  v-on:click="setCurrentDish(dish)" class="btn btn-sign" data-toggle="modal" data-target="#exampleModalCenter">More info</button>
+                    </div>
+                  </div>
+                </div> 
               </div>
             </div>
-          </div> -->
-        <!-- end  cuisin -->  
+          </div>
 
 
-       <!-- currentUserDishes -->
-         <!-- <div class="container">
-           <div v-if="current_user.provider === true">
-             <div class="cuisine">
-               <button class="sign-filter"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
-               <div class="hidden" id="userDishes">      
-               <hr>     
-                 <button type=""  class="button-filter " v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
-                 <div >
-                   <button  type=""  class="button-filter " v-on:click="dishFilter('all')">All dishes</button>        
-                 </div>
-                 <hr>
-               </div>
-             </div>
-           </div>
-         </div> -->
-         <!-- end currentUserDishes -->
-       </div>
-       <!-- end filter -->
-       
 
-        <!-- Search form -->       
-        <!--  <div class="section-search padding-small">
-           <div class="input-group">
-             <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
-             <input type="text" class="form-control" placeholder="Search dish here" aria-label="Search" v-model="nameDishFilter"/>
-           </div>        
-       </div><br> -->
-       <!-- end search form -->
- 
+        </section>
 
-
-        <div class="row ">
+       <!-- <div class="container">    -->
+        <!-- <div class="row ">
           <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
             <div class=" is-gray">                       
               <div class="ribbon text-uppercase">
@@ -610,7 +570,7 @@
               <div class=" text-middle price text-muted">${{  dish.price }}</div>
             </div>
           </div>
-        </div>
+        </div> -->
     
 
         <!-- Modal -->
@@ -619,21 +579,21 @@
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title font-form" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
+                <button type="" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
                 <img class="img-fluid"  :src="currentDish.image_url" alt="Card image cap">
-                <p>{{ currentDish.description }} </p>     
+                <p class="font">{{ currentDish.description }} </p>     
               </div>
               <div class="modal-footer">
                 
                 <div class="form-inline">
                   <div v-if="currentDish.user_id === current_user.id">  
-                    <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type="button"  class="sign">Edit Dish</button></a>    
-                    <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="button" class="sign">Delete Dish</button></a>
+                    <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type=""  class="btn btn-sign">Edit Dish</button></a>    
+                    <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="" class="btn btn-sign">Delete Dish</button></a>
                   </div>   
                     <div v-if="current_user.provider === false">
                     <input  type="number"  v-model="quantity" class="form-control"  placeholder="Quantity">
@@ -642,12 +602,13 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="button" class="sign" data-dismiss="modal">Close</button>                
+                <button type="" class="btn btn-cancel" data-dismiss="modal">Close</button>                
               </div>
             </div>
           </div>
         </div>
         <!-- end Modal -->
+      <!-- </div> -->
 
       </div>
     <!-- </div> -->
