@@ -168,7 +168,8 @@ var ProfileShowPage = {
 
   methods: { 
     submit: function() {
-        $(window).on('load');
+        // $(window).on('load');
+        location.reload();
       var params = {
         first_name: this.first_name,
         last_name: this.last_name,
@@ -179,11 +180,13 @@ var ProfileShowPage = {
         password: this.password,
         password_confirmation: this.passwordConfirmation
       };
-        $(window).on('load');
+        // $(window).on('load');
+        // location.reload();
       axios
       .patch("/current_user", params)
         .then(function(response) {
-          $(window).on('load');
+          // $(window).on('load');
+           location.reload();
           router.push("/current_user/");
         })
         .catch(

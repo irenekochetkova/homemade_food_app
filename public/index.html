@@ -29,9 +29,11 @@
           </ul>
         </div>   
         <div class="nav">
+          <span > <a class="target1 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart nav-icon"></i></a></span>
           <span > <a class="target1 nav-link" href="/#/login"><i class="fa fa-sign-in nav-icon"></i></a></span>
           <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out nav-icon"></i></a></span>
           <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span>
+
         </div>
       </nav>
     </header>   
@@ -471,199 +473,196 @@
 
 <template id="dish-index-page">
   <div class="vue-component">
-    
-      
+    <section class="section-top-menu">
+      <div class="text-box">
+        <h1 class="font-top">
+          <span class="font-top-menu">Everyone likes good food.</span>
+          <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite food</span>
+        </h1>
 
-        <section class="section-top-menu">
-          <div class="text-box">
-            <h1 class="font-top">
-              <span class="font-top-menu">Everyone likes good food.</span>
-              <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite food</span>
-            </h1>
+         <!-- Search form --> 
+        <form action="#" class="search">
+          <input type="search" class="btn btn-ghost search_input" placeholder="Search dish" v-model="nameDishFilter">
+          <button class="search_button">
+            <svg class="search_icon">
+              <use xlink:href="SVG/sprite.svg#icon-magnifying-glass"></use>
+            </svg>
+          </button>
+        </form>
+        <!-- end search form -->
 
-             <!-- Search form --> 
-            <form action="#" class="search">
-              <input type="search" class="btn btn-ghost search_input" placeholder="Search dish" v-model="nameDishFilter">
-              <button class="search_button">
-                <svg class="search_icon">
-                  <use xlink:href="SVG/sprite.svg#icon-magnifying-glass"></use>
-                </svg>
-              </button>
-            </form>
-            <!-- end search form -->
-    
-          </div>
-        </section>
+      </div>
+    </section>
 
-        <section class="section-menu">
-          <div class="container">
-            <div class="heading u-center-text">
-              <h2 class="heading--main">Great menu from chefs</h2>
-            </div>  
-          </div>
+    <section class="section-menu">
+      <div class="container">
+        <div class="heading u-center-text">
+          <h2 class="heading--main">Great menu from chefs</h2>
+        </div>  
+      </div>
 
-          <!-- filter -->
+      <!-- filter -->
 
-          <!-- cuisine -->
-          <div class="container">
+      <!-- cuisine -->
+      <div class="container">
 
+        <div v-if="current_user.provider === true">
+          <div class="row u-margin-bottom-big">
+            <div class="col-xl-6 col-md-6 u-center-text">
+              <button type="button" class="btn btn-full"  v-on:click="toggle()">Choose cuisine here</button>
+              <div class="hidden" id="categories"> 
 
-            <div v-if="current_user.provider === true">
-              <div class="row u-margin-bottom-big">
-                <div class="col-xl-6 col-md-6 u-center-text">
-                  <button type="button" class="btn btn-full"  v-on:click="toggle()">Choose cuisine here</button>
-                  <div class="hidden" id="categories"> 
-
-                  <hr>     
-                    <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
-                    <div >
-                      <button  type=""  class="btn btn-ghost font" v-on:click="categoryFilter('all')">All cuisine</button>        
-                    </div>
-                    <hr>
-                  </div>
-                </div>
-                <div class="col-xl-6 col-md-6 u-center-text">
-                  <button type="button" class="btn btn-full"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
-                  <div class="hidden" id="userDishes">      
-                  <hr>     
-                   <button type=""  class="btn btn-ghost font " v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
-                    <button  type=""  class="btn btn-ghost font " v-on:click="dishFilter('all')">All dishes</button>        
-                  <hr>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div v-if="current_user.provider === false">
-              <div class="u-center-text u-margin-bottom-big ">
-                <button type="button" class="btn btn-full "  v-on:click="toggle()">Choose cuisine here</button>
-                <div class="hidden" id="categories">
-                  <hr>     
-                  <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+              <hr>     
+                <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+                <div >
                   <button  type=""  class="btn btn-ghost font" v-on:click="categoryFilter('all')">All cuisine</button>        
-                  <hr>
                 </div>
+                <hr>
               </div>
             </div>
-          </div>
-        <!-- end  cuisin -->  
-          <!-- end filter -->
-
-          <div class="container">
-            <div class="row">
-              <div v-for="dish in dishes" class="col-xl-3 col-md-4 box" v-if="isValidDish(dish)">
-                <img :src="dish.image_url" alt="product" class="">
-                <div class="dish-box">
-                  
-                  <h3>{{ dish.name }}</h3>
-                  <div class="grid-box">
-                    <div class="item-chef" >
-                      <strong>Chef:</strong> {{ dish.user.first_name }}
-                    </div>                
-                    <div class="font item-price">${{  dish.price }}</div>
-                    <div class="item-btn">
-                       <!-- <button><i class="fa fa-info-circle grid-icon" v-on:click="setCurrentDish(dish)" data-toggle="modal" data-target="#exampleModalCenter"></i></button> -->
-                        <button  v-on:click="setCurrentDish(dish)" class="btn btn-sign" data-toggle="modal" data-target="#exampleModalCenter">More info</button>
-                    </div>
-                  </div>
-                </div> 
-              </div>
-            </div>
-          </div>
-        
-
-       <!-- <div class="container">    -->
-        <!-- <div class="row ">
-          <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
-            <div class=" is-gray">                       
-              <div class="ribbon text-uppercase">
-                <a v-on:click="setCurrentDish(dish)"  data-toggle="modal" data-target="#exampleModalCenter">More info</a> 
-              </div>
-              <img :src="dish.image_url" alt="product" class="img-fluid">                          
-              <div class="text-muted cuisine2 text-small">Cuisine: {{ dish.category.title }}</div>
-              <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
-              <h3 class="text-middle" >{{ dish.name }}</h3>
-              <div class=" text-middle price text-muted">${{  dish.price }}</div>
-            </div>
-          </div>
-        </div> -->
-    
-
-        <!-- Modal -->
-
-        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title font-form" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
-                <button type="" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <img class="img-fluid"  :src="currentDish.image_url" alt="Card image cap">
-                <p class="font">{{ currentDish.description }} </p>     
-              </div>
-              <div class="modal-footer">
-                
-                <div class="form-inline">
-                  <div v-if="currentDish.user_id === current_user.id">  
-                    <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type=""  class="btn btn-sign">Edit Dish</button></a>    
-                    <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="" class="btn btn-sign">Delete Dish</button></a>
-                  </div>   
-                    <div v-if="current_user.provider === false">
-                    <input  type="number"  v-model="quantity" class="form-control"  placeholder="Quantity">
-                    <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="button" data-dismiss="modal" data-backdrop="false" class="sign">Add to cart</button></a>    
-                  </div>                                                     
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button type="" class="btn btn-cancel" data-dismiss="modal">Close</button>                
+            <div class="col-xl-6 col-md-6 u-center-text">
+              <button type="button" class="btn btn-full"  v-on:click="toggleDish()">Your dishes, {{ current_user.first_name}}</button>
+              <div class="hidden" id="userDishes">      
+              <hr>     
+               <button type=""  class="btn btn-ghost font " v-for="current_user" v-on:click="dishFilter(current_user)"> {{ current_user.first_name}}`s Dishes</button>
+                <button  type=""  class="btn btn-ghost font " v-on:click="dishFilter('all')">All dishes</button>        
+              <hr>
               </div>
             </div>
           </div>
         </div>
-        <!-- end Modal -->
-      <!-- </div> -->
 
-      </section>
+        <div v-if="current_user.provider === false">
+          <div class="u-center-text u-margin-bottom-big ">
+            <button type="button" class="btn btn-full "  v-on:click="toggle()">Choose cuisine here</button>
+            <div class="hidden" id="categories">
+              <hr>     
+              <button type=""  class="btn btn-ghost font" v-for="category in categories" v-on:click="categoryFilter(category)">{{ category.title }}</button>
+              <button  type=""  class="btn btn-ghost font" v-on:click="categoryFilter('all')">All cuisine</button>        
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- end  cuisin -->  
+      <!-- end filter -->
+
+      <div class="container">
+        <div class="row u-margin-bottom-big">
+          <div v-for="dish in dishes" class="col-xl-3 col-md-4 box" v-if="isValidDish(dish)">
+            <img :src="dish.image_url" alt="product" class="">
+            <div class="dish-box">
+              
+              <h3>{{ dish.name }}</h3>
+              <div class="grid-box">
+                <div class="item-chef" >
+                  <strong>Chef:</strong> {{ dish.user.first_name }}
+                </div>                
+                <div class="font item-price">${{  dish.price }}</div>
+                <div class="item-btn">
+                   <!-- <button><i class="fa fa-info-circle grid-icon" v-on:click="setCurrentDish(dish)" data-toggle="modal" data-target="#exampleModalCenter"></i></button> -->
+                    <button  v-on:click="setCurrentDish(dish)" class="btn btn-sign" data-toggle="modal" data-target="#exampleModalCenter">More info</button>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    
+
+   <!-- <div class="container">    -->
+    <!-- <div class="row ">
+      <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
+        <div class=" is-gray">                       
+          <div class="ribbon text-uppercase">
+            <a v-on:click="setCurrentDish(dish)"  data-toggle="modal" data-target="#exampleModalCenter">More info</a> 
+          </div>
+          <img :src="dish.image_url" alt="product" class="img-fluid">                          
+          <div class="text-muted cuisine2 text-small">Cuisine: {{ dish.category.title }}</div>
+          <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
+          <h3 class="text-middle" >{{ dish.name }}</h3>
+          <div class=" text-middle price text-muted">${{  dish.price }}</div>
+        </div>
+      </div>
+    </div> -->
+
+
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title font-form" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
+
+            <button type="" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <img class="img-fluid"  :src="currentDish.image_url" alt="Card image cap">
+            <p class="font">{{ currentDish.description }} </p>     
+          </div>
+          <div class="modal-footer">
+            
+            <div class="form-inline">
+              <div v-if="currentDish.user_id === current_user.id">  
+                <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type=""  class="btn btn-sign">Edit Dish</button></a>    
+                <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="" class="btn btn-sign">Delete Dish</button></a>
+              </div>   
+                <div v-if="current_user.provider === false">
+                <input  type="number"  v-model="quantity" class="form-control"  placeholder="Quantity">
+                <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="" data-dismiss="modal" data-backdrop="false" class="btn btn-sign">Add to cart</button></a>    
+              </div>                                                     
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="" class="btn btn-cancel" data-dismiss="modal">Close</button>                
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end Modal -->
+  <!-- </div> -->
+
+  </section>
     <!-- </div> -->
     <section class="section-prefooter-1">
-        <div class="container">
+      <div class="container">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
-              Why choose us
+            HOW IT WORKS
           </h3>
         </div>
-        
+      
         <div class="row">
           <div class="col-md-3">
              <div class="feature-box">
-              <i class="feature-box_icon fa fa-heart-o"></i>
+              <i class="feature-box_icon fa fa-truck"></i>
               <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.</p>      
             </div>
           </div>
           <div class="col-md-3">
              <div class="feature-box">
-              <i class="feature-box_icon fa fa-diamond"></i>
+              <i class="feature-box_icon fa fa-shopping-basket"></i>
               <p>Pick and custom tailor your gourmet meals to your desires from our large menu options.</p>      
             </div>
           </div>
           <div class="col-md-3">
              <div class="feature-box">
-              <i class="feature-box_icon fa fa-truck"></i>
+              <i class="feature-box_icon fa fa-clock-o"></i>
               <p>Our chefs fully prepare your meals, saving you hours of shopping, prepping and cooking each week.</p>      
             </div>
           </div>
           <div class="col-md-3">
              <div class="feature-box">
-              <i class="feature-box_icon fa fa-gift"></i>
+              <i class="feature-box_icon fa fa-leaf"></i>
               <p>Just heat and enjoy your healthy meal ready in minutes. Clean up is simply tossing our tray in your recycling.</p>      
             </div>
           </div>
         </div>
       </div>
-      </section>
+    </section>
   </div>
 </template>
 

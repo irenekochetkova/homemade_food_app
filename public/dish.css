@@ -553,6 +553,22 @@ h2:after {
 
 }*/
 
+/*Modal dish*/
+
+.form-control {
+   line-height: 1;
+   border: 1px solid #ced4da;
+   box-shadow: #e67e22 !important;
+   font-size: 1.2rem;
+
+  }
+
+.form-control:focus {
+  border-color: #ced4da !important;
+  box-shadow: none !important;
+}
+
+
 
 /*BUTTONS*/
 
@@ -669,7 +685,7 @@ input[type=search] {
 
 .btn-cancel {
   /*background-color: rgba(207, 109, 23, 0.3); */
-  background-color: #2E1A00;
+  background-color: #3D2300;
   color: #fff;
   width: 100%;
   font-size: 1.2rem;
@@ -753,6 +769,7 @@ input[type=search] {
   font-size: 1.8rem;
   text-transform: uppercase;
   padding-top: 2rem;
+  word-spacing: 5px;
 }
 
 
@@ -818,19 +835,6 @@ input[type=search] {
     padding: 20px 30px!important;
 }*/
 
-/*.form-control {
-   line-height: 1;
-   border-radius: 50px!important;
-   border: 1px solid #ced4da;
-   box-shadow: #A33A80 !important;
-   font-size: 0.8rem;
-
-  }*/
-
-/*.form-control:focus {
-  border-color: #A33A80;
-  box-shadow: 0 0 8px #A33A80;
-}*/
 
 /*.block {*/
   /*min-height:100%;*/
