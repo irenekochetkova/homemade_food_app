@@ -98,6 +98,8 @@ body {
  color: #fff !important;
 }
 
+
+
 section {
   /*padding-top: .5rem;*/
 }
@@ -114,10 +116,7 @@ h2:after {
   margin-top: 2rem;
 }
 
-.block-box {
-  padding-left: 30%;
-  padding-right: 30%;
-}
+
 
 
 
@@ -261,7 +260,7 @@ h2:after {
   height: 100%;
   width: 100%;
   z-index: -999;
-  opacity: .3;
+  /*opacity: .8;*/
   overflow: hidden;
  
 }
@@ -572,11 +571,23 @@ h2:after {
   box-shadow: none !important;
 }
 
-/*NEW_DISH PAGE*/
+/*NEW_DISH PAGE / EDIT_PAGE*/ 
 
-/*.block-box .form-input {
-  background: rgba(0,0,0,0.1) !important;
-}*/
+
+.section-form-dish {
+  background: #f4f4f4;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-bottom: 6rem;
+  padding-top: 2rem;
+}
+
+.dish-box {  
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0 .2);
+  padding: 2rem;
+}
 
 /*BUTTONS*/
 
