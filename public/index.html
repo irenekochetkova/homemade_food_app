@@ -666,7 +666,7 @@
   </div>
 </template>
 
-<template id="dishes-new-page">
+<!-- <template id="dishes-new-page">
   <div class="vue-component">
     <div class="container block">
       <div>
@@ -700,6 +700,57 @@
             <input type="text" class="form-control" v-model="image_url">
           </div>
           <button class="sign-new" v-on:click="submit()">Submit</button>       
+      </div>
+    </div>
+  </div>
+</template> -->
+
+<template id="dishes-new-page">
+  <div class="vue-component">
+      <div class="bg-video">
+        <video autoplay muted loop>
+          <source src="pictures/video-sign.mp4" type="video/mp4">
+          <source src="pictures/video-sign.webm" type="video/webm">
+            Your browser is not supported!
+        </video>
+      </div>
+    <div class="container">
+      <div class="heading u-center-text">
+        <h2 class="heading--main">Create new dish</h2>
+      </div>
+
+        <div class="block-box u-margin-bottom-big">
+          <ul class="u-center-text">
+            <li class="text-danger" v-for="error in errors">{{ error }}</li>
+          </ul>
+          <div class="form-group">             
+          <input type="text" class="form-input" id="name" v-model="name" placeholder="Name">
+          <label for="name" class="form-label">Name</label>
+        </div> 
+         <div class="form-group">            
+          <input id="price" type="decimal" class="form-input"  v-model="price" placeholder="Price">
+          <label for="price" class="form-label">Price</label>
+        </div>
+        <div class="form-group">            
+          <input type="text" class="form-input" id="description" v-model="description" placeholder="Description">
+          <label for="description" class="form-label">Description</label>
+        </div>
+        <div class="">            
+          <div class="form-group">           
+            <input type="text" class="form-input" id="cuisine" v-model="category_id" list="titles" placeholder="Cuisine">
+            <label for="cuisine" class="form-label">Cuisine</label>
+            <datalist id="titles">
+              <option v-for="category in categories"> {{ category.id + " " + category.title }}</option>
+            </datalist>
+          </div>
+        </div>
+        <div class="form-group">            
+          <input type="text" class="form-input" id="img" v-model="image_url" placeholder="Image">
+          <label for="img" class="form-label">Image</label>
+        </div>
+        <div class="u-center-text">
+          <input type="submit" class="btn btn-full" v-on:click="submit()"></input>
+        </div>
       </div>
     </div>
   </div>

@@ -114,6 +114,10 @@ h2:after {
   margin-top: 2rem;
 }
 
+.block-box {
+  padding-left: 30%;
+  padding-right: 30%;
+}
 
 
 
@@ -250,14 +254,14 @@ h2:after {
   color: #e67e22;
 }
 
-/*.bg-video {
+.bg-video {
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
   z-index: -999;
-  opacity: .8;
+  opacity: .3;
   overflow: hidden;
  
 }
@@ -267,7 +271,7 @@ h2:after {
   width: 100%;
   object-fit: cover;
 
-  }*/
+  }
 
 .text-sign-box {
   font-size: ;
@@ -568,7 +572,11 @@ h2:after {
   box-shadow: none !important;
 }
 
+/*NEW_DISH PAGE*/
 
+/*.block-box .form-input {
+  background: rgba(0,0,0,0.1) !important;
+}*/
 
 /*BUTTONS*/
 
@@ -845,7 +853,7 @@ input[type=search] {
   margin:15px;
 }*/
 
-/*PRPFILE PAGE*/
+/*PROFILE PAGE*/
 
 .customer-profile {
     text-align: center;
@@ -1070,9 +1078,9 @@ input[type=search] {
   width: 25%;
 }
 
-#price, #quantity, #subtotal, #remove {
+/*#price, #quantity, #subtotal, #remove {
   width: 15%;
-}
+}*/
 
 #customers .form-group {
   margin-bottom:0!important;

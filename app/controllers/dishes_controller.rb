@@ -23,7 +23,7 @@ class DishesController < ApplicationController
     if dish.save
       render json: dish.as_json
     else
-      render json: {errors: dish.errors.full_message}, status: 422
+      render json: {errors: dish.errors.full_messages}, status: 422
     end
   end
 
