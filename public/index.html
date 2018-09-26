@@ -710,44 +710,6 @@
   </div>
 </template>
 
-<!-- <template id="dishes-edit-page">
-  <div class="vue-component">
-    <div class="container block">
-      <div>
-        <h1>Edit Dish</h1>
-        <ul>
-          <li class="text-danger" v-for="error in errors">{{ error }}</li>
-        </ul>
-        <div class="form-group">
-          <label>Name:</label> 
-          <input type="text" class="form-control" v-model="name">
-        </div>
-        <div class="form-group">
-          <label>Price:</label>
-          <input type="decimal" class="form-control" v-model="price">
-        </div>
-        <div class="form-group">
-          <label>Description:</label>
-          <input type="text" class="form-control" v-model="description">
-        </div>
-        <div>  
-          <label>Cuisine:</label>
-          <div class="form-group">       
-            <input type="text" class="form-control"  v-model="category_id" list="titles" >
-            <datalist id="titles">
-              <option v-for="category in categories">{{ category.id + " " + category.title }}</option>
-            </datalist>
-          </div>
-        </div>
-      <div class="form-group">
-        <label>Image:</label>
-        <input type="text"  class="form-control" v-model="image_url">
-      </div>      
-      <button class="sign-new" data-dismiss="modal" data-backdrop="false" v-on:click="submit()">Submit</button>
-      </div>
-    </div>
-  </div>
-</template> -->
 <template id="dishes-edit-page">
   <div class="vue-component">
     <section class="section-form-dish">
@@ -788,7 +750,6 @@
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
@@ -797,7 +758,7 @@
   </div>
 </template>
 
-<template id="carted_dish-index-page">
+<!-- <template id="carted_dish-index-page">
   <div class="vue-component">
     <div class="container">
       <div class="padding-small">
@@ -842,6 +803,131 @@
       </div>
     </div>
   </div> 
+</template> -->
+
+<template id="carted_dish-index-page">
+  <div class="vue-component">
+
+    <section class="section-cart-header">       
+    </section>
+    
+      <section class="section-carted-dish">
+        <div class="container">
+          <!-- <div class="u-right-text">
+             <img src="/pictures/row-cart.png" alt="chef-1" class="cart-img ">
+          </div> -->
+          
+          <div class="heading u-center-text">
+            <h2 class="heading--main">Your shopping cart</h2>
+          </div>
+          <!-- <div class="row ">           -->
+          <!-- <div class="col-md-6 u-center-text">
+             <img src="/pictures/credit.png" alt="chef-1" class="cart-img ">
+          </div> -->
+          
+          <!-- <div class="col-md-6 u-center-text">
+             <img src="/pictures/row-cart.png" alt="chef-1" class="cart-img ">
+          </div> -->
+        </div>
+
+          <div class="container">
+            <table id="customers">
+              <thead>
+                <tr>
+                  <th id="dish">Dish</th>
+                  <th id="price">Price</th>
+                  <th id="quantity">Quantity</th>
+                  <th id="subtotal">Subtotal</th>
+                  <th id="remove">Remove</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="carted_dish in carted_dishes">
+
+                  <td><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted"><br>{{ carted_dish.dish.name }}</td>
+                  <td>${{ carted_dish.dish.price }}</td>
+                  <td>{{ carted_dish.quantity }}</td>
+                  <td>{{ carted_dish.subtotal_carted }}</td>
+                  <td><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="" class="feature-shop_icon" ><i class="fa fa-trash"></i></button></a></td>        
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+            <div class="container">
+              <div class="check-box">               
+                <a href="/#/dishes" class="btn btn-ghost sign">Continue Shopping</a>
+                <a href="/#/orders" class="btn btn-full"  v-on:click="checkout()" id="reload">Checkout</a>
+              </div>             
+            </div>
+            <div class="container u-center-text">
+              <div class="payment-box ">
+                
+                  <div class="recommend-payment">
+                    <span class="payment-text">
+                    Payment Methods:
+                    </span>
+                    <img src="payment/p-visa.png" alt="visa" >
+                    <img src="payment/p-west.png" alt="west" >
+                    <img src="payment/p-money-4.png" alt="money-4" >                
+                    <img src="payment/p-master.png" alt="master" >
+                    <img src="payment/p-paypal.png" alt="paypal" >
+                    <img src="payment/p-webmoney.png" alt="webmoney" >
+                    <img src="payment/p-maestro.png" alt="maestro" >                
+                    <img src="payment/p-money.png" alt="money" >
+                    <img src="payment/p-g.png" alt="p-g">
+                    <img src="payment/p-solo.png" alt="solo" >
+                    <img src="payment/p-yndex.png" alt="yndex" >
+                    <img src="payment/p-disco.png" alt="disco" >
+                    <img src="payment/p-cirr.png" alt="cirr" >
+                    <img src="payment/p-money-2.png" alt="money-2" >
+                    <img src="payment/p-2co.png" alt="2co">                   
+                    <img src="payment/p-money-3.png" alt="money-3">                   
+                    <img src="payment/cash.png" alt="money">
+                  </div>
+                
+              </div>
+            </div>
+      </section>
+
+      <section class="section-prefooter-1">
+      <div class="container">
+        <div class="heading u-center-text">
+          <h3 class="heading-prefooter">
+            HOW IT WORKS
+          </h3>
+        </div>
+      
+        <div class="row">
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-truck"></i>
+              <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-shopping-basket"></i>
+              <p>Pick and custom tailor your gourmet meals to your desires from our large menu options.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-clock-o"></i>
+              <p>Our chefs fully prepare your meals, saving you hours of shopping, prepping and cooking each week.</p>      
+            </div>
+          </div>
+          <div class="col-md-3">
+             <div class="feature-box">
+              <i class="feature-box_icon fa fa-leaf"></i>
+              <p>Just heat and enjoy your healthy meal ready in minutes. Clean up is simply tossing our tray in your recycling.</p>      
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+   
+  </div>
 </template>
 
 <template id="cartedDishes-delete-page">
