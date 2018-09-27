@@ -458,6 +458,7 @@ var CartedDishesIndexPage = {
   data: function() {
     return {
       carted_dishes: [],
+
       dishes: [],
       errors: []
     };
@@ -501,7 +502,24 @@ var CartedDishesIndexPage = {
             }.bind(this));
       
     }
- } 
+ },
+
+    computed: {
+      order_subtotal: function() {
+        var newArr = [];
+        this.carted_dishes.filter(obj => obj.subtotal_carted).map(obj => newArr.push(Number(obj.subtotal_carted)));
+        return newArr.length ? newArr.reduce((a,b) => (a + b)) : null;
+      },
+
+      tax: function() {
+        return this.order_subtotal * 0.1;
+      },
+
+      total: function() {
+        return this.order_subtotal + this.tax;
+      }
+    }
+
 };
 
 
