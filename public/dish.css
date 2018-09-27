@@ -98,6 +98,14 @@ body {
  color: #fff !important;
 }
 
+.d-flex {
+  display: flex !important;
+}
+
+.justify-content-between {
+  justify-content: space-between !important;
+}
+
 
 
 section {
@@ -610,7 +618,7 @@ h2:after {
 
 
 .feature-shop_icon {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     border: none;
     outline: none;
     display: inline-block;   
@@ -622,49 +630,85 @@ h2:after {
      height: 10rem;
      border-radius: 2px;
 
-} 
+}
+
 
 #customers {
-    border-collapse: collapse;
     width: 100%;
     text-align: center;
-    /*min-height: 60% ;*/
+   
 
 }
 
-#customers td {
-    border-bottom: 1px solid rgba(0, 0, 0, .2);
+#customers .item {
     padding: .8rem;
 }
 
-
+.line {
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
 
  #customers th {
     border: 1px solid rgba(0, 0, 0, .2);
-    padding: 8px;
-    background-color: #fff;
-
-}
-
-#customers th {
-    padding-top: 12px;
-    padding-bottom: 12px;
+    padding: 1rem;
     text-align: center;
-    font-size: 1rem;
+    font-size: 1.3rem;
+  font-weight: 400;
+
 }
+
 
 #dish {
-  width: 25%;
+  width: 40%;
 }
 
 .cart-img {
   padding-top: 1rem;
   height: 10vh;
   width: auto;
-
-  /*margin-bottom: 2rem;*/
 }
 
+.dish-name {
+  display: flex;
+  text-align: left !important;
+}
+
+.name-item {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.second-table {
+  margin-left: .5rem;
+  margin-right: .5rem;
+}
+
+.img-order {
+  height: 40vh;
+  width: auto;
+  padding-top: 2rem;
+
+}
+
+.total-box {
+  padding-left: 8rem;
+  padding-top: 4rem;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+ul.order-menu li {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+}
+
+
+/*SECTION-PAYMENT*/
 .cart-gif {
   padding-top: 1rem;
   height: 60vh;
@@ -691,15 +735,13 @@ h2:after {
   /*box-sizing: content-box;*/
     height: 2.5rem;
     width: auto;
-    margin-left: .5rem;
-    margin-right: .5rem;
+    margin-left: .3rem;
+    margin-right: .3rem;
     /*border-radius: 50%;*/
     border: 1px solid rgba(0, 0, 0, .2);
 }
 
-/*.recommend-payment:not(:last-child) img {
-  margin-right: -15rem;
-}*/
+
 
 /*BUTTONS*/
 

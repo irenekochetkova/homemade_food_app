@@ -758,52 +758,7 @@
   </div>
 </template>
 
-<!-- <template id="carted_dish-index-page">
-  <div class="vue-component">
-    <div class="container">
-      <div class="padding-small">
-        <h3>Shopping cart</h3>
-      </div>
-    </div>
-     <div class="container block">
-      <div class="basket-body">
-        <div class="basket">
-          <div class="basket-holder">
-            <div class="container">
-              <table id="customers">
-                <thead>
-                  <tr>
-                    <th id="dish">Dish</th>
-                    <th id="price">Price</th>
-                    <th id="quantity">Quantity</th>
-                    <th id="subtotal">Subtotal</th>
-                    <th id="remove">Remove</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr v-for="carted_dish in carted_dishes">
 
-                    <td><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted"><br>{{ carted_dish.dish.name }}</td>
-                    <td>${{ carted_dish.dish.price }}</td>
-                    <td>{{ carted_dish.quantity }}</td>
-                    <td>{{ carted_dish.subtotal_carted }}</td>
-                    <td><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="button" class="btn-remove" ><i class="fa fa-trash"></i></button></a></td>        
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class=" basket-check">
-        <div class="d-flex carted justify-content-md-end">
-         <a href="/#/dishes" class="sign-new">Continue Shopping</a>
-          <a href="/#/orders" class="sign-new"  v-on:click="checkout()" id="reload">Checkout</a>
-        </div>
-      </div>
-    </div>
-  </div> 
-</template> -->
 
 <template id="carted_dish-index-page">
   <div class="vue-component">
@@ -812,83 +767,109 @@
     </section>
     
       <section class="section-carted-dish">
-        <div class="container">
-          <!-- <div class="u-right-text">
-             <img src="/pictures/row-cart.png" alt="chef-1" class="cart-img ">
-          </div> -->
-          
+        <div class="container">          
           <div class="heading u-center-text">
             <h2 class="heading--main">Your shopping cart</h2>
-          </div>
-          <!-- <div class="row ">           -->
-          <!-- <div class="col-md-6 u-center-text">
-             <img src="/pictures/credit.png" alt="chef-1" class="cart-img ">
-          </div> -->
-          
-          <!-- <div class="col-md-6 u-center-text">
-             <img src="/pictures/row-cart.png" alt="chef-1" class="cart-img ">
-          </div> -->
+          </div>      
         </div>
 
-          <div class="container">
-            <table id="customers">
-              <thead>
-                <tr>
-                  <th id="dish">Dish</th>
-                  <th id="price">Price</th>
-                  <th id="quantity">Quantity</th>
-                  <th id="subtotal">Subtotal</th>
-                  <th id="remove">Remove</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr v-for="carted_dish in carted_dishes">
+        <div class="container">
+          <table id="customers">
+            <thead>
+              <tr>
+                <th id="dish">Dish</th>
+                <th id="price">Price</th>
+                <th id="quantity">Quantity</th>
+                <th id="subtotal">Subtotal</th>
+                <th id="remove">Remove</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr v-for="carted_dish in carted_dishes" class="line">
+                <td class="dish-name item"><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted">
+                  <table class="second-table">
+                    <tr><td class="name-item">{{ carted_dish.dish.name }}</td></tr>
+                    <tr><td>{{ carted_dish.dish.description }}</td></tr>
+                  </table>
+                </td>
+                </td>                  
+                <td class="item">${{ carted_dish.dish.price }}</td>
+                <td class="item">{{ carted_dish.quantity }}</td>
+                <td class="item">{{ carted_dish.subtotal_carted }}</td>
+                <td class="item"><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="" class="feature-shop_icon" ><i class="fa fa-trash"></i></button></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>        
+        
+        <div class="container">
 
-                  <td><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted"><br>{{ carted_dish.dish.name }}</td>
-                  <td>${{ carted_dish.dish.price }}</td>
-                  <td>{{ carted_dish.quantity }}</td>
-                  <td>{{ carted_dish.subtotal_carted }}</td>
-                  <td><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="" class="feature-shop_icon" ><i class="fa fa-trash"></i></button></a></td>        
-                </tr>
-              </tbody>
-            </table>
+          <div class="row">
+            <div class="col-6">
+              <img src="payment/order.jpg" alt="order" class="img-order">
+            </div>
+
+            <div class="col-6">
+              <div class="total-box">
+                <ul class="order-menu list-unstyled">
+                  <li class="d-flex justify-content-between">
+                    <span >Order Subtotal</span>
+                    <strong>${{ }}</strong>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span >Tax</span>
+                    <strong>${{ }}</strong>
+                  </li>
+                  <li class="d-flex justify-content-between">
+                    <span >Total</span>
+                    <strong>${{ }}</strong>
+                  </li>
+                </ul>
+                <div class="check-box">               
+                <a href="/#/dishes" class="btn btn-ghost sign">Shopping</a>
+                <a href="/#/orders" class="btn btn-full"  v-on:click="checkout()" id="reload">Checkout</a>
+              </div>
+              </div>             
+                 
+            </div>
           </div>
 
-            <div class="container">
-              <div class="check-box">               
-                <a href="/#/dishes" class="btn btn-ghost sign">Continue Shopping</a>
-                <a href="/#/orders" class="btn btn-full"  v-on:click="checkout()" id="reload">Checkout</a>
-              </div>             
-            </div>
-            <div class="container u-center-text">
-              <div class="payment-box ">
-                
-                  <div class="recommend-payment">
-                    <span class="payment-text">
-                    Payment Methods:
-                    </span>
-                    <img src="payment/p-visa.png" alt="visa" >
-                    <img src="payment/p-west.png" alt="west" >
-                    <img src="payment/p-money-4.png" alt="money-4" >                
-                    <img src="payment/p-master.png" alt="master" >
-                    <img src="payment/p-paypal.png" alt="paypal" >
-                    <img src="payment/p-webmoney.png" alt="webmoney" >
-                    <img src="payment/p-maestro.png" alt="maestro" >                
-                    <img src="payment/p-money.png" alt="money" >
-                    <img src="payment/p-g.png" alt="p-g">
-                    <img src="payment/p-solo.png" alt="solo" >
-                    <img src="payment/p-yndex.png" alt="yndex" >
-                    <img src="payment/p-disco.png" alt="disco" >
-                    <img src="payment/p-cirr.png" alt="cirr" >
-                    <img src="payment/p-money-2.png" alt="money-2" >
-                    <img src="payment/p-2co.png" alt="2co">                   
-                    <img src="payment/p-money-3.png" alt="money-3">                   
-                    <img src="payment/cash.png" alt="money">
-                  </div>
-                
-              </div>
-            </div>
+        </div>
       </section>
+       
+       <section class="section-payment">
+        <div class="container u-center-text">
+          <div class="payment-box ">            
+              <div class="recommend-payment">
+                <span class="payment-text">
+                Payment Methods:
+                </span>
+                <img src="payment/p-visa.png" alt="visa" >
+                <img src="payment/p-west.png" alt="west" >
+                <img src="payment/p-money-4.png" alt="money-4" >          
+                <img src="payment/p-master.png" alt="master" >
+                <img src="payment/p-paypal.png" alt="paypal" >
+                <img src="payment/p-webmoney.png" alt="webmoney" >
+                <img src="payment/p-maestro.png" alt="maestro" >          
+                <img src="payment/p-money.png" alt="money" >
+                <img src="payment/p-g.png" alt="p-g">
+                <img src="payment/p-solo.png" alt="solo" >
+                <img src="payment/p-yndex.png" alt="yndex" >
+                <img src="payment/p-disco.png" alt="disco" >
+                <img src="payment/p-cirr.png" alt="cirr" >
+                <img src="payment/p-money-2.png" alt="money-2" >
+                <img src="payment/p-2co.png" alt="2co">                   
+                <img src="payment/p-money-3.png" alt="money-3">       
+                <img src="payment/cash.png" alt="money">
+              </div>            
+          </div>
+        </div>
+      </section>
+
+      
+
+
+
 
       <section class="section-prefooter-1">
       <div class="container">
