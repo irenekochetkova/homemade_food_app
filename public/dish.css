@@ -692,9 +692,9 @@ h2:after {
 }
 
 .img-order {
-  height: 40vh;
+  height: 35vh;
   width: auto;
-  padding-top: 2rem;
+  padding-top: 4rem;
 
 }
 
@@ -715,9 +715,6 @@ ul.order-menu li {
   border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
 
-/*.side-right {
-  margin-right: 2rem;
-}*/
 
 .side-left {
   font-weight: 400;
@@ -736,28 +733,39 @@ ul.order-menu li {
   padding: .5rem;
   border: .6px solid rgba(0, 0, 0, .2);
   display: inline-block;
-  
-
 }
 
 .payment-text {
-  /*float: left;*/
   margin-right: 1rem;
-  /*line-height: 3rem;*/
 }
 
 
 .recommend-payment img {
-  /*box-sizing: content-box;*/
     height: 2.5rem;
     width: auto;
     margin-left: .3rem;
     margin-right: .3rem;
-    /*border-radius: 50%;*/
     border: 1px solid rgba(0, 0, 0, .2);
 }
 
+/*PAGE_ORDERS*/
 
+.section-order-header {
+  height: 60vh;
+  width: auto;
+  background-image:  url(payment/delivery.png);
+
+  background-size: cover;
+  background-position: center;
+  
+  background-attachment: fixed;
+    
+}
+
+.img-ordered {
+  height: 2px;
+  /*width: auto;*/
+}
 
 /*BUTTONS*/
 
@@ -1164,14 +1172,14 @@ input[type=search] {
   font-size: 15px;
 }*/
 /*-------------------------------------------------*/
-.price, .cuisine, .chef {
+/*.price, .cuisine, .chef {
   margin-bottom: .5rem;
   position: relative;
 }
 
 .cuisine {
   padding: 1px;
-  /*margin: 0 auto;*/
+ 
   text-align: center;
   font-family:  Cardo;
   font-size: 20px;  
@@ -1187,7 +1195,7 @@ input[type=search] {
 
 .cuisine2 {
   margin-top: .5rem;
-}
+}*/
 
 /*.hidden {
   display: none;
@@ -1228,14 +1236,14 @@ input[type=search] {
   width: 15%;
 }*/
 
-#customers .form-group {
+/*#customers .form-group {
   margin-bottom:0!important;
 
 }
 
 .customers-order {
   color: #A33A80!important;
-}
+}*/
 
 /*.picture  {
    

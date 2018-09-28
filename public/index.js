@@ -569,7 +569,7 @@ var OrdersIndexPage = {
       console.log(response.data);
     }.bind(this)),
     axios.get("/orders/").then(function(response) {
-      this.orders = response.data; 
+      this.orders = response.data.reverse(); 
       console.log(response.data);
     }.bind(this));    
   },     

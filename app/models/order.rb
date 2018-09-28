@@ -4,6 +4,11 @@ class Order < ApplicationRecord
   has_many :carted_dishes
   has_many :dishes, through: :carted_dishes
 
+  def time
+    time = Time.new
+    time.strftime("%d/%m/%Y")
+  end
+
   def as_json
     {
       id: id,
@@ -11,7 +16,8 @@ class Order < ApplicationRecord
       carted_dishes: carted_dishes.as_json,
       subtotal: subtotal,
       total: total,
-      tax: tax
+      tax: tax,
+      time: time
     }
   end
 
