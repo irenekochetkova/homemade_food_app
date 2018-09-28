@@ -508,15 +508,18 @@ var CartedDishesIndexPage = {
       order_subtotal: function() {
         var newArr = [];
         this.carted_dishes.filter(obj => obj.subtotal_carted).map(obj => newArr.push(Number(obj.subtotal_carted)));
-        return newArr.length ? newArr.reduce((a,b) => (a + b)) : null;
+        var sum = newArr.length ? newArr.reduce((a,b) => (a + b)) : null;
+        return sum.toFixed(2);
       },
 
       tax: function() {
-        return this.order_subtotal * 0.1;
+        var sum = Number(this.order_subtotal * 0.1);
+        return sum.toFixed(2);
       },
 
       total: function() {
-        return this.order_subtotal + this.tax;
+        var sum = Number(this.order_subtotal) + Number(this.tax);
+        return sum.toFixed(2);
       }
     }
 
