@@ -979,14 +979,16 @@
       <div class="heading u-center-text">
         <h2 class="heading--main">Your orders</h2>
       </div>
-      <div class="container">
+
+      <!-- <div class="container"> -->
+      <div class="table-box">
         <table id="customers" class="u-margin-bottom-big">
           <thead>
             <tr>
               <th>Order</th>
               <th>Date</th>
-              <th>Subtotal</th>
-              <th>Tax</th>
+              <!-- <th>Subtotal</th> -->
+              <!-- <th>Tax</th> -->
               <th>Total</th>
               
               <th>Cancel</th>
@@ -994,10 +996,10 @@
           </thead>
           <tbody>
             <tr v-for="order in orders" class="line">
-              <td class="item"><strong> #{{ order.id }}</strong></td>
+              <td class="item "><strong> #{{ order.id }}</strong></td>
               <td class="item">{{ order.time }}</td>
-              <td class="item">{{ order.subtotal }}</td>
-              <td class="item">{{ order.tax }}</td>
+              <!-- <td class="item">{{ order.subtotal }}</td> -->
+              <!-- <td class="item">{{ order.tax }}</td> -->
               <td class="item">{{ order.total }}</td>
               
               <td class="item"><a :href="'/#/orders/' + order.id + '/delete'" class="feature-shop_icon"><i class="fa fa-trash"></i></a></td>        
@@ -1005,6 +1007,34 @@
           </tbody>
         </table>
       </div>
+
+
+      <div class="gift-box ">
+        <div class="card u-margin-bottom-small">
+          <img src="payment/gift-card-3.png" alt="order" class="card-img-top img-ordered">
+          <div class="gift-text card-body">
+            <span >{{ current_user.first_name }}, <span class="font-color">Get $60 Off Instantly</span> upon credit approval.</span><br>
+            <span ><br>Also &nbsp;<span class="font-color-gift">Earn 5% Back Every Day</span>&nbsp;with the Gift Card.</span>
+          </div>
+        </div>
+        <div class="card u-margin-bottom-small">
+          <img src="payment/delivery.png" alt="order" class="card-img-top img-ordered">
+          <div class="gift-text card-body">
+            <span >Our chefs deliver almost everywhere in the continental United States.</span>
+          </div>
+        </div>
+        <div class="card">
+          <img src="payment/pick-up-2.png" alt="order" class="card-img-top img-ordered">
+          <div class="gift-text card-body">
+            <span >You can pick up the food at chef`s place.</span><br>
+            <span ><br>Our chefs guarantee the quality of products and the timely preparation of food.</span>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    <!-- </div> -->
+
+      <!-- </div> -->
 
       <!-- <div class="container">
         <div class="row">
@@ -1021,6 +1051,10 @@
       </div> -->
 
     </div>
+
+
+
+
   </div>
 </template> 
 

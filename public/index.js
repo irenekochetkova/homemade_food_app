@@ -508,8 +508,8 @@ var CartedDishesIndexPage = {
       order_subtotal: function() {
         var newArr = [];
         this.carted_dishes.filter(obj => obj.subtotal_carted).map(obj => newArr.push(Number(obj.subtotal_carted)));
-        var sum = newArr.length ? newArr.reduce((a,b) => (a + b)) : null;
-        return sum.toFixed(2);
+        return  newArr.length ? (newArr.reduce((a,b) => (a + b))).toFixed(2) : '0.00';
+        // return sum.toFixed(2);
       },
 
       tax: function() {
@@ -555,10 +555,15 @@ var OrdersIndexPage = {
     return {
       orders: [],
       carted_dishes: [],
+      current_user: {},
       dishes: []            
     };
   },
   created: function() {
+    axios.get("/current_user").then(function(response) {
+      console.log(response.data);
+       this.current_user = response.data;
+    }.bind(this));
     axios.get("/carted_dishes").then(function(response) {
       this.carted_dishes = response.data; 
       $(window).on('load');
@@ -571,7 +576,8 @@ var OrdersIndexPage = {
     axios.get("/orders/").then(function(response) {
       this.orders = response.data.reverse(); 
       console.log(response.data);
-    }.bind(this));    
+    }.bind(this)); 
+
   },     
 };
 

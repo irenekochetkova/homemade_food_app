@@ -18,6 +18,12 @@ html {
 
 }
 
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 body {
   box-sizing: border-box;
   background-color:  #fff;
@@ -105,12 +111,10 @@ body {
 .justify-content-between {
   justify-content: space-between !important;
 }
-
-
-
-section {
-  /*padding-top: .5rem;*/
+.d-inline-block {
+    display: inline-block;
 }
+
 
 /*FEATURES*/
 
@@ -692,9 +696,9 @@ h2:after {
 }
 
 .img-order {
-  height: 35vh;
+  height: 45vh;
   width: auto;
-  padding-top: 4rem;
+  padding-top: 6rem;
 
 }
 
@@ -762,9 +766,31 @@ ul.order-menu li {
     
 }
 
+.table-box {
+  font-weight: 700 !important;
+  width: 80%;
+  float: left;
+  padding-right: 30px;
+  position: relative;
+}
+
 .img-ordered {
-  height: 2px;
-  /*width: auto;*/
+  padding-top: .5rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.gift-text {
+  line-height: 1rem;
+}
+
+.gift-box {
+  width: 20%;
+  float: left;
+}
+
+.img-ordered {
+  /*height: 20px !important;*/
 }
 
 /*BUTTONS*/
@@ -908,6 +934,17 @@ input[type=search] {
   font-weight: 400;
   font-size: 1.2rem;
 
+}
+
+.font-color {
+  color: #e67e22;
+  font-weight: 700;
+}
+
+.font-color-gift {
+  color: #e67e22;
+  font-weight: 400;
+  font-size: 1.2rem;
 }
 
 .font-form {
@@ -1055,9 +1092,7 @@ input[type=search] {
     padding: 2rem;
 }
 
-.d-inline-block {
-    display: inline-block;
-}
+
 
 .customer-profile a {
     /*color: #9055A2;*/

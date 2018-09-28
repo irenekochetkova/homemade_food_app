@@ -5,8 +5,9 @@ class Order < ApplicationRecord
   has_many :dishes, through: :carted_dishes
 
   def time
-    time = Time.new
-    time.strftime("%d/%m/%Y")
+    # time = Time.new
+    # time.strftime("%d/%m/%Y")
+    created_at.strftime("%d/%m/%Y")
   end
 
   def as_json
@@ -22,3 +23,6 @@ class Order < ApplicationRecord
   end
 
 end
+
+
+# created_at.strftime('%FT%T')
