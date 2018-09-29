@@ -480,9 +480,18 @@
           <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite food</span>
         </h1>
 
+        
+
+      </div>
+    </section>
+
+    <section class="section-menu">
+      <div class="container">
+
+        <div class="header-menu">
          <!-- Search form --> 
         <form action="#" class="search">
-          <input type="search" class="btn btn-ghost search_input" placeholder="Search dish" v-model="nameDishFilter">
+          <input type="search" class="search_input" placeholder="Search dish" v-model="nameDishFilter">
           <button class="search_button">
             <svg class="search_icon">
               <use xlink:href="SVG/sprite.svg#icon-magnifying-glass"></use>
@@ -491,35 +500,47 @@
         </form>
         <!-- end search form -->
 
-      </div>
-    </section>
+          <!-- <div class="user-nav">
 
-    <section class="section-menu">
-      <div class="container">
+            <div class=" carted-nav-box">
 
-        <div class=" u-margin-top-small">
-
-            <div class="carted-nav-box">
               <span > <a class="target2 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart cart-icon "></i></a></span>
-              <!-- <i class="icon_features icon-ecommerce-cart-check"></i> -->
-
               <span class="carted-count">{{ count_carted }}</span>
             </div>
-        </div>
+
+          </div> -->
+
+          <nav class="user-nav">
+          <div class="user-nav_icon-box">
+            <span class="user-nav_icon">
+              <a class="target2 " href="/#/carted_dishes"><i class="cart-icon fa fa-shopping-cart  "></i></a>  
+            </span> 
+            <span class="user-nav_notification">{{ count_carted }}</span>   
+          </div>  
+
+          <div class="user-nav_icon-box">
+            <a href="/#/orders"   class="btn-2 btn-ghost">Your orders, <br>{{ current_user.first_name }}</a>   
+          </div>         
+        </nav>
 
 
-        <div class="heading u-center-text">
-          <h2 class="heading--main">Great menu from chefs</h2>
         </div>
+
+</div>
+        
           
           
 
-      </div>
+      
 
       <!-- filter -->
 
       <!-- cuisine -->
       <div class="container">
+
+        <div class="heading u-center-text">
+          <h2 class="heading--main">Great menu from chefs</h2>
+        </div>
 
         <div v-if="current_user.provider === true">
           <div class="row u-margin-bottom-big">
@@ -821,8 +842,8 @@
 
           <div class="row">
             <div class="col-6 u-center-text">
-              <!-- <img src="payment/order.jpg" alt="order" class="img-order"> -->
-              <img src="payment/order-page.jpg" alt="order" class="img-order">
+              <img src="payment/order.jpg" alt="order" class="img-order">
+              <!-- <img src="payment/order-page.jpg" alt="order" class="img-order"> -->
             </div>
 
             <div class="col-6 ">
