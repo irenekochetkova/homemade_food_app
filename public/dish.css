@@ -39,16 +39,62 @@ body {
 
 .navbar {  
   font-size: 1.8rem;
-}
-
-.back-nav {
-  background-color: #25222B !important;
+  font-weight: 400;
 }
 
 
-.nav-link {
-  margin-left: 1.5rem;
+.logo {
+   height: 60px;
+    width: auto;
+    float: left;
+    margin-left: 2rem;
+    
+}
 
+.nav {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+.nav li a:link,
+.nav li a:visited {
+    padding: 8px 0;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    -webkit-transition: border-bottom 0.2s;
+    transition: border-bottom 0.2s;
+}
+
+.nav li a:hover,
+.nav li a:active {
+    border-bottom: 2px solid #e67e22;
+}
+
+.nav-link-left  {
+  margin-left: 2.5rem;  
+}
+
+.nav-link-right  {
+  margin-right: 2.5rem; 
+  font-weight: 400 !important; 
 }
 
 .nav-icon {
@@ -909,6 +955,8 @@ ul.order-menu li {
 
 
 /*BUTTONS*/
+
+
 
 /*btn - 1*/
 

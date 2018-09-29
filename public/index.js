@@ -1,6 +1,9 @@
 
+// $(document).ready(function() {
+//       $(".target1").css("color", "#fff");
+//     });
 $(document).ready(function() {
-      $(".target1").css("color", "#fff");
+      $(".target1").css("color", "#613D07");
     });
 $(document).ready(function() {
       $(".target2").css("color", "#613D07");
