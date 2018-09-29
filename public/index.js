@@ -2,6 +2,9 @@
 $(document).ready(function() {
       $(".target1").css("color", "#fff");
     });
+$(document).ready(function() {
+      $(".target2").css("color", "#e67e22");
+    });
 
 $(document).ready(function(){
   $("#reload").click(function(){
@@ -230,7 +233,7 @@ var DishesIndexPage = {
       users: [],
       categories: [],
       nameDishFilter: "",
-      
+      carted_dishes: [],
       current_user: {},
       quantity: ""
     };
@@ -247,6 +250,10 @@ var DishesIndexPage = {
     axios.get("/current_user").then(function(response) {
       console.log(response.data);
        this.current_user = response.data;
+    }.bind(this));
+    axios.get("/carted_dishes").then(function(response) {
+      this.carted_dishes = response.data;      
+      console.log(response.data);     
     }.bind(this));
   },
 
@@ -325,6 +332,12 @@ var DishesIndexPage = {
     }
 
   },
+
+  computed: {
+    count_carted: function() {
+      return this.carted_dishes.length;
+    }
+  }
 };
 
 var DishesNewPage = {

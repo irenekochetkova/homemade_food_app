@@ -91,6 +91,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
+.u-margin-top-small {
+  margin-top: 1.5rem;
+}
+
 .u-margin-bottom-big {
   margin-bottom: 4rem;
 }
@@ -106,6 +110,10 @@ body {
 
 .d-flex {
   display: flex !important;
+}
+
+.d-float-left {
+  float: left;
 }
 
 .justify-content-between {
@@ -518,6 +526,10 @@ h2:after {
   
 }
 
+.cart-icon {
+  font-size: 2.5rem;
+}
+
 .hidden {
   display: none;
 }
@@ -789,9 +801,6 @@ ul.order-menu li {
   float: left;
 }
 
-.img-ordered {
-  /*height: 20px !important;*/
-}
 
 /*BUTTONS*/
 
