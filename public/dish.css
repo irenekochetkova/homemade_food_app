@@ -526,9 +526,42 @@ h2:after {
   
 }
 
-.cart-icon {
-  font-size: 2.5rem;
+
+.carted-nav-box {
+  position: relative;
+  /*float: right;*/
+  text-align: right;
+
 }
+
+.cart-icon {
+  font-size: 3rem;
+}
+
+/*.icon_features {
+  font-size: 6rem;
+    margin-bottom: .5rem;
+    display: inline-block;
+    color: black; 
+}*/
+
+.carted-count {
+  font-weight: 700;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  position: absolute;
+  top: .3rem;
+  right: 1.35rem; 
+  text-align: center;
+  align-items: center !important;
+  display: flex; 
+  justify-content: center;
+
+}
+
 
 .hidden {
   display: none;

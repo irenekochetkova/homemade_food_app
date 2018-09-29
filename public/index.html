@@ -497,10 +497,14 @@
     <section class="section-menu">
       <div class="container">
 
-        <div class="u-right-text u-margin-top-small">
-          <span > <a class="target2 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart cart-icon "></i></a></span>
+        <div class=" u-margin-top-small">
 
-          <span>{{ count_carted }}</span>
+            <div class="carted-nav-box">
+              <span > <a class="target2 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart cart-icon "></i></a></span>
+              <!-- <i class="icon_features icon-ecommerce-cart-check"></i> -->
+
+              <span class="carted-count">{{ count_carted }}</span>
+            </div>
         </div>
 
 

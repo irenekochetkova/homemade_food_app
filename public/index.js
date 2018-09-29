@@ -3,7 +3,7 @@ $(document).ready(function() {
       $(".target1").css("color", "#fff");
     });
 $(document).ready(function() {
-      $(".target2").css("color", "#e67e22");
+      $(".target2").css("color", "#555");
     });
 
 $(document).ready(function(){
