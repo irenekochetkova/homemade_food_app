@@ -10,9 +10,12 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700">
+  <link rel="stylesheet" type="text/css" href="/css/ionicons.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/normalize.css"> -->
   
 
- <link rel="stylesheet" href="dish.css">
+  <link rel="stylesheet" href="dish.css">
+
 
   <title>Homemade food</title>
 
@@ -173,7 +176,7 @@
     </section>
 
     <section class="section-chefs">
-       <div class="container">
+       <div class="container ">
 
         <div class="heading u-center-text">
           <h2 class="heading--main">Our chefs cook for you</h2>
@@ -182,8 +185,8 @@
         <div class="row">
           
            
-           <div v-for="list_provider in list_providers" class="col-xl-3 col-md-4 u-center-text u-margin-bottom-big">
-            <div class="box-chef">
+           <div v-for="list_provider in list_providers" class="col-xl-3 col-md-4 u-center-text u-margin-bottom-big ">
+            <div class="">
              <div class="card box-chef">
             
              <img :src="list_provider.image_url" alt="chef" class="card-img-top img-chef" >
@@ -194,9 +197,54 @@
              </div>
            </div>
         </div>
+        </div>
+        <div class="u-center-text u-margin-bottom-big">
+          <a href="/#/dishes" class="btn-text">Learn menu  &rarr;</a>
+        </div>
 
        
 
+      </div>
+    </section>
+
+    <section class="section-features ">
+      <div class="container ">
+<div class="heading u-center-text">
+          <h3 class="heading-prefooter">
+              Why choose us
+          </h3>
+        </div>
+        <div class="row ">
+         <div class="col-xl-3 col-md-4 ">
+                    <i class="ion-ios-infinite-outline icon-big"></i>
+                    <h3>Up to 365 days/year</h3>
+                    <p>
+                        Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
+                    </p>
+                </div>
+                <div class="col-xl-3 col-md-4 ">
+                    <i class="ion-ios-stopwatch-outline icon-big"></i>
+                    <h3>Ready in 20 minutes</h3>
+                    <p>
+                        You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.
+                    </p>
+                </div>
+                <div class="col-xl-3 col-md-4  ">
+                    <i class="ion-ios-nutrition-outline icon-big"></i>
+                    <h3>100% organic</h3>
+                    <p>
+                        All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
+                    </p>
+                </div>
+                <div class="col-xl-3 col-md-4 ">
+                    <i class="ion-ios-cart-outline icon-big"></i>
+                    <h3>Order anything</h3>
+                    <p>
+                        We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
+                    </p>
+                </div>
+       
+        </div>        
       </div>
     </section>
 
@@ -236,8 +284,8 @@
           </div>
         </div>
       </div>
-    </section> -->
-
+    </section>
+ -->
 
   </div>
 </template>
