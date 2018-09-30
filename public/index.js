@@ -27,10 +27,21 @@ var HomePage = {
     return {
       email: "",
       password: "",
+      current_user: {},
+      users: [],
       errors: []
     };
   },
-  created: function() {},
+  created: function() {
+     axios.get("/users/" ).then(function(response) {// displaying Data from an API
+      this.users = response.data;
+      console.log(response.data);
+    }.bind(this));
+     axios.get("/current_user").then(function(response) {
+      console.log(response.data);
+       this.current_user = response.data;
+    }.bind(this));
+  },
   methods: {
     submit: function() {
       var params = {
@@ -56,7 +67,12 @@ var HomePage = {
         );
     }
   },
-  computed: {}
+  computed: {
+    list_providers: function() {
+      
+       return this.users.filter(obj => obj.provider === true);
+    }
+  }
 };
 
 var SignupPage = {

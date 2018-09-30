@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   delete "/dishes/:id" => "dishes#destroy"
 
   post '/user_token' => 'user_token#create'
+  get "/users" => "users#index"
   get "/current_user" => "users#show"
   post "/users" => "users#create"
   patch "/current_user" => "users#update"

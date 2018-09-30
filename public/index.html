@@ -25,9 +25,9 @@
         <!-- <div > -->
           <img src="pictures/logo-2.png" alt="logo" class="logo">
           <ul  class="nav ">
-            <li class="" ><a class="target1 nav-link-right" href="/#/">HOME</a></li>
-            <li class=""><a class="target1 nav-link-right" href="/#/dishes">MENU</a></li>
-          <!-- </ul> -->
+            <li class="" ><a class="target1 nav-link-center" href="/#/">HOME</a></li>
+            <li class=""><a class="target1 nav-link-center" href="/#/dishes">MENU</a></li>
+          </ul>
         <!-- </div>    -->
         <!-- <div class="nav"> -->
          <!--  <span > <a class="target1 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart nav-icon"></i></a></span> -->
@@ -35,9 +35,11 @@
           <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out nav-icon"></i></a></span>
           <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span> -->
 
-          <!-- <ul  class="nav "> -->
-            <li class="" ><a class="target1 nav-link-right" href="/#/login">Sign in</a></li>
-            <!-- <li class=""><a class="target1 nav-link-right" href="/#/logout">Log out</a></li> -->
+          <ul  class="nav ">
+            <li ><a class="target1 nav-link-right" href="/#/login">Log In</a></li>
+            <li><a class="target1 nav-link-right" href="/#/logout">Log out</a></li>
+            <li> <a class="target1 nav-link-right" href="/#/current_user"><i class="fa fa-user-o  nav-icon" ></i></a></li>
+
           </ul>
 
         <!-- </div> -->
@@ -168,6 +170,20 @@
 
       </div>
        
+    </section>
+
+    <section class="section-chefs">
+       <div class="container">
+
+        <div class="heading u-center-text">
+          <h2 class="heading--main">Our chefs</h2>
+        </div>
+
+        <div v-for="list_provider in list_providers">      
+          <p>chef: {{ list_provider.first_name }}&nbsp;{{ list_provider.last_name }}</p> 
+        </div>
+
+      </div>
     </section>
 
     <section class="section-prefooter-1">
