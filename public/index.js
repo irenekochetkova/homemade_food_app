@@ -27,7 +27,7 @@ var HomePage = {
     return {
       email: "",
       password: "",
-      current_user: {},
+     
       users: [],
       errors: []
     };
@@ -37,10 +37,7 @@ var HomePage = {
       this.users = response.data;
       console.log(response.data);
     }.bind(this));
-     axios.get("/current_user").then(function(response) {
-      console.log(response.data);
-       this.current_user = response.data;
-    }.bind(this));
+     
   },
   methods: {
     submit: function() {

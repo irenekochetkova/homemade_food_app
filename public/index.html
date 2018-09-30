@@ -176,17 +176,32 @@
        <div class="container">
 
         <div class="heading u-center-text">
-          <h2 class="heading--main">Our chefs</h2>
+          <h2 class="heading--main">Our chefs cook for you</h2>
         </div>
 
-        <div v-for="list_provider in list_providers">      
-          <p>chef: {{ list_provider.first_name }}&nbsp;{{ list_provider.last_name }}</p> 
+        <div class="row">
+          
+           
+           <div v-for="list_provider in list_providers" class="col-xl-3 col-md-4 u-center-text u-margin-bottom-big">
+            <div class="box-chef">
+             <div class="card box-chef">
+            
+             <img :src="list_provider.image_url" alt="chef" class="card-img-top img-chef" >
+             
+             <p class="font ">{{ list_provider.first_name }}&nbsp;{{ list_provider.last_name }}</p>
+             <p > {{ list_provider.email }}</p>
+          
+             </div>
+           </div>
         </div>
+
+       
 
       </div>
     </section>
 
-    <section class="section-prefooter-1">
+
+    <!-- <section class="section-prefooter-1">
       <div class="container">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
@@ -221,7 +236,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
 
   </div>

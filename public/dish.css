@@ -303,6 +303,16 @@ h2:after {
     color: #cf6d17;  
 }
 
+.box-chef {
+  background: #f4f4f4;
+  border: none !important;
+}
+
+.img-chef {
+  padding: 1rem;
+  border-radius: 12px;
+}
+
 /*SIGN-UP PAGE*/
 
 .section-sign_up, .section-log_in {
