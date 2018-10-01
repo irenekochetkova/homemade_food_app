@@ -630,7 +630,7 @@ h2:after {
 .steps-box:last-child {
     text-align: left;
     padding-left: 3%;
-    margin-top: 6.5rem;
+    margin-top: 7rem;
 }
 
 .app-screen {
@@ -638,25 +638,25 @@ h2:after {
 }
 
 .works-step {
-    margin-bottom: 50px;
+    margin-bottom: 5rem;
 }
 
 .works-step:last-of-type {
-    margin-bottom: 80px;
+    margin-bottom: 8rem;
 }
 
 .works-step div {
     color: #e67e22;
     font-size: 150%;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
     border: 2px solid #e67e22;
     border-radius: 50%;
     display: inline-block;
     text-align: center;
     margin-right: 25px;
     float: left;
-    padding: 6px;
+    padding: 4px;
 }
 
 /*.btn-app:link,
@@ -911,6 +911,44 @@ h2:after {
   border: 1px solid rgba(0, 0, 0 .2);
   padding: 2rem;
 }
+
+/*section-quotes*/
+
+.section-quotes {
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(pictures/back-quotes.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(pictures/back-quotes.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+    padding-bottom: 1.5rem;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 4rem;
+    font-size: 1.5rem;
+}
+
+blockquote:before {
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 2.5rem;
+    display: block;
+}
+
+
+
 
 /*SHOPPING-CART*/
 .section-cart-header {
