@@ -40,6 +40,7 @@ body {
 .navbar {  
   font-size: 1.8rem;
   font-weight: 400;
+  box-shadow: 0 .5rem .9rem rgba(0, 0, 0, .15);
 }
 
 
@@ -304,17 +305,23 @@ h2:after {
 }
 
 .box-chef {
-  background: #f4f4f4;
+  /*background: #f4f4f4;*/
+  background: #fff;
   border: none !important;
+  /*box-shadow: 0 2px 2px #efefef;*/
 
 }
 
 .section-chefs {
-  margin-left: 20rem;
-  margin-right: 20rem;
+  
   /*background: #f4f4f4;*/
+  padding-bottom: 4rem;
 }
 
+.section-chefs .container {
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
 
 .img-chef {
   padding: 1rem;
@@ -322,13 +329,25 @@ h2:after {
 }
 
 .section-features {
-   background-color: #f4f4f4;
-   padding-bottom: 1.5rem;
+  
+   background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.2)), url(pictures/back-features-4.png);
+  background-size: cover;
+  background-position: top;
+  /*color: #fff;*/
+  /*background-attachment: fixed;*/
+  height: 60vh;
+ 
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-bottom: 3rem;
+   /*background-color: #f4f4f4;*/
+   /*padding-bottom: 1.5rem;*/
+  
 }
 
-.section-features p {
+/*.section-features p {
   font-size: 1.2rem;
-}
+}*/
 
 .works-step div {
     color: #e67e22;
@@ -1240,6 +1259,7 @@ button[type=button] {
   text-transform: uppercase;
   padding-top: 2rem;
   word-spacing: 5px;
+
 }
 
 
