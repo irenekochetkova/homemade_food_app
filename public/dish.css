@@ -18,6 +18,7 @@ html {
 
 }
 
+.clearfix {zoom: 1;}
 .clearfix:after {
   content: "";
   display: table;
@@ -155,6 +156,11 @@ a:active {
   margin-top: 4rem;
 }
 
+.u-padding-side {
+  padding-right: 15rem;
+  padding-left: 15rem;
+}
+
 .text-danger {
  background-color: rgba(209, 46, 46, 0.8); 
  color: #fff !important;
@@ -174,6 +180,10 @@ a:active {
 .d-inline-block {
     display: inline-block;
 }
+
+
+
+
 
 
 /*FEATURES*/
@@ -272,13 +282,13 @@ h2:after {
 
 .font-about--main {
   /*margin-top: 5rem;*/
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 .font-about--sub {
   margin-top: 1.6rem;
   font-weight: 300;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .about-img {
@@ -345,9 +355,9 @@ h2:after {
   
 }
 
-/*.section-features p {
-  font-size: 1.2rem;
-}*/
+.section-features-2 {
+  
+}
 
 .works-step div {
     color: #e67e22;
@@ -597,7 +607,70 @@ h2:after {
   align-items: center;
 }
 
+/*-------------------------------*/
+
+.section-work {
+  padding-left: 25rem;
+  padding-right: 25rem;
+  padding-bottom: 4rem;
+}
+
+.steps-box {
+    margin-top: 3rem;
+    font-size: 1.3rem;
+
+}
+
+
+.steps-box:first-child {
+    text-align: right;
+    padding-right: 3%;
+}
+
+.steps-box:last-child {
+    text-align: left;
+    padding-left: 3%;
+    margin-top: 6.5rem;
+}
+
+.app-screen {
+    width: 55%;
+}
+
+.works-step {
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type {
+    margin-bottom: 80px;
+}
+
+.works-step div {
+    color: #e67e22;
+    font-size: 150%;
+    height: 50px;
+    width: 50px;
+    border: 2px solid #e67e22;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    margin-right: 25px;
+    float: left;
+    padding: 6px;
+}
+
+/*.btn-app:link,
+.btn-app:visited {
+    border: 0;
+}
+
+.btn-app img {
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}*/
 /*form-search*/
+
 
 
 .search {
@@ -1188,6 +1261,10 @@ button[type=button] {
   font-weight: 400;
   font-size: 1.2rem;
 
+}
+
+.font-prefooter {
+  font-size: 1.2rem;
 }
 
 .font-color {

@@ -158,6 +158,33 @@
         </div>
       </div>
     </section>
+    <section class="section-work ">
+  <div class="heading u-center-text">
+          <h2 class="heading--main">How it works &mdash; Simple as 1, 2, 3</h2>
+        </div>
+            <div class="row ">
+                <div class="col-6 steps-box">
+                    <img src="pictures/phone.jpg" alt="Omnifood app on iPhone" class="app-screen js--wp-2">
+                </div>
+                <div class="col-6 steps-box">
+                    <div class="works-step clearfix">
+                        <div>1</div>
+                        <span>Choose the options "chef" or "customer" and sign up today.</span>
+                    </div>
+                    <div class="works-step clearfix">
+                        <div>2</div>
+                        <span>Chefs can create a new dish, edit their own dishes and delete them.</span>
+                    </div>
+                    <div class="works-step clearfix">
+                        <div>3</div>
+                        <span>Customers can buy chefs` dishes and enjoy their. See you the next time!</pspan
+                    </div>
+                    <!-- <a href="#" class="btn-app"><img src="resources/img/download-app.svg" alt="App Store Button"></a>
+                    <a href="#" class="btn-app"><img src="resources/img/download-app-android.png" alt="Play Store Button"></a> -->
+                   
+                </div>
+            </div>
+ </section>
 
     <section class="section-sentence">
       <div class="heading u-center-text">
@@ -191,8 +218,8 @@
             
              <img :src="list_provider.image_url" alt="chef" class="card-img-top img-chef" >
              
-             <p class="font ">{{ list_provider.first_name }}&nbsp;{{ list_provider.last_name }}</p>
-             <p > {{ list_provider.email }}</p>
+             <span class="font ">{{ list_provider.first_name }}&nbsp;{{ list_provider.last_name }}</span>
+             <span > {{ list_provider.email }}</span>
           
              </div>
            </div>
@@ -225,78 +252,12 @@
         
 
       </div>
-       <!--  <div class="row ">
-         <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-heart-outline icon-big"></i>
-                    <h3>The best service for you</h3>
-                    <p>
-                        We care about every client and it is important for us to know that everyone is happy with our service.
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-stopwatch-outline icon-big"></i>
-                    <h3>Ready in 20 minutes</h3>
-                    <p>
-                        You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4  ">
-                    <i class="ion-ios-nutrition-outline icon-big"></i>
-                    <h3>100% organic</h3>
-                    <p>
-                        All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-cart-outline icon-big"></i>
-                    <h3>Order anything</h3>
-                    <p>
-                        We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
-                    </p>
-                </div>
        
-        </div> -->        
       </div>
     </section>
 
 
-    <!-- <section class="section-prefooter-1">
-      <div class="container">
-        <div class="heading u-center-text">
-          <h3 class="heading-prefooter">
-              Why choose us
-          </h3>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-heart-o"></i>
-              <p>We care about every client and it is important for us to know that everyone is happy with our service.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-diamond"></i>
-              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-truck"></i>
-              <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300. </p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-gift"></i>
-              <p>Do not miss the chance! We offer bonuses if you are a regular customer of our site.</p>      
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
- -->
+    
 
   </div>
 </template>
@@ -582,7 +543,7 @@
     </section>
 
     <section class="section-menu">
-      <div class="container">
+      <div class="container u-padding-side">
 
         <div class="header-menu">
          <!-- Search form --> 
@@ -606,7 +567,7 @@
 
           </div> -->
 
-          <nav class="user-nav">
+          <nav v-if="current_user.provider === false" class="user-nav">
           <div class="user-nav_icon-box">
             <span class="user-nav_icon">
               <a class="target2 " href="/#/carted_dishes"><i class="cart-icon fa fa-shopping-cart  "></i></a>  
@@ -632,7 +593,7 @@
       <!-- filter -->
 
       <!-- cuisine -->
-      <div class="container">
+      <div class="container ">
 
         <div class="heading u-center-text">
           <h2 class="heading--main">Great menu from chefs</h2>
@@ -679,9 +640,9 @@
     <!-- end  cuisin -->  
       <!-- end filter -->
 
-      <div class="container">
-        <div class="row u-margin-bottom-big">
-          <div v-for="dish in dishes" class="col-xl-3 col-md-4 box" v-if="isValidDish(dish)">
+      <div class="container u-padding-side">
+        <div class="row u-margin-bottom-big ">
+          <div v-for="dish in dishes" class="col-xl-4 col-md-4 box" v-if="isValidDish(dish)">
             <img :src="dish.image_url" alt="product" class="">
             <div class="dish-box">
               
@@ -760,159 +721,43 @@
   </section>
     <!-- </div> -->
 
-   <!--  <section class="section-features ">
-      <div class="container ">
-<div class="heading u-center-text">
-          <h3 class="heading-prefooter">
-              HOW IT WORKS
-          </h3>
-        </div>
-        <div class="row ">
-         <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-infinite-outline icon-big"></i>
-                    <h3>Pick up your meal</h3>
-                    <p>
-                        You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-stopwatch-outline icon-big"></i>
-                    <h3>Ready in 20 minutes</h3>
-                    <p>
-                        Pick and custom tailor your gourmet meals to your desires from our large menu options.
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4  ">
-                    <i class="ion-ios-nutrition-outline icon-big"></i>
-                    <h3>100% organic</h3>
-                    <p>
-                        Our chefs fully prepare your meals, saving you hours of shopping, prepping and cooking each week.
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-cart-outline icon-big"></i>
-                    <h3>Order anything</h3>
-                    <p>
-                        Just heat and enjoy your healthy meal ready in minutes. Clean up is simply tossing our tray in your recycling.
-                    </p>
-                </div>
-       
-        </div>        
-      </div>
-    </section> -->
 
-   <!--  <section class="section-prefooter-1">
-      <div class="container">
+ 
+
+
+    <section class="section-features-2">
+      <div class="container u-padding-side">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
-            HOW IT WORKS
-          </h3>
-        </div>
-      
-        <div class="row">
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-truck"></i>
-              <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-shopping-basket"></i>
-              <p>Pick and custom tailor your gourmet meals to your desires from our large menu options.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-clock-o"></i>
-              <p>Our chefs fully prepare your meals, saving you hours of shopping, prepping and cooking each week.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-leaf"></i>
-              <p>Just heat and enjoy your healthy meal ready in minutes. Clean up is simply tossing our tray in your recycling.</p>      
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-prefooter-1">
-      <div class="container">
-        <div class="heading u-center-text">
-          <h3 class="heading-prefooter">
-              Why choose us
-          </h3>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-3">
-             <div class="">
-              <i class="ion-ios-heart-outline icon-big"></i>
-              <p>We care about every client and it is important for us to know that everyone is happy with our service.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="">
-              <i class="ion-ios-rose-outline icon-big"></i>
-              <p>Our chefs guarantee the quality of products and the timely preparation of thier customer`s orders.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-truck"></i>
-              <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300. </p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-gift"></i>
-              <p>Do not miss the chance! We offer bonuses if you are a regular customer of our site.</p>      
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
- -->
-
-
-
-    <section class="section-features ">
-      <div class="container ">
-        <div class="heading u-center-text">
-          <h3 class="heading-prefooter">
-              How it works
+              GET FOOD FAST — NOT FAST FOOD
           </h3>
         </div>
         <div class="row ">
          <div class="col-xl-3 col-md-4 ">
                     <i class="ion-ios-infinite-outline icon-big"></i>
                     <h3>Up to 365 days/year</h3>
-                    <p>
+                    <p class="font-prefooter">
                         Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-4 ">
                     <i class="ion-ios-stopwatch-outline icon-big"></i>
                     <h3>Ready in 20 minutes</h3>
-                    <p>
+                    <p class="font-prefooter">
                         You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-4  ">
                     <i class="ion-ios-nutrition-outline icon-big"></i>
                     <h3>100% organic</h3>
-                    <p>
+                    <p class="font-prefooter">
                         All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-4 ">
                     <i class="ion-ios-cart-outline icon-big"></i>
                     <h3>Order anything</h3>
-                    <p>
+                    <p class="font-prefooter">
                         We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
                     </p>
                 </div>
