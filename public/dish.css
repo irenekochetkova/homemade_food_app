@@ -1174,7 +1174,7 @@ ul.order-menu li {
 
 /*PAGE_ORDERS*/
 
-.section-order-header {
+/*.section-order-header {
   height: 60vh;
   width: auto;
   background-image:  url(payment/delivery.png);
@@ -1184,15 +1184,9 @@ ul.order-menu li {
   
   background-attachment: fixed;
     
-}
+}*/
 
-.table-box {
-  font-weight: 700 !important;
-  width: 80%;
-  float: left;
-  padding-right: 30px;
-  position: relative;
-}
+
 
 .img-ordered {
   padding-top: .5rem;
@@ -1214,19 +1208,59 @@ ul.order-menu li {
   color: #e67e22;
 }
 /*================================================*/
+.table-box {
+  /*font-weight: 700 !important;*/
+  width: 80%;
+  float: left;
+  padding-right: 30px;
+  position: relative;
+}
 
 .width-hearder {
   width: 35%;
 }
 
+.card-title {
+  margin-bottom: .3rem !important;
+  font-size: 1rem !important;
+}
+
+.card-text {
+  font-size: .8rem !important;
+}
+
 .img-order-group {
-  width: 70px;
-  height: 45px;
+  width: 45px;
+  height: 35px;
 }
 
 .card-body-dishes {
   margin-bottom: .5rem;
+  margin-top: .5rem;
   line-height: .3rem;
+}
+
+.icon-page-order {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.user-nav {
+  align-self: stretch;
+
+  display: flex;
+  align-items: center;
+}
+.wrap-nav {  
+  padding: .75rem;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .25rem;
+}
+
+.cart-icon-2 {
+  font-size: 2.5rem;
+  /*color: #613D07;*/
 }
 
 /*BUTTONS*/
@@ -1257,8 +1291,8 @@ button[type=button] {
 .btn-2:link,
 .btn-2:visited {
   display: inline-block;
-  font-size: .9rem;
-  padding: .5rem;
+  font-size: 1.1rem;
+  padding: .7rem;
   font-weight: 300;
   line-height: .75rem;
   text-align: center;
@@ -1397,13 +1431,14 @@ button[type=button] {
 
 .font-color {
   color: #e67e22;
+  font-size: .9rem;
   font-weight: 700;
 }
 
 .font-color-gift {
   color: #e67e22;
   font-weight: 400;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .font-form {

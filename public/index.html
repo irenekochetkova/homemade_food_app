@@ -1148,7 +1148,8 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
       </div>
 
       <div class="container ">
-        <div v-for="order in orders"  class="card border-dark mb-3 " >
+        <div class="table-box">
+        <div v-for="order in orders"  class="card  mb-3 " >
           <div class="card-header d-flex justify-content-between">
             <div class="width-hearder d-flex justify-content-between ">
               <div >
@@ -1179,19 +1180,33 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
         </div>
       </div>
 
-      
+
       <div class="gift-box ">
-        <div class="u-margin-bottom-small"> 
-          <span class="user-nav_icon ">
+        <div class="u-margin-bottom-small wrap-nav"> 
+          <!-- <span class="user-nav_icon ">
+            <a href="/#/dishes" class="btn btn-ghost sign"><i class="icon-page-order ion-ios-cart-outline ">Continue Shopping</i></a>
               <a class="" href="/#/carted_dishes"><i class="cart-icon-order ion-ios-cart-outline "></i></a>  
-            </span>
+            </span> -->
+
+            <nav  class="user-nav">
+          <div class="user-nav_icon-box">
+            <span class="user-nav_icon">
+              <a class="target3 " href="/#/carted_dishes"><i class="cart-icon-2 fa fa-shopping-cart  "></i></a>  
+            </span> 
+            <!-- <span class="user-nav_notification">{{ count_carted }}</span>    -->
+          </div>  
+
+          <div class="user-nav_icon-box">
+            <a href="/#/dishes"   class="btn-2 btn-ghost">Shopping </a>   
+          </div>         
+        </nav>
 
           </div>
         <div class="card u-margin-bottom-small">
           <img src="payment/gift-card-3.png" alt="order" class="card-img-top img-ordered">
           <div class="gift-text card-body">
             <span >{{ current_user.first_name }}, <span class="font-color">Get $60 Off Instantly</span> upon credit approval.</span><br>
-            <span ><br>Also &nbsp;<span class="font-color-gift">Earn 5% Back Every Day</span>&nbsp;with the Gift Card.</span>
+            <span ><br>Also &nbsp;<span class="font-color">Earn 5% Back Every Day</span>&nbsp;with the Gift Card.</span>
           </div>
         </div>
         <div class="card u-margin-bottom-small">
@@ -1211,7 +1226,7 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
       <div class="clearfix"></div>
    
     </div>
-
+</div>
 
   </div>
 </template> 
