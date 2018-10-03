@@ -10,6 +10,8 @@ class Order < ApplicationRecord
     created_at.strftime("%d/%m/%Y")
   end
 
+  
+
   def as_json
     {
       id: id,
@@ -18,7 +20,9 @@ class Order < ApplicationRecord
       subtotal: subtotal,
       total: total,
       tax: tax,
-      time: time
+      time: time,
+      current_carted_dishes: carted_dishes.map { |carted_dish| carted_dish.dish }.as_json
+      
     }
   end
 

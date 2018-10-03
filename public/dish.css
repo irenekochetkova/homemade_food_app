@@ -57,6 +57,7 @@ body {
 .nav {
   list-style: none;
 
+
 }
 
 /*a:link,
@@ -93,9 +94,9 @@ a:active {
 }
 
 .nav-link-center  {
-  margin-left: 3.2rem;  
-  margin-right: 1.5rem;  
-  text-align: center;
+  /*margin-left: 1.7rem;  */
+  margin-right: 1.7rem;  
+  /*text-align: center;*/
 }
 
 .nav-link-right  {
@@ -159,7 +160,7 @@ a:active {
 
 footer.footer .services-block .icon-footer {
   margin-right: 2rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
   transition: all 0.3s;
 }
 
@@ -900,14 +901,11 @@ h2:after {
   display: none;
 }
 
-.dish-box {
-  margin-bottom: 1rem;
-  ;
-}
+
 
 .box img {
   width: 100%;
-  height: 170px;
+  height: 130px;
   margin-bottom: .8rem;
   border-radius: 3px;
 }
@@ -976,7 +974,9 @@ h2:after {
   background: #fff;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0 .2);
-  padding: 2rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+  margin-bottom: 1.3rem;
 }
 
 /*section-quotes*/
@@ -1162,7 +1162,7 @@ ul.order-menu li {
 
 .recommend-payment img {
     height: 2.5rem;
-    width: auto;
+    width: 4rem;
     margin-left: .3rem;
     margin-right: .3rem;
     border: 1px solid rgba(0, 0, 0, .2);
@@ -1204,6 +1204,22 @@ ul.order-menu li {
   width: 20%;
   float: left;
 }
+
+.cart-icon-order {
+  font-size: 2.5rem;
+  color: #e67e22;
+}
+/*================================================*/
+
+.width-hearder {
+  width: 35%;
+}
+
+.img-order {
+  width: 90px;
+  height: 70px;
+}
+
 
 
 /*BUTTONS*/

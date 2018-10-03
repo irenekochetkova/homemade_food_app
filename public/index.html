@@ -27,10 +27,12 @@
       <nav class="navbar">
         <!-- <div > -->
           <img src="pictures/logo-2.png" alt="logo" class="logo">
-          <ul  class="nav ">
+
+          <!-- <ul  class="nav ">
             <li class="" ><a class="target1 nav-link-center" href="/#/">HOME</a></li>
-            <li class=""><a class="target1 nav-link-center" href="/#/dishes">MENU</a></li>
-          </ul>
+            <li class=""><a class="target1 " href="/#/dishes">MENU</a></li>
+          </ul> -->
+        
         <!-- </div>    -->
         <!-- <div class="nav"> -->
          <!--  <span > <a class="target1 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart nav-icon"></i></a></span> -->
@@ -39,6 +41,8 @@
           <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span> -->
 
           <ul  class="nav ">
+            <li class="" ><a class="target1 nav-link-right" href="/#/">Home</a></li>
+            <li class=""><a class="target1 nav-link-right" href="/#/dishes">Menu</a></li>
             <li ><a class="target1 nav-link-right" href="/#/login">Log In</a></li>
             <li><a class="target1 nav-link-right" href="/#/logout">Log out</a></li>
             <li> <a class="target1 nav-link-right" href="/#/current_user"><i class="fa fa-user-o  nav-icon" ></i></a></li>
@@ -68,7 +72,7 @@
         <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start">
           <div class="u-items-center d-flex">
             <div class="icon-footer">
-              <i class="ion-bag"></i>
+              <i class="ion-ios-box-outline"></i>
             </div>
             <div class="text">
               <h6 class="no margin text-uppercase">free shipping & return</h6>  
@@ -1095,8 +1099,9 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
   <!-- </section> -->
 
 
-<section class="section-payment">
-        <div class="container u-center-text">
+<!-- <section class="section-payment">
+        <div class="container u-center-text u-padding-side">
+          <div class=" d-flex justify-content-between u-items-center">
           <div class="payment-box ">            
             <div class="recommend-payment">
               <span class="payment-text">
@@ -1121,31 +1126,23 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
               <img src="payment/cash.png" alt="money">
             </div>            
           </div>
+          
+         
         </div>
-      </section>
+      </div>
+      </section> -->
 
-  <!-- <div class="row">
-    <div class="col-4">
-      <img src="payment/order-page.jpg" alt="order" class="img-ordered">
-    </div>
-    <div class="col-4">
-      <h3>You can</h3>
-    </div>
-    <div class="col-4">
-      <img src="payment/Food-pick.png" alt="order" class="img-ordered">
-    </div>
-  </div> -->
+  
+  <!-- </div> -->
 
 
 
 
 
 
-  <!-- <div class="u-center-text">
-    <img src="payment/Food-pick.png" alt="order" class="img-ordered">
-  </div> -->
+  
 
-    <div class="container">
+    <div class="container u-padding-side">
       <div class="heading u-center-text">
         <h2 class="heading--main">Your orders</h2>
       </div>
@@ -1180,6 +1177,12 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
 
 
       <div class="gift-box ">
+        <div class="u-margin-bottom-small"> 
+          <span class="user-nav_icon ">
+              <a class="" href="/#/carted_dishes"><i class="cart-icon-order ion-ios-cart-outline "></i></a>  
+            </span>
+
+          </div>
         <div class="card u-margin-bottom-small">
           <img src="payment/gift-card-3.png" alt="order" class="card-img-top img-ordered">
           <div class="gift-text card-body">
@@ -1193,7 +1196,7 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
             <span >Our chefs deliver almost everywhere in the continental United States.</span>
           </div>
         </div>
-        <div class="card">
+        <div class="card u-margin-bottom-small">
           <img src="payment/pick-up-2.png" alt="order" class="card-img-top img-ordered">
           <div class="gift-text card-body">
             <span >You can pick up the food at chef`s place.</span><br>
@@ -1204,24 +1207,49 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
       <div class="clearfix"></div>
     <!-- </div> -->
 
-      <!-- </div> -->
-
-      <!-- <div class="container">
-        <div class="row">
-          <div class="col-6 u-center-text">
-            <img src="payment/order.jpg" alt="order" class="img-order">             
-          </div>
-        </div>
-      </div> -->
-
-      <!-- <div class="container">
-        <div class="row">
-        <img src="pictures/delivery-icon.png" alt="order" class=img-ordered">
-        </div>
-      </div> -->
-
+      <!-- </div> --> 
     </div>
+<!-- -------------------------------------- -->
 
+<div class="container u-padding-side">
+    <div v-for="order in orders"  class="card border-dark mb-3 " >
+      <div class="card-header d-flex justify-content-between">
+        <div class="width-hearder d-flex justify-content-between ">
+          <div >
+            <strong class="text-uppercase">ORDER PLACED:</strong><br> {{ order.time }}
+          </div>
+          <div >
+            <strong class="text-uppercase">Total:</strong><br> ${{ order.total }}
+          </div>
+          <div >
+            <strong class="text-uppercase">Ship to:</strong><br> {{ current_user.first_name }}&nbsp;{{ current_user.last_name }}
+          </div>
+
+        </div>
+
+        <div >
+           <strong class="text-uppercase">Order #&nbsp;</strong> {{ order.id }}
+        </div>
+      </div>
+
+
+      <div class="card-body" >        
+        <div class="d-flex" v-for="current_carted_dish in order.current_carted_dishes">
+          <img :src="current_carted_dish.image_url"  alt="..." class="img-fluid img-order"><h5 class="card-title ">{{ current_carted_dish.name }}</h5>
+
+       <!--  <strong>CARTED_DISH</strong> {{ current_carted_dish.name }} -->
+          
+        </div>
+
+        <!-- ORDER: {{ order.current_carted_dishes }}<br> -->
+        <!-- ORDER: {{ current_carted_dishes }}<br> -->
+       
+        <!-- <img :src="order.carted_dish.dish.image_url"  alt="..." class="img-fluid img-order"><h5 class="card-title">Primary card title</h5> -->
+        
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      </div>
+    </div>
+</div>
 
 
 

@@ -585,6 +585,7 @@ var OrdersIndexPage = {
       orders: [],
       carted_dishes: [],
       current_user: {},
+      current_carted_dishes: [],
       dishes: []            
     };
   },
@@ -606,8 +607,10 @@ var OrdersIndexPage = {
       this.orders = response.data.reverse(); 
       console.log(response.data);
     }.bind(this)); 
+    
 
-  },     
+  },
+  
 };
 
 var OrdersDeletePage = {
