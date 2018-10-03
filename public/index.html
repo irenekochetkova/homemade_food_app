@@ -1147,35 +1147,39 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
         <h2 class="heading--main">Your orders</h2>
       </div>
 
-      <!-- <div class="container"> -->
-      <div class="table-box">
-        <table id="customers" class="u-margin-bottom-big">
-          <thead>
-            <tr>
-              <th>Order</th>
-              <th>Date</th>
-              <!-- <th>Subtotal</th> -->
-              <!-- <th>Tax</th> -->
-              <th>Total</th>
-              
-              <th>Cancel</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="order in orders" class="line">
-              <td class="item "><strong> #{{ order.id }}</strong></td>
-              <td class="item">{{ order.time }}</td>
-              <!-- <td class="item">{{ order.subtotal }}</td> -->
-              <!-- <td class="item">{{ order.tax }}</td> -->
-              <td class="item">{{ order.total }}</td>
-              
-              <td class="item"><a :href="'/#/orders/' + order.id + '/delete'" class="feature-shop_icon"><i class="fa fa-trash"></i></a></td>        
-            </tr>
-          </tbody>
-        </table>
+      <div class="container ">
+        <div v-for="order in orders"  class="card border-dark mb-3 " >
+          <div class="card-header d-flex justify-content-between">
+            <div class="width-hearder d-flex justify-content-between ">
+              <div >
+                <strong class="text-uppercase">ORDER PLACED:</strong><br> {{ order.time }}
+              </div>
+              <div >
+                <strong class="text-uppercase">Total:</strong><br> ${{ order.total }}
+              </div>
+              <div >
+                <strong class="text-uppercase">Ship to:</strong><br> {{ current_user.first_name }}&nbsp;{{ current_user.last_name }}
+              </div>
+            </div>
+            <div>
+               <strong class="text-uppercase">Order #&nbsp;</strong> {{ order.id }}
+            </div>
+          </div>
+
+          <div class="card-body" >        
+            <div class="d-flex card-body-dishes" v-for="current_carted_dish in order.current_carted_dishes">
+              <img :src="current_carted_dish.image_url"  alt="..." class="img-fluid img-order-group">
+              <div class="u-margin-left">
+                <h5 class="card-title ">{{ current_carted_dish.name }}</h5>          
+                <p class="card-text">Sold by: Homefood.com Services, Inc</p>
+                <div class="font-color">${{ current_carted_dish.price }}</div>
+              </div>          
+            </div>        
+          </div>
+        </div>
       </div>
 
-
+      
       <div class="gift-box ">
         <div class="u-margin-bottom-small"> 
           <span class="user-nav_icon ">
@@ -1205,52 +1209,8 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
         </div>
       </div>
       <div class="clearfix"></div>
-    <!-- </div> -->
-
-      <!-- </div> --> 
+   
     </div>
-<!-- -------------------------------------- -->
-
-<div class="container u-padding-side">
-    <div v-for="order in orders"  class="card border-dark mb-3 " >
-      <div class="card-header d-flex justify-content-between">
-        <div class="width-hearder d-flex justify-content-between ">
-          <div >
-            <strong class="text-uppercase">ORDER PLACED:</strong><br> {{ order.time }}
-          </div>
-          <div >
-            <strong class="text-uppercase">Total:</strong><br> ${{ order.total }}
-          </div>
-          <div >
-            <strong class="text-uppercase">Ship to:</strong><br> {{ current_user.first_name }}&nbsp;{{ current_user.last_name }}
-          </div>
-
-        </div>
-
-        <div >
-           <strong class="text-uppercase">Order #&nbsp;</strong> {{ order.id }}
-        </div>
-      </div>
-
-
-      <div class="card-body" >        
-        <div class="d-flex" v-for="current_carted_dish in order.current_carted_dishes">
-          <img :src="current_carted_dish.image_url"  alt="..." class="img-fluid img-order"><h5 class="card-title ">{{ current_carted_dish.name }}</h5>
-
-       <!--  <strong>CARTED_DISH</strong> {{ current_carted_dish.name }} -->
-          
-        </div>
-
-        <!-- ORDER: {{ order.current_carted_dishes }}<br> -->
-        <!-- ORDER: {{ current_carted_dishes }}<br> -->
-       
-        <!-- <img :src="order.carted_dish.dish.image_url"  alt="..." class="img-fluid img-order"><h5 class="card-title">Primary card title</h5> -->
-        
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-</div>
-
 
 
   </div>

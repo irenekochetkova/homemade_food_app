@@ -226,6 +226,9 @@ footer.footer .services-block .icon-footer {
 .no-margin {
   margin: 0 !important;
 }
+.u-margin-left {
+  margin-left: .8rem;
+}
 
 .text-danger {
  background-color: rgba(209, 46, 46, 0.8); 
@@ -1118,6 +1121,7 @@ cite {
 
 }
 
+
 .total-box {
   padding-left: 8rem;
   padding-top: 4rem;
@@ -1215,12 +1219,15 @@ ul.order-menu li {
   width: 35%;
 }
 
-.img-order {
-  width: 90px;
-  height: 70px;
+.img-order-group {
+  width: 70px;
+  height: 45px;
 }
 
-
+.card-body-dishes {
+  margin-bottom: .5rem;
+  line-height: .3rem;
+}
 
 /*BUTTONS*/
 
