@@ -1306,7 +1306,16 @@ ul.order-menu li {
   margin-bottom: .5rem;
 }
 
+.empty-orders {
+  text-align: center;
+  font-size: 1.5rem;
+}
 
+.img-order-empty {
+  height: 20vh;
+  width: auto;
+  margin: 2rem;
+}
 /*BUTTONS*/
 
 
