@@ -8,9 +8,9 @@ $(document).ready(function() {
 $(document).ready(function() {
       $(".target2").css("color", "#613D07");
     });
-$(document).ready(function() {
-      $(".target3").css("color", "#e67e22");
-    });
+// $(document).ready(function() {
+//       $(".target3").css("color", "#e67e22");
+//     });
 
 $(document).ready(function(){
   $("#reload").click(function(){
@@ -613,6 +613,18 @@ var OrdersIndexPage = {
     
 
   },
+
+  methods: {
+    isOrder: function(orders) {
+      return this.orders.length > 0;
+    },
+  },
+
+  computed: {
+    count_ordered: function() {
+      return this.orders.length;
+    }
+  }
   
 };
 

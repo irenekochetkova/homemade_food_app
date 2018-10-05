@@ -1152,24 +1152,38 @@ ul.order-menu li {
   width: auto;
 }
 
+.payment-box-search {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  flex: 2 0 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .payment-box {
-  margin: 2rem 0 2rem 0;
+  /*margin: 2rem 0 2rem 0;*/
   padding: .5rem;
-  border: .6px solid rgba(0, 0, 0, .2);
+  /*border: 1px solid rgba(0, 0, 0, .125);*/
   display: inline-block;
+  /*width: 80%;*/
+  /*border-radius: .25rem;*/
+  display: flex;
 }
 
 .payment-text {
   margin-right: 1rem;
+  font-size: 1rem;
 }
 
 
 .recommend-payment img {
-    height: 2.5rem;
-    width: 4rem;
+    height: 3.2vh;
+    width: auto;
     margin-left: .3rem;
     margin-right: .3rem;
-    border: 1px solid rgba(0, 0, 0, .2);
+    /*border: 1px solid rgba(0, 0, 0, .2);*/
 }
 
 /*PAGE_ORDERS*/
@@ -1236,7 +1250,6 @@ ul.order-menu li {
 
 .card-body-dishes {
   margin-bottom: .5rem;
-  margin-top: .5rem;
   line-height: .3rem;
 }
 
@@ -1246,22 +1259,53 @@ ul.order-menu li {
   margin-right: 1rem;
 }
 
-.user-nav {
-  align-self: stretch;
+.card-body-order {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center;
+  padding: .5rem;
 
+}
+
+
+/*.user-nav {
+  align-self: stretch;
+  position: relative;
   display: flex;
   align-items: center;
-}
+}*/
 .wrap-nav {  
   padding: .75rem;
   border: 1px solid rgba(0, 0, 0, .125);
   border-radius: .25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+/*.user-nav_icon-box-order {
+  position: relative;
+}*/
 
 .cart-icon-2 {
   font-size: 2.5rem;
   /*color: #613D07;*/
 }
+
+.order-ditails {
+  /*padding: .5rem;*/
+}
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap-order:not(:last-child) {
+  margin-bottom: .5rem;
+}
+
 
 /*BUTTONS*/
 
@@ -1269,7 +1313,7 @@ ul.order-menu li {
 
 /*btn - 1*/
 
-.btn:focus {
+.btn, .btn-order:focus {
   outline: #e67e22 !important;
   box-shadow: none  !important;
 
@@ -1294,7 +1338,7 @@ button[type=button] {
   font-size: 1.1rem;
   padding: .7rem;
   font-weight: 300;
-  line-height: .75rem;
+  line-height: .9rem;
   text-align: center;
   text-decoration: none;
   border-radius: 5rem;
@@ -1324,8 +1368,7 @@ button[type=button]{
 .btn:hover,
 .btn:active {
    background-color: #cf6d17;
-
-}
+ }
 
 .btn-2:hover,
 .btn-2:active {
@@ -1402,6 +1445,27 @@ button[type=button] {
   width: 100%;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+
+
+.btn-order {
+  display: inline-block;
+  padding: .2rem 5rem;
+  font-weight: 300;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: .2rem;
+  transition: background-color 0.2s, border 0.2s, color 0.2s;
+}
+
+
+
+.btn-order:hover,
+.btn-order:active {
+  background-color: #cf6d17;
+  border: 1px solid #cf6d17;
+  color: #fff;
 }
 
 /*btn-4*/
