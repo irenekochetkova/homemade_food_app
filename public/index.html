@@ -41,11 +41,11 @@
           <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span> -->
 
           <ul  class="nav ">
-            <li class="" ><a class="target1 nav-link-right" href="/#/">Home</a></li>
-            <li class=""><a class="target1 nav-link-right" href="/#/dishes">Menu</a></li>
-            <li ><a class="target1 nav-link-right" href="/#/login">Log In</a></li>
-            <li><a class="target1 nav-link-right" href="/#/logout">Log out</a></li>
-            <li> <a class="target1 nav-link-right" href="/#/current_user"><i class="fa fa-user-o  nav-icon" ></i></a></li>
+            <li class="" ><a class="target2 nav-link-right" href="/#/">Home</a></li>
+            <li class=""><a class="target2 nav-link-right" href="/#/dishes">Menu</a></li>
+            <li ><a class="target2 nav-link-right" href="/#/login">Log In</a></li>
+            <li><a class="target2 nav-link-right" href="/#/logout">Log out</a></li>
+            <li> <a class="target2 nav-link-right" href="/#/current_user"><i class="fa fa-user-o  nav-icon" ></i></a></li>
 
           </ul>
 
@@ -63,7 +63,7 @@
       <div class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova. &mdash;</a>All rights reserved.</div>
     </div>  -->
 
-    <footer class="footer target1" >
+    <footer class="footer target2" >
       <!-- <div class="container "> -->
 
         <div class="services-block">
@@ -120,11 +120,11 @@
 
       <div class="u-center-text ">
         <span>
-         <a href="#" target="_blank" title="twitter"><i class="navigation-icon target1 fa fa-twitter"></i></a>
-         <a href="#" target="_blank" title="whatsapp"><i class="navigation-icon target1 fa fa-whatsapp"></i></a>
-         <a href="#" target="_blank" title="facebook"><i class="navigation-icon target1 fa fa-facebook-f"></i></a>
-         <a href="#" target="_blank" title="linkedin"><i class="navigation-icon target1 fa fa-linkedin"></i></a>
-         <a href="#" target="_blank" title="instagram"><i class="navigation-icon target1 fa fa-instagram"></i></a>
+         <a href="#" target="_blank" title="twitter"><i class="navigation-icon target2 fa fa-twitter"></i></a>
+         <a href="#" target="_blank" title="whatsapp"><i class="navigation-icon target2 fa fa-whatsapp"></i></a>
+         <a href="#" target="_blank" title="facebook"><i class="navigation-icon target2 fa fa-facebook-f"></i></a>
+         <a href="#" target="_blank" title="linkedin"><i class="navigation-icon target2 fa fa-linkedin"></i></a>
+         <a href="#" target="_blank" title="instagram"><i class="navigation-icon target2 fa fa-instagram"></i></a>
         </span>
       </div>  
         <div class="u-center-text">
@@ -643,7 +643,7 @@
           <nav v-if="current_user.provider === false" class="user-nav">
           <div class="user-nav_icon-box">
             <span class="user-nav_icon">
-              <a class="target2 " href="/#/carted_dishes"><i class="cart-icon fa fa-shopping-cart  "></i></a>  
+              <a class="target1 " href="/#/carted_dishes"><i class="cart-icon ion-ios-cart-outline"></i></a>  
             </span> 
             <span class="user-nav_notification">{{ count_carted }}</span>   
           </div>  
@@ -1094,172 +1094,98 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
 
 <template id="orders-index-page">
   <div class="vue-component">
-
-  <!-- <section class="section-order-header">     -->
-  <!-- </section> -->
-
-
-
-  
-  <!-- </div> -->
-
-
-
-
-
-
-  
-
     <div class="container u-padding-side">
 
-
-
-      <div class=" header-menu"> 
-
-
-    <div class="payment-box-search ">            
+      <section class="section-order-header">
+        <div class=" header-menu">
+          <div class="payment-box-search ">            
             <div class="recommend-payment">
               <span class="payment-text">
               Payment Methods:
-              </span>
-             
-                <img src="payment/payment.png" alt="visa" >
-             
+              </span>             
+              <img src="payment/payment.png" alt="visa" class="payment-img">             
             </div>            
-          </div>
+          </div> 
 
-
-
-        
-          <!-- <span class="user-nav_icon ">
-            <a href="/#/dishes" class="btn btn-ghost sign"><i class="icon-page-order ion-ios-cart-outline ">Continue Shopping</i></a>
-              <a class="" href="/#/carted_dishes"><i class="cart-icon-order ion-ios-cart-outline "></i></a>  
-            </span> -->
-
-            <nav  class="user-nav">
-              <div class="user-nav_icon-box">
-                <span class="user-nav_icon">
-                <a class="target3 " href="/#/carted_dishes"><i class="cart-icon fa fa-shopping-cart  "></i></a>  
-                </span> 
-            <!-- <span class="user-nav_notification">{{ count_carted }}</span>    -->
-              </div>  
-
-              <!-- <div class="user-nav_icon-box">
-                <a href="/#/dishes"   class="btn-2 btn-ghost">Shopping </a>   
-              </div> -->   
-              <div class="user-nav_icon-box">
-            <a href="/#/dishes"   class="btn-2 btn-ghost">Go Shopping, <br>{{ current_user.first_name }}</a>   
-          </div>        
-            </nav>
-
-          </div>
+          <nav  class="user-nav">
+            <div class="user-nav_icon-box">
+              <span class="user-nav_icon">
+              <a class="target1 " href="/#/carted_dishes"><i class="cart-icon ion-ios-cart-outline  "></i></a>  
+              </span>           
+            </div>              
+            <div class="user-nav_icon-box">
+              <a href="/#/dishes"   class="btn-2 btn-ghost">Go Shopping, <br>{{ current_user.first_name }}</a>   
+            </div>        
+          </nav>
         </div>
+    </section>
 
-
-
-        <div class="container u-padding-side">
-
- 
-
-
+    <section class="section-orders">
       <div class="heading u-center-text">
         <h2 class="heading--main">Your orders</h2>
       </div>
-
-      <div class="container ">
-        <div class="table-box mb-3">
-
-          
+    
+      <div class="table-box mb-3"> 
 
         <div v-if="isOrder(orders) === false">
-
-     
-          <div class="card">
-            <div class="card-body ">
-              <p class="empty-orders"> <img src="pictures/empty-cart.png" alt="maestro" class="img-order-empty"> 
-              You don't have any purchases.&nbsp;<a class="font-color" href="/#/dishes">Start Shopping,&nbsp; {{ current_user.first_name }}</a></p>
-
-          </div>  
+          <div class="card u-margin-bottom-small">
+            <img src="pictures/empty-cart.png" alt="order" class="card-img-top img-order-empty">
+            <div class="gift-text card-body">
+              <p class="empty-orders">You don't have any purchases.&nbsp;<a class="font-color" href="/#/dishes">Start Shopping Now</a></p>
             </div>
-          </div>
+          </div>         
+        </div>
 
-
-        </div> 
-
-
-       <div v-if="isOrder(orders) === true">
-        <div   v-for="order in orders"  class="card  mb-3 " >
-          <div class="card-header d-flex justify-content-between">
-            <div class="width-hearder d-flex justify-content-between ">
-              <div >
-                <strong class="text-uppercase">ORDER PLACED:</strong><br> {{ order.time }}
-              </div>
-              <div >
-                <strong class="text-uppercase">Total:</strong><br> ${{ order.total }}
-              </div>
-              <div >
-                <strong class="text-uppercase">Ship to:</strong><br> {{ current_user.first_name }}&nbsp;{{ current_user.last_name }}
-              </div>
-            </div>
-            <div>
-               <strong class="text-uppercase">Order #&nbsp;</strong> {{ order.id }}
-            </div>
-          </div>
-
-          <div class="card-body-order" > 
-          <div class="column">       
-            <div  v-for="current_carted_dish in order.current_carted_dishes" >
-              <div class="d-flex ">
-
-                 
-                  <img :src="current_carted_dish.image_url"  alt="..." class="wrap-order img-fluid img-order-group">
-              
-                <div class="card-body-dishes u-margin-left ">
-                  <h5 class="card-title ">{{ current_carted_dish.name }}</h5>          
-                  <p class="card-text">Sold by: Homefood.com Services, Inc</p>
-                  <div class="font-color">${{ current_carted_dish.price }}</div>
+        <div v-if="isOrder(orders) === true">
+          <div v-for="order in orders"  class="card  mb-3 " >
+            <div class="card-header d-flex justify-content-between">
+              <div class="width-hearder d-flex justify-content-between ">
+                <div >
+                  <strong class="text-uppercase">ORDER PLACED:</strong><br> {{ order.time }}
                 </div>
+                <div >
+                  <strong class="text-uppercase">Total:</strong><br> ${{ order.total }}
                 </div>
+                <div >
+                  <strong class="text-uppercase">Ship to:</strong><br> {{ current_user.first_name }}&nbsp;{{ current_user.last_name }}
+                </div>
+              </div>
+              <div>
+                 <strong class="text-uppercase">Order #&nbsp;</strong> {{ order.id }}
+              </div>
+            </div>
 
-
+            <div class="card-body-order" > 
+              <div class="column">       
+                <div  v-for="current_carted_dish in order.current_carted_dishes" >
+                  <div class="d-flex ">                 
+                    <img :src="current_carted_dish.image_url"  alt="..." class="wrap-order img-fluid img-order-group">
+                    <div class="card-body-dishes u-margin-left ">
+                      <h5 class="card-title ">{{ current_carted_dish.name }}</h5>          
+                      <p class="card-text">Sold by: Homefood.com Services, Inc</p>
+                      <div class="font-color">${{ current_carted_dish.price }}
+                      </div>
+                    </div>
+                  </div>
+                </div> 
               </div> 
-
-            </div> 
-
-
-
-            <div class="column">
+              <div class="column">
                 <a class="wrap-order " :href="'/#/orders/' + order.id + '/delete'" ><button  class="btn-block btn-order">Cancel</button></a>
                 <a class="wrap-order " href=""><button class="btn-block btn-order">Get a gift card</button></a>
                 <a class="wrap-order " href=""><button class="btn-block btn-order">Order delivery</button></a>
                 <a class="wrap-order " href=""><button class="btn-block btn-order">Leave seller feedback</button></a>
                 <a class="wrap-order " href=""><button class="btn-block btn-order">Write a product review</button></a>
-            </div> 
+              </div> 
+            </div>
 
-
-          </div>
-
-
+          </div>        
         </div>
       </div>
-
-
+    </section>
  
 
-
-      </div>
-
-    <!--   <section class="section-empty">
-        <div class="card">
-          <div class="card-body ">
-          <p class="card-text">You don't have any purchases</p>
-        </div>
-        </div>
-      </section> -->
-
-
-      <div class="gift-box ">
-        
+    <section class="section-gift">
+      <div class="gift-box">        
         <div class="card u-margin-bottom-small">
           <img src="payment/gift-card-3.png" alt="order" class="card-img-top img-ordered">
           <div class="gift-text card-body">
@@ -1281,44 +1207,11 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
           </div>
         </div>
       </div>
-      <div class="clearfix"></div>
-<!--       <section class="section-payment">
-        <div class="container ">
-          <div class=" d-flex justify-content-between u-items-center">
-          <div class="payment-box ">            
-            <div class="recommend-payment">
-              <span class="payment-text">
-              Payment Methods:
-              </span>
-              <img src="payment/p-visa.png" alt="visa" >
-              <img src="payment/p-west.png" alt="west" >
-              <img src="payment/p-money-4.png" alt="money-4" >          
-              <img src="payment/p-master.png" alt="master" >
-              <img src="payment/p-paypal.png" alt="paypal" >
-              <img src="payment/p-webmoney.png" alt="webmoney" >
-              <img src="payment/p-maestro.png" alt="maestro" >          
-              <img src="payment/p-money.png" alt="money" >
-              <img src="payment/p-g.png" alt="p-g">
-              <img src="payment/p-solo.png" alt="solo" >
-              <img src="payment/p-yndex.png" alt="yndex" >
-              <img src="payment/p-disco.png" alt="disco" >
-              <img src="payment/p-cirr.png" alt="cirr" >
-              <img src="payment/p-money-2.png" alt="money-2" >
-              <img src="payment/p-2co.png" alt="2co">                   
-              <img src="payment/p-money-3.png" alt="money-3">       
-              <img src="payment/cash.png" alt="money">
-            </div>            
-          </div>
-          
-         
-        </div>
-      </div>
-      </section>
- -->
-   
-    </div>
-</div>
+    </section>
 
+    <div class="clearfix"></div>
+
+    </div>
   </div>
 </template> 
 

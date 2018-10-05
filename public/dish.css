@@ -822,8 +822,8 @@ h2:after {
 }
 
 .cart-icon {
-  font-size: 2.5rem;
-  color: #613D07;
+  font-size: 3.5rem;
+  color: #e67e22;
 }
 
 /*.icon_features {
@@ -890,7 +890,7 @@ h2:after {
     color: #fff;
     position: absolute;
     top: 1.5rem;
-    right: 1.1rem;
+    right: 2.3rem;
 
     display: flex;
     justify-content: center;
@@ -1179,12 +1179,14 @@ ul.order-menu li {
 
 
 .recommend-payment img {
-    height: 3.2vh;
+    height: 4vh;
     width: auto;
     margin-left: .3rem;
     margin-right: .3rem;
     /*border: 1px solid rgba(0, 0, 0, .2);*/
 }
+
+
 
 /*PAGE_ORDERS*/
 
@@ -1292,9 +1294,7 @@ ul.order-menu li {
   /*color: #613D07;*/
 }
 
-.order-ditails {
-  /*padding: .5rem;*/
-}
+
 
 
 .column {
@@ -1312,10 +1312,25 @@ ul.order-menu li {
 }
 
 .img-order-empty {
-  height: 20vh;
-  width: auto;
-  margin: 2rem;
+  padding: 0 3rem 9rem 3rem;
+  
 }
+
+
+.empty-box {
+  position: relative;
+
+}
+
+.empty-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
 /*BUTTONS*/
 
 
@@ -1345,9 +1360,9 @@ button[type=button] {
 .btn-2:visited {
   display: inline-block;
   font-size: 1.1rem;
-  padding: .7rem;
+  padding: .3rem .7rem;
   font-weight: 300;
-  line-height: .9rem;
+  line-height: 1.2rem;
   text-align: center;
   text-decoration: none;
   border-radius: 5rem;

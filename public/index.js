@@ -3,7 +3,7 @@
 //       $(".target1").css("color", "#fff");
 //     });
 $(document).ready(function() {
-      $(".target1").css("color", "#613D07");
+      $(".target1").css("color", "#e67e22");
     });
 $(document).ready(function() {
       $(".target2").css("color", "#613D07");
@@ -620,11 +620,6 @@ var OrdersIndexPage = {
     },
   },
 
-  computed: {
-    count_ordered: function() {
-      return this.orders.length;
-    }
-  }
   
 };
 
