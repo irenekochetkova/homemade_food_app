@@ -253,28 +253,25 @@
       </div>
     </section>
 
-    <section class="section-work ">
-      <div class="heading u-center-text">
-        <h2 class="heading--main">How it works &mdash; Simple as 1, 2, 3</h2>
+    <div class="heading u-center-text">
+      <h2 class="heading--main">How it works &mdash; Simple as 1, 2, 3</h2>
+    </div>
+
+  <section class="section-work-step u-margin-bottom-big u-margin-top-small">       
+    <div class="item-phone">
+      <img src="pictures/phone-2.png" alt="homemade food" class="app-screen ">
+    </div>
+    <div class="work-step item-step-1 ">
+        <div>1</div>
+        <span>Choose the options "chef" or "customer" and sign up today.</span>
       </div>
-      <div class="row ">
-        <div class="col-6 steps-box">
-          <img src="pictures/phone.jpg" alt="homemade food" class="app-screen ">
-        </div>
-        <div class="col-6 steps-box">
-          <div class="works-step clearfix">
-            <div>1</div>
-            <span>Choose the options "chef" or "customer" and sign up today.</span>
-          </div>
-          <div class="works-step clearfix">
-            <div>2</div>
-            <span>Chefs can create a new dish, edit their own dishes and delete them.</span>
-          </div>
-          <div class="works-step clearfix">
-            <div>3</div>
-            <span>Customers can buy chefs` dishes and enjoy their. See you the next time!</span>
-          </div>           
-        </div>
+      <div class=" work-step item-step-2">
+        <div>2</div>
+        <span>Chefs can create a new dish, edit their own dishes and delete them.</span>
+      </div>
+      <div class="work-step item-step-3">
+        <div>3</div>
+        <span>Customers can buy chefs` dishes and enjoy their. See you the next time!</span>
       </div>
     </section>
 
@@ -784,7 +781,7 @@
               </div>   
                 <div v-if="current_user.provider === false">
                 <input  type="number"  v-model="quantity" class="form-control"  placeholder="Quantity">
-                <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="" data-dismiss="modal" data-backdrop="false" class="btn btn-sign">Add to cart</button></a>    
+                <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="" data-dismiss="modal" data-backdrop="false" class="btn btn-sign" id="reload">Add to cart</button></a>    
               </div>                                                     
             </div>
           </div>
@@ -834,29 +831,29 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
       <div class="container u-padding-side">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
-              GET FOOD FAST — NOT FAST FOOD
+              eating good food — enjoy good food
           </h3>
         </div>
         <div class="row ">
          <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-infinite-outline icon-big"></i>
-                    <h3>Up to 365 days/year</h3>
+                    <i class="ion-ios-heart-outline icon-big"></i>
+                    <h3>Choose our service</h3>
                     <p class="font-prefooter">
-                        Never cook again! We really mean that. Our subscription plans include up to 365 days/year coverage. You can also choose to order more flexibly if that's your style.
+                        We care about every client and it is important for us to know that everyone is happy with our service. Do not miss the chance! We offer bonuses if you are a regular customer of our site.
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-4 ">
                     <i class="ion-ios-stopwatch-outline icon-big"></i>
-                    <h3>Ready in 20 minutes</h3>
+                    <h3>Save your time</h3>
                     <p class="font-prefooter">
-                        You're only twenty minutes away from your delicious and super healthy meals delivered right to your home. We work with the best chefs in each town to ensure that you're 100% happy.
+                        Our chefs guarantee the timely preparation of their customer`s orders. They fully prepare your meals, saving you hours of shopping, prepping and cooking each week. Just heat and enjoy your healthy meal ready in minutes. 
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-4  ">
-                    <i class="ion-ios-nutrition-outline icon-big"></i>
-                    <h3>100% organic</h3>
+                    <i class="ion-social-euro-outline icon-big"></i>
+                    <h3>Save your money</h3>
                     <p class="font-prefooter">
-                        All our vegetables are fresh, organic and local. Animals are raised without added hormones or antibiotics. Good for your health, the environment, and it also tastes better!
+                       Pick and custom tailor your gourmet meals to your desires from our large menu options. You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.
                     </p>
                 </div>
                 <div class="col-xl-3 col-md-4 ">

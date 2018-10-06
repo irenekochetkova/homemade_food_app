@@ -1,16 +1,11 @@
 
-// $(document).ready(function() {
-//       $(".target1").css("color", "#fff");
-//     });
+
 $(document).ready(function() {
       $(".target1").css("color", "#e67e22");
     });
 $(document).ready(function() {
       $(".target2").css("color", "#613D07");
     });
-// $(document).ready(function() {
-//       $(".target3").css("color", "#e67e22");
-//     });
 
 $(document).ready(function(){
   $("#reload").click(function(){
@@ -19,18 +14,12 @@ $(document).ready(function(){
 });
 
 
- // $("input[type='image']").click(function() {
- //    $("input[id='my_file']").focus().click();
- //  });
-
-
 var HomePage = {
   template: "#home-page",
   data: function() {
     return {
       email: "",
-      password: "",
-     
+      password: "",     
       users: [],
       errors: []
     };
@@ -255,6 +244,7 @@ var DishesIndexPage = {
       carted_dishes: [],
       current_user: {},
       quantity: ""
+
     };
   },
   created: function() {
@@ -285,7 +275,7 @@ var DishesIndexPage = {
     submit: function() {
       var params = {
         quantity: this.quantity,
-        dish_id:  this.currentDish.id 
+        dish_id:  this.currentDish.id
       };
       axios
         .post("/carted_dishes", params)
@@ -293,7 +283,8 @@ var DishesIndexPage = {
           console.log(response.data)
            $('#exampleModalCenter').modal('hide');
            $('body').removeClass('modal-open');
-           $('.modal-backdrop').remove();         
+           $('.modal-backdrop').remove();
+
           router.push("/dishes");
         })
         .catch(
@@ -355,6 +346,7 @@ var DishesIndexPage = {
   computed: {
     count_carted: function() {
       return this.carted_dishes.length;
+
     }
   }
 };
