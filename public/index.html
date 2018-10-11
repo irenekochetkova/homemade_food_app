@@ -12,6 +12,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700">
   <link rel="stylesheet" type="text/css" href="/css/ionicons.min.css">
   <!-- <link rel="stylesheet" type="text/css" href="/css/normalize.css"> -->
+   <link rel="stylesheet" type="text/css" href="queries.css">
   
 
   <link rel="stylesheet" href="dish.css">
@@ -40,7 +41,7 @@
           <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out nav-icon"></i></a></span>
           <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span> -->
 
-          <ul  class="nav ">
+          <ul  class="nav js--main-nav">
             <li class="" ><a class="target2 nav-link-right" href="/#/">Home</a></li>
             <li class=""><a class="target2 nav-link-right" href="/#/dishes">Menu</a></li>
             <li ><a class="target2 nav-link-right" href="/#/login">Log In</a></li>
@@ -48,6 +49,7 @@
             <li> <a class="target2 nav-link-right" href="/#/current_user"><i class="fa fa-user-o  nav-icon" ></i></a></li>
 
           </ul>
+          <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
 
         <!-- </div> -->
       </nav>
@@ -113,19 +115,19 @@
       <!-- </div> -->
       <div class="services-block">
      <div class="row ">
-         <div class="col-4 u-center-text">            
+         <div class="col-xl-4 u-center-text">            
             <h6 class="no-margin text-uppercase">free shipping & return</h6>
             <p class="font-prefooter ">
                 Free Shipping over $300
             </p>
         </div>
-        <div class="col-4 u-center-text">                    
+        <div class="col-xl-4 u-center-text">                    
             <h6 class="no-margin text-uppercase">money back guarantee</h6>
             <p class="font-prefooter ">
                 30 Days Money Back Garantee
             </p>
         </div>
-        <div class="col-4  u-center-text ">                  
+        <div class="col-xl-4  u-center-text ">                  
             <h6 class="no-margin text-uppercase">+1 (283) 567-27-27</h6>
             <p class=" font-prefooter">
                Available Support
@@ -157,7 +159,8 @@
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <script src=https://code.jquery.com/jquery-3.1.1.min.js></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
   
@@ -181,8 +184,10 @@
           <span class="font-top--main">homemade food</span>
           <span class="font-top--sub">Are you a chef or a customer?</span>
         </h1>
+        <div class="d-flex">
          <a href="/#/signup" class="btn btn-full sign">SignUp</a>
          <a href="/#/login"   class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal" >LogIn</a>
+       </div>
       </div> 
 
       <!-- Modal    -->
@@ -253,11 +258,9 @@
       </div>
     </section>
 
-    <div class="heading u-center-text">
-      <h2 class="heading--main">How it works &mdash; Simple as 1, 2, 3</h2>
-    </div>
+   
 
-  <section class="section-work-step u-margin-bottom-big u-margin-top-small">       
+<!--   <section class="section-work-step u-margin-bottom-big u-margin-top-small">       
     <div class="item-phone">
       <img src="pictures/phone-2.png" alt="homemade food" class="app-screen ">
     </div>
@@ -273,7 +276,9 @@
         <div>3</div>
         <span>Customers can buy chefs` dishes and enjoy their. See you the next time!</span>
       </div>
-    </section>
+    </section> -->
+
+
 
     <section class="section-sentence">
       <div class="heading u-center-text">
@@ -291,6 +296,36 @@
        
     </section>
 
+      <div class="heading u-center-text">
+      <h2 class="heading--main">How it works &mdash; Simple as 1, 2, 3</h2>
+    </div>
+
+
+<section class="section-work-step-2 u-margin-bottom-big u-margin-top-small">
+  <div class="row">
+   <div class="item-phone-2 col">
+      <img src="pictures/phone-2.png" alt="homemade food" class="app-screen ">
+    </div>
+
+    <div class="col items-steps">
+
+     <div class="work-step item-step-1-2 ">
+        <div>1</div>
+        <p>Choose the options "chef" or "customer" and sign up today.</p>
+      </div>
+      <div class=" work-step item-step-2-2">
+        <div>2</div>
+        <p>Chefs can create a new dish, edit their own dishes and delete them.</p>
+      </div>
+      <div class="work-step item-step-3-2">
+        <div>3</div>
+        <p>Customers can buy chefs` dishes and enjoy their. See you the next time!</p>
+      </div>
+    </div>
+    </div>
+</section>
+
+
     <section class="section-chefs">
        <div class="container ">
 
@@ -301,7 +336,7 @@
         <div class="row">
           
            
-           <div v-for="list_provider in list_providers" class="col-xl-3 col-md-4 u-center-text u-margin-bottom-big ">
+           <div v-for="list_provider in list_providers" class="col-md-3 col-md-4 u-center-text u-margin-bottom-big ">
             <div class="">
              <div class="card box-chef">
             
@@ -715,7 +750,7 @@
         <div class="row u-margin-bottom-big ">
           <div v-for="dish in dishes" class="col-xl-4 col-md-4 box" v-if="isValidDish(dish)">
             <img :src="dish.image_url" alt="product" class="">
-            <div class="dish-box">
+            <div class="dish-box-modal">
               
               <h3>{{ dish.name }}</h3>
               <div class="grid-box">

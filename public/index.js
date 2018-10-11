@@ -1,4 +1,21 @@
+// mobile-nav
+  $(document).ready(function() {
+    $('.js--nav-icon').click(function() {
+      var nav = $('.js--main-nav');
+      var icon = $('.js--nav-icon i');
 
+
+      nav.slideToggle(200);
+      if (icon.hasClass('ion-navicon-round')) {
+        icon.addClass('ion-close-round');
+        icon.removeClass('ion-navicon-round');
+      } else {
+        icon.addClass('ion-navicon-round');
+        icon.removeClass('ion-close-round');
+      }
+    });
+  });
+// ====================
 
 $(document).ready(function() {
       $(".target1").css("color", "#e67e22");
@@ -284,7 +301,7 @@ var DishesIndexPage = {
            $('#exampleModalCenter').modal('hide');
            $('body').removeClass('modal-open');
            $('.modal-backdrop').remove();
-
+           location.reload();
           router.push("/dishes");
         })
         .catch(
@@ -516,6 +533,7 @@ var CartedDishesIndexPage = {
         axios
           .post("/orders", params)
           .then(function(response) {
+            location.reload();
             router.push("/orders");
             
           })

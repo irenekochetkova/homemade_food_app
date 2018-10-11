@@ -13,17 +13,24 @@
   box-sizing: border-box;
 }
 
+/*html {
+  font-size: 62.5%;
+ 
+
+  box-sizing: border-box;
+  background-color:  #fff;
+  font-family: "Lato", 'Arial', sans-serif;
+  font-weight: 300;
+ 
+  line-height: 1.7;
+  color: #555;
+ 
+}*/
+
 html {
   font-size: 62.5%;
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 
-}
-
-.clearfix {zoom: 1;}
-.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
 }
 
 body {
@@ -34,6 +41,20 @@ body {
   line-height: 1.7;
   color: #555;
 }
+
+.clearfix {zoom: 1;}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*body {
+  
+}*/
+
+
+
 
 /*NAVIGATION*/
 
@@ -50,13 +71,13 @@ body {
    height: 60px;
     width: auto;
     float: left;
-    margin-left: 2rem;
+    margin-left: 2%;
     
 }
 
 .nav {
   list-style: none;
-
+  margin-right: 2%;
 
 }
 
@@ -93,22 +114,38 @@ a:active {
     border-bottom: 2px solid #e67e22;
 }
 
-.nav-link-center  {
-  /*margin-left: 1.7rem;  */
+/*.nav-link-center  {
+ 
   margin-right: 1.7rem;  
-  /*text-align: center;*/
-}
+  
+}*/
 
 .nav-link-right  {
   margin-right: 2rem; 
   font-weight: 400 !important;
-  font-size: 1.3rem !important;
+  font-size: 1.7rem !important;
 
 }
 
 .nav-icon {
   font-size: 1.8rem;
 }
+
+/*Mobile-navi*/
+.mobile-nav-icon {
+  float: right;
+ 
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-nav-icon i {
+  font-size: 200%;
+  color: #613D07;
+
+}
+
+
 
 /*FOOTER*/
 
@@ -118,7 +155,7 @@ a:active {
    display: block;
  }*/
 
- .copyright a {
+.copyright a {
    color: #888;
 }
 
@@ -312,7 +349,9 @@ h2:after {
   display: block;
   font-size: 2.5rem;
   font-weight: 300;
-  line-height: 3.1;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  /*line-height: 3.1;*/
   /*text-transform: uppercase;*/
   word-spacing: .65rem;
 }
@@ -331,11 +370,14 @@ h2:after {
   grid-template-rows: repeat(3, 1fr);
   grid-template-columns: repeat(2, 1fr);
   padding-left: 30rem;
-  padding-right: 30rem;
+  padding-right: 30rem; 
+}
 
-
+.section-work-step-2 {
 
   
+  padding-left: 25rem;
+  padding-right: 25rem; 
 }
  
 .item-phone {
@@ -345,7 +387,21 @@ h2:after {
     padding-right: 3%;
 }
 
+.item-phone-2 {
+  
+  padding: 2rem;
+  text-align: center;
+    padding-right: 3%;
+}
 
+.items-steps {
+  /*padding-top: 4rem;
+  padding-bottom: 4rem;*/
+  text-align: left;
+  padding-left: 3%;
+  margin-top: 7rem;
+
+}
 
 .item-step-1 {
   grid-column : 2 / 2;
@@ -371,11 +427,21 @@ h2:after {
  /*margin-top: auto;*/
 }
 
+.work-step {
+  
+  margin-bottom: 5rem;
+}
+
+.work-step p {
+  display: block;
+
+}
+
 .work-step div {
     color: #e67e22;
     font-size: 150%;
-    height: 44px;
-    width: 44px;
+    height: 50px;
+    width: 50px;
     border: 2px solid #e67e22;
     border-radius: 50%;
     display: inline-block;
@@ -383,7 +449,7 @@ h2:after {
     margin-right: 25px;
     float: left;
     padding: 5px;
-    padding-top: 6px;
+    padding-top: 9.5px;
 
 }
 
@@ -393,7 +459,7 @@ h2:after {
 }
 
 .app-screen {
-  width: 200px;
+  width: 18rem;
 }
 
 .section-sentence {
@@ -540,7 +606,7 @@ h2:after {
   padding-left: 35%;
   padding-right: 35%;
   padding-bottom: 6rem;
-  padding-top: 2rem;
+  /*padding-top: 2rem;*/
   background: #f4f4f4;
   /*background: rgba(0, 0, 0, 0.4);*/
 
@@ -619,7 +685,7 @@ h2:after {
 .form-box-main {
   /*background: rgba(0, 0, 0, 0.4);*/
   background: #fff;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0, .2);
 }
@@ -721,7 +787,7 @@ h2:after {
 /*DISHES PAGE*/
 
 .section-top-menu {
-  height: 70vh;
+  height: 75vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.2)), url(pictures/back-2.jpg);
   background-size: cover;
   background-position: center;
@@ -1043,12 +1109,21 @@ h2:after {
   padding-top: 2rem;
 }
 
-.dish-box {  
+.dish-box-modal {  
   background: #fff;
   border-radius: 3px;
   border: 1px solid rgba(0, 0, 0 .2);
   padding-left: .5rem;
   padding-right: .5rem;
+  margin-bottom: 1.3rem;
+}
+.dish-box {  
+  background: #fff;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0 .2);
+  /*padding-left: .5rem;
+  padding-right: .5rem;*/
+  padding: 1.5rem;
   margin-bottom: 1.3rem;
 }
 
@@ -1638,7 +1713,7 @@ button[type=button] {
 
 .font-form {
   font-weight: 700;
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   /*margin-bottom: 1.5rem;*/
 }
 
