@@ -3,18 +3,13 @@
   <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <!-- <meta http-equiv='refresh' content='0'> -->
-
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700">
   <link rel="stylesheet" type="text/css" href="/css/ionicons.min.css">
-  <!-- <link rel="stylesheet" type="text/css" href="/css/normalize.css"> -->
-   <link rel="stylesheet" type="text/css" href="queries.css">
-  
-
+  <link rel="stylesheet" type="text/css" href="queries.css">
   <link rel="stylesheet" href="dish.css">
 
 
@@ -25,33 +20,16 @@
 <body>
   <div id="vue-app">     
     <header class="header">
-      <nav class="navbar">
-        <!-- <div > -->
-          <img src="pictures/logo-2.png" alt="logo" class="logo">
-
-          <!-- <ul  class="nav ">
-            <li class="" ><a class="target1 nav-link-center" href="/#/">HOME</a></li>
-            <li class=""><a class="target1 " href="/#/dishes">MENU</a></li>
-          </ul> -->
-        
-        <!-- </div>    -->
-        <!-- <div class="nav"> -->
-         <!--  <span > <a class="target1 nav-link" href="/#/carted_dishes"><i class="fa fa-shopping-cart nav-icon"></i></a></span> -->
-          <!-- <span > <a class="target1 nav-link" href="/#/login"><i class="fa fa-sign-in nav-icon"></i></a></span>
-          <span > <a class="target1 nav-link" href="/#/logout"><i class="fa fa-sign-out nav-icon"></i></a></span>
-          <span > <a class="target1 nav-link" href="/#/current_user"><i class="fa fa-user-circle nav-icon"></i></a></span> -->
-
-          <ul  class="nav js--main-nav">
-            <li class="" ><a class="target2 nav-link-right" href="/#/">Home</a></li>
-            <li class=""><a class="target2 nav-link-right" href="/#/dishes">Menu</a></li>
-            <li ><a class="target2 nav-link-right" href="/#/login">Log In</a></li>
-            <li><a class="target2 nav-link-right" href="/#/logout">Log out</a></li>
-            <li> <a class="target2 nav-link-right" href="/#/current_user"><i class="fa fa-user-o  nav-icon" ></i></a></li>
-
-          </ul>
-          <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
-
-        <!-- </div> -->
+      <nav class="navbar">        
+        <img src="pictures/logo-2.png" alt="logo" class="logo">
+        <ul  class="nav js--main-nav">
+          <li class="" ><a class="target2 nav-link-right" href="/#/">Home</a></li>
+          <li class=""><a class="target2 nav-link-right" href="/#/dishes">Menu</a></li>
+          <li ><a class="target2 nav-link-right" href="/#/login">Log In</a></li>
+          <li><a class="target2 nav-link-right" href="/#/logout">Log out</a></li>
+          <li> <a class="target2 nav-link-right" href="/#/current_user"><i class="fa fa-user-o  nav-icon" ></i></a></li>
+        </ul>
+        <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>        
       </nav>
     </header>   
 
@@ -59,107 +37,49 @@
   
     <!-- <div id="vue-app"> -->
     <router-view></router-view>
-  <!-- </div> -->
-
-   <!-- <div class="footer back-nav">
-      <div class="copyright">&copy; 2018 <a  href="#" target="_blank">Irina Kochetkova. &mdash;</a>All rights reserved.</div>
-    </div>  -->
+    <!-- </div> -->
 
     <footer class="footer target2" >
-      <!-- <div class="container "> -->
-
-      <!-- <div class="services-block"> -->
-        <div class="container u-padding-side">
-      <!--     <div class="row">
-            <div class="col-lg-4 d-flex justify-content-center justify-content-lg-start">
-              <div class="u-items-center d-flex">
-                <div class="icon-footer">
-                  <i class="ion-ios-box-outline"></i>
-                </div>
-                <div class="text">
-                  <h6 class="no margin text-uppercase">free shipping & return</h6>  
-                  <span>Free Shipping over $300</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 d-flex justify-content-center">
-              <div class="u-items-center d-flex">
-                <div class="icon-footer">
-                  <i class="ion-social-usd-outline"></i>
-                </div>
-                <div class="text">
-                <h6 class="no margin text-uppercase">money back guarantee</h6>
-                <span>30 Days Money Back Garantee</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 d-flex justify-content-center">
-              <div class="u-items-center d-flex">
-                <div class="icon-footer">
-                  <i class="ion-ios-telephone-outline"></i>
-                </div>
-                <div class="text">
-                <h6 class="no margin text-uppercase">+1(283) 567-27-27</h6>
-                <span>24/7 Available Support</span>
-                </div>
-              </div>
-            </div>
-
-         
-      </div> -->
-
-
-      <!-- </div> -->
-      <!-- </div> -->
-      <div class="services-block">
-     <div class="row ">
-         <div class="col-xl-4 u-center-text">            
-            <h6 class="no-margin text-uppercase">free shipping & return</h6>
-            <p class="font-prefooter ">
+      <div class="container u-padding-side">
+        <div class="services-block">
+          <div class="row">
+            <div class="col-xl-4 u-center-text">         
+              <h6 class="no-margin text-uppercase">free shipping & return</h6>
+              <p class="font-prefooter ">
                 Free Shipping over $300
-            </p>
-        </div>
-        <div class="col-xl-4 u-center-text">                    
-            <h6 class="no-margin text-uppercase">money back guarantee</h6>
-            <p class="font-prefooter ">
+              </p>
+            </div>
+            <div class="col-xl-4 u-center-text">        
+              <h6 class="no-margin text-uppercase">money back guarantee</h6>
+              <p class="font-prefooter ">
                 30 Days Money Back Garantee
-            </p>
-        </div>
-        <div class="col-xl-4  u-center-text ">                  
-            <h6 class="no-margin text-uppercase">+1 (283) 567-27-27</h6>
-            <p class=" font-prefooter">
-               Available Support
-            </p>
-        </div>
-                
-       
-        </div> 
+              </p>
+            </div>
+            <div class="col-xl-4  u-center-text ">       
+              <h6 class="no-margin text-uppercase">+1 (283) 567-27-27</h6>
+              <p class=" font-prefooter">
+                Available Support
+              </p>
+            </div>           
+          </div> 
         </div>
 
-      <div class="u-center-text u-height-line">
-        <!-- <span> -->
-         <a href="#" target="_blank" title="twitter"><i class="navigation-icon target2 fa fa-twitter"></i></a>
-         <a href="#" target="_blank" title="whatsapp"><i class="navigation-icon target2 fa fa-whatsapp"></i></a>
-         <a href="#" target="_blank" title="facebook"><i class="navigation-icon target2 fa fa-facebook-f"></i></a>
-         <a href="#" target="_blank" title="linkedin"><i class="navigation-icon target2 fa fa-linkedin"></i></a>
-         <a href="#" target="_blank" title="instagram"><i class="navigation-icon target2 fa fa-instagram"></i></a>
-        <!-- </span> -->
-      <!-- </div>  
-        <div class="u-center-text"> -->
-          <div class="copyright">&copy; 2018 <a class="target1" href="#" target="_blank">Irina Kochetkova. &mdash;</a>All rights reserved.</div>
+        <div class="u-center-text u-height-line">        
+          <a href="#" target="_blank" title="twitter"><i class="navigation-icon target2 fa fa-twitter"></i></a>
+          <a href="#" target="_blank" title="whatsapp"><i class="navigation-icon target2 fa fa-whatsapp"></i></a>
+          <a href="#" target="_blank" title="facebook"><i class="navigation-icon target2 fa fa-facebook-f"></i></a>
+          <a href="#" target="_blank" title="linkedin"><i class="navigation-icon target2 fa fa-linkedin"></i></a>
+          <a href="#" target="_blank" title="instagram"><i class="navigation-icon target2 fa fa-instagram"></i></a>        
+          <div class="copyright">&copy; 2018 <a class="target1" href="#" target="_blank">Irina Kochetkova. &mdash;</a>All rights reserved.
+          </div>
         </div>
-
-      </div>
-      <!-- </div> -->
+      </div>    
     </footer>
 
   </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
   <script src=https://code.jquery.com/jquery-3.1.1.min.js></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
@@ -258,6 +178,37 @@
       </div>
     </section>
 
+    <div class="heading u-center-text">
+      <h2 class="heading--main">How it works </h2>
+    </div>
+
+
+<section class="section-work-step-2 u-margin-bottom-big u-margin-top-small">
+  <div class="row">
+   <div class="item-phone-2 col-md">
+      <img src="pictures/phone-2.png" alt="homemade food" class="app-screen ">
+    </div>
+
+    <div class="col work-box items-steps">
+     <div class="row ">
+     <div class="work-step item-step-1-2 ">
+        <div>1</div>
+        <p>Choose the options "chef" or "customer" and sign up today.</p>
+      </div>
+      <div class=" work-step item-step-2-2">
+        <div>2</div>
+        <p>Chefs can create a new dish, edit their own dishes and delete them.</p>
+      </div>
+      <div class="work-step item-step-3-2">
+        <div>3</div>
+        <p>Customers can buy chefs` dishes and enjoy them. Don`t forget to rate them!</p>
+      </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
    
 
 <!--   <section class="section-work-step u-margin-bottom-big u-margin-top-small">       
@@ -296,36 +247,7 @@
        
     </section>
 
-      <div class="heading u-center-text">
-      <h2 class="heading--main">How it works &mdash; Simple as 1, 2, 3</h2>
-    </div>
-
-
-<section class="section-work-step-2 u-margin-bottom-big u-margin-top-small">
-  <div class="row">
-   <div class="item-phone-2 col-md">
-      <img src="pictures/phone-2.png" alt="homemade food" class="app-screen ">
-    </div>
-
-    <div class="col work-box items-steps">
-     <div class="row ">
-     <div class="work-step item-step-1-2 ">
-        <div>1</div>
-        <p>Choose the options "chef" or "customer" and sign up today.</p>
-      </div>
-      <div class=" work-step item-step-2-2">
-        <div>2</div>
-        <p>Chefs can create a new dish, edit their own dishes and delete them.</p>
-      </div>
-      <div class="work-step item-step-3-2">
-        <div>3</div>
-        <p>Customers can buy chefs` dishes and enjoy their. See you the next time!</p>
-      </div>
-      </div>
-    </div>
-
-  </div>
-</section>
+      
 
 
     <section class="section-chefs">
@@ -631,7 +553,7 @@
                 </div>
               </div>
               <div class="text-center">
-                <input type="submit" id="reload" class="btn" v-on:click="submit()"></input>
+                <input type="submit" id="reload" class="btn" v-on:click="submit()" value="Save Changes"></input>
               </div>
             </div>
           </div>
@@ -652,8 +574,8 @@
     <section class="section-top-menu">
       <div class="text-box">
         <h1 class="font-top">
-          <span class="font-top-menu">Everyone likes good food.</span>
-          <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite food</span>
+          <span class="font-top-menu">Everyone likes good food</span>
+          <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite dishes</span>
         </h1>
 
         
