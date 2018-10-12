@@ -11,28 +11,19 @@
   html {
       font-size: 50%;
     }
-  /*body { font-size: 16px; }*/
- /* section { padding: 30px 0; }
-
-  .row,
-  .hero-text-box { padding: 0 4%; }
-  .col { 
-    width: 100%;
-    margin: 0 0 4% 0%;
- }*/
-
+  
   
   .nav { display: none; }
   
   .mobile-nav-icon {display: inline-block !important;}
 
 
-  .nav {
-    /*float: left;*/
-    /*margin-top: 35px;
-    margin-left: 25px;*/
-    
-  }
+  /*.nav {
+    float: left;
+    margin-top: 35px;
+    margin-left: 25px;
+
+  }*/
 
   .nav li {
     display: block ;
@@ -66,22 +57,7 @@
     padding-left: 5rem !important;
   }
 
-  /*.sticky .main-nav { margin-top: 10px; }
-
-  .sticky .main-nav li a:link,
-  .sticky .main-nav li a:visited { padding: 10px 0; }
-  .sticky .mobile-nav-icon { margin-top: 10px; }
-  .sticky .mobile-nav-icon i { color: #555; }
-
   
-  h1 { font-size: 180%; }
-  h2 { font-size: 150%; }
-
-  .long-copy {
-    width: 100%;
-    margin-left: 0%;
-  }*/
-
   .font-top .font-top--main  {
     font-size: 90%;
   }
@@ -93,6 +69,13 @@
   .font-top .font-top--sub-menu {
     font-size: 80%;
   }
+
+  .section-work-step-2 {  
+      padding-left: 2% !important;
+      padding-right: 2% !important;  
+    }
+
+
 
   .steps-box:first-child { text-align: center; }
 
