@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:100,300,300i,400,700">
   <link rel="stylesheet" type="text/css" href="/css/ionicons.min.css">
   <link rel="stylesheet" type="text/css" href="queries.css">
-  <link rel="stylesheet" href="dish.css">
+  <link rel="stylesheet" href="style.css">
 
 
   <title>Homemade food</title>
@@ -31,13 +31,9 @@
         </ul>
         <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>        
       </nav>
-    </header>   
-
-
-  
-    <!-- <div id="vue-app"> -->
-    <router-view></router-view>
-    <!-- </div> -->
+    </header> 
+    
+    <router-view></router-view>  
 
     <footer class="footer target2" >
       <div class="container u-padding-side">
@@ -105,9 +101,9 @@
           <span class="font-top--sub">Are you a chef or a customer?</span>
         </h1>
         <div class="d-flex">
-         <a href="/#/signup" class="btn btn-full sign">SignUp</a>
-         <a href="/#/login"   class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal" >LogIn</a>
-       </div>
+          <a href="/#/signup" class="btn btn-full sign">SignUp</a>
+          <a href="/#/login"   class="btn btn-ghost" data-toggle="modal" data-target="#exampleModal" >LogIn</a>
+        </div>
       </div> 
 
       <!-- Modal    -->
@@ -126,19 +122,15 @@
                   <li class="text-danger" v-for="error in errors" >{{ error }}</li>
                 </ul>
                 <div class="form-group">
-                  <!-- <label  class="col-form-label">Email:</label> -->
                   <input type="email" class="form-control" v-model="email" placeholder="Email">
                 </div>
                 <div class="form-group">
-                  <!-- <label class="col-form-label">Password:</label> -->
                   <input type="password" class="form-control" v-model="password" placeholder="Password">
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
-             
-                <button type="submit" class="btn  btn-sign btn-block " v-on:click="submit()"   data-backdrop="static">LogIn</button>
-             
+            <div class="modal-footer">             
+              <button type="submit" class="btn  btn-sign btn-block " v-on:click="submit()"   data-backdrop="static">LogIn</button>     
             </div>
           </div>
         </div>
@@ -183,53 +175,29 @@
     </div>
 
 
-<section class="section-work-step-2 u-margin-bottom-big u-margin-top-small">
-  <div class="row">
-   <div class="item-phone-2 col-md">
-      <img src="pictures/phone-2.png" alt="homemade food" class="app-screen ">
-    </div>
-
-    <div class="col work-box items-steps">
-     <div class="row ">
-     <div class="work-step item-step-1-2 ">
-        <div>1</div>
-        <p>Choose the options "chef" or "customer" and sign up today.</p>
+    <section class="section-work-step u-margin-bottom-big u-margin-top-small">
+      <div class="row">
+        <div class="u-center-text col-md">
+          <img src="pictures/phone-2.png" alt="homemade food" class="app-screen">
+        </div>
+        <div class="col work-box">
+          <div class="row">
+            <div class="work-step">
+              <div>1</div>
+                <p>Choose the options "chef" or "customer" and sign up today.</p>
+            </div>
+            <div class="work-step">
+              <div>2</div>
+                <p>Chefs can create a new dish, edit their own dishes and delete them.</p>
+              </div>
+            <div class="work-step">
+              <div>3</div>
+              <p>Customers can buy chefs` dishes and enjoy them. Don`t forget to rate them!</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class=" work-step item-step-2-2">
-        <div>2</div>
-        <p>Chefs can create a new dish, edit their own dishes and delete them.</p>
-      </div>
-      <div class="work-step item-step-3-2">
-        <div>3</div>
-        <p>Customers can buy chefs` dishes and enjoy them. Don`t forget to rate them!</p>
-      </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-   
-
-<!--   <section class="section-work-step u-margin-bottom-big u-margin-top-small">       
-    <div class="item-phone">
-      <img src="pictures/phone-2.png" alt="homemade food" class="app-screen ">
-    </div>
-    <div class="work-step item-step-1 ">
-        <div>1</div>
-        <span>Choose the options "chef" or "customer" and sign up today.</span>
-      </div>
-      <div class=" work-step item-step-2">
-        <div>2</div>
-        <span>Chefs can create a new dish, edit their own dishes and delete them.</span>
-      </div>
-      <div class="work-step item-step-3">
-        <div>3</div>
-        <span>Customers can buy chefs` dishes and enjoy their. See you the next time!</span>
-      </div>
-    </section> -->
-
-
+    </section>
 
     <section class="section-sentence">
       <div class="heading u-center-text">
@@ -241,71 +209,45 @@
         <div class="u-margin-bottom-big u-margin-top-big">
           <a href="/#/dishes" class="btn btn-ghost">Choose your meals</a>
         </div>        
-        <p class="font-about--main">Our meals are perfect for diabetic, low sodium and many other therapeutic diets, as well as for seniors and those looking to loose weight by following either a portion controlled or Paleo diet. </p> 
-
-      </div>
-       
+        <p class="font-about--main">Our meals are perfect for diabetic, low sodium and many other therapeutic diets, as well as for seniors and those looking to loose weight by following either a portion controlled or Paleo diet. </p>
+      </div>       
     </section>
 
-      
-
-
     <section class="section-chefs">
-       <div class="container ">
-
+      <div class="container">
         <div class="heading u-center-text">
           <h2 class="heading--main">Our chefs cook for you</h2>
         </div>
-
         <div class="row">
-          
-           
-           <div v-for="list_provider in list_providers" class="col-md-3 col-md-4 u-center-text u-margin-bottom-big ">
-            <div class="">
-             <div class="card box-chef">
-            
-             <img :src="list_provider.image_url" alt="chef" class="card-img-top img-chef" >
-             
-             <span class="font ">{{ list_provider.first_name }}&nbsp;{{ list_provider.last_name }}</span>
-             <span > {{ list_provider.email }}</span>
-          
-             </div>
-           </div>
-        </div>
+          <div v-for="list_provider in list_providers" class="col-md-3 col-md-4 u-center-text u-margin-bottom-big">
+            <div class="card box-chef">            
+              <img :src="list_provider.image_url" alt="chef" class="card-img-top img-chef">      
+              <span class="font ">{{ list_provider.first_name }}&nbsp;{{ list_provider.last_name }}</span>
+              <span > {{ list_provider.email }}</span>
+            </div>           
+          </div>
         </div>
         <div class="u-center-text">
           <a href="/#/dishes" class="btn-text">Learn menu  &rarr;</a>
         </div>
-
-       
-
       </div>
     </section>
 
-    <section class="section-features ">
-      <div class="container ">
+    <section class="section-features">
+      <div class="container">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
               Feel great about your food.
           </h3>
-
-
         </div>
-
         <div class="u-center-text">
-        <p class="font-about--main">Our chefs guarantee the quality of products and the timely preparation of their customer`s orders. They fully prepare your meals, saving you hours of shopping, prepping and cooking each week. Just heat and enjoy your healthy meal ready in minutes. Clean-up is simply tossing our tray in your recycling.</p>
-        <div class="u-margin-bottom-big u-margin-top-big">
-          <a href="/#/signup" class="btn btn-ghost">Join Now</a>
-        </div>        
-        
-
+          <p class="font-about--main">Our chefs guarantee the quality of products and the timely preparation of their customer`s orders. They fully prepare your meals, saving you hours of shopping, prepping and cooking each week. Just heat and enjoy your healthy meal ready in minutes. Clean-up is simply tossing our tray in your recycling.</p>
+          <div class="u-margin-bottom-big u-margin-top-big">
+            <a href="/#/signup" class="btn btn-ghost">Join Now</a>
+          </div>       
+        </div>       
       </div>
-       
-      </div>
-    </section>
-
-
-    
+    </section>    
 
   </div>
 </template>
@@ -328,7 +270,7 @@
         <div class="header-sign u-center-text">
           <p class="font-form" >Sign Up</p>
         </div>
-        <div class="row ">
+        <div class="row">
           <div class="col-md-6">
             <div class="form-group">            
               <input type="text" class="form-input"  id="first_name" v-model="first_name" placeholder="First Name">
@@ -400,7 +342,7 @@
         </div>
 
         <div class="u-center-text">
-          <button type="submit" class="btn btn-lg btn-sign btn-block " v-on:click="submit()">Create account</button>
+          <button type="submit" class="btn btn-lg btn-sign btn-block" v-on:click="submit()">Create account</button>
         </div>
       </div>
 
@@ -415,7 +357,7 @@
         <h2 class="heading--main">Join our team</h2>
       </div>
       <div class="u-center-text">
-        <p><strong>Not a member?</strong><a href="/#/sigup" class="login">&nbsp; <strong>Sign Up</strong></a></p>
+        <p><strong>Not a member?</strong><a href="/#/signup" class="login">&nbsp; <strong>Sign Up</strong></a></p>
       </div>
       <ul class="u-center-text">
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
@@ -454,7 +396,7 @@
           <div class="col-xl-3 col-lg-4 mb-md-5">
             <div class="customer-profile">
               <a href="#" class="d-inline-block">
-                <img :src="current_user.image_url" class="img-user img-fluid rounded-circle customer-image"></a>
+                <img :src="current_user.image_url" class="img-fluid customer-image"></a>
                 <h5 class="name-user">{{current_user.first_name}} {{current_user.last_name}}</h5>
                 <p class="text-muted text-small">email: {{ current_user.email }}</p>
                 <p class="text-muted text-small">zipcode: {{ current_user.zipcode }}</p>
@@ -490,13 +432,13 @@
               </div>
               <div class="row">
                 <div class="col-sm-6">
-                  <div class="form-group">                    
+                  <div class="form-group">               
                     <input  type="password" class="form-input" v-model="password" placeholder="New password">
                     <label  class="form-label">New password</label>
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group">                    
+                  <div class="form-group">               
                     <input  type="password" class="form-input" v-model="passwordConfirmation" placeholder="Retype new password">
                     <label class="form-label">Retype new password</label>
                   </div>
@@ -546,7 +488,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6">
-                  <div class="form-group">                    
+                  <div class="form-group">               
                     <input type="text" id="zip" class="form-input" v-model="zipcode">
                     <label for="zip" class="form-label">ZIP</label>
                   </div>
@@ -577,51 +519,40 @@
           <span class="font-top-menu">Everyone likes good food</span>
           <span class="font-top--sub-menu">Choose from an affordable menu of nourishing meals your favorite dishes</span>
         </h1>
-
-        
-
       </div>
     </section>
 
     <section class="section-menu">
       <div class="container u-padding-side">
-
         <div class="header-menu">
-         <!-- Search form --> 
-        <form action="#" class="search">
-          <input type="search" class="search_input" placeholder="Search dish" v-model="nameDishFilter">
-          <button class="search_button">
-            <svg class="search_icon">
-              <use xlink:href="SVG/sprite.svg#icon-magnifying-glass"></use>
-            </svg>
-          </button>
-        </form>
-      
+
+           <!-- Search form --> 
+          <form action="#" class="search">
+            <input type="search" class="search_input" placeholder="Search dish" v-model="nameDishFilter">
+            <button class="search_button">
+              <svg class="search_icon">
+                <use xlink:href="SVG/sprite.svg#icon-magnifying-glass"></use>
+              </svg>
+            </button>
+          </form>
+          <!-- end Search form -->
+        
           <nav v-if="current_user.provider === false" class="user-nav">
-          <div class="user-nav_icon-box">
-            <span class="user-nav_icon">
-              <a class="target1 " href="/#/carted_dishes"><i class="cart-icon ion-ios-cart-outline"></i></a>  
-            </span> 
-            <span class="user-nav_notification">{{ count_carted }}</span>   
-          </div>  
-
-          <div class="user-nav_icon-box">
-            <a href="/#/orders"   class="btn-2 btn-ghost">Your orders, <br>{{ current_user.first_name }}</a>   
-          </div>         
-        </nav>
-
+            <div class="user-nav_icon-box">
+              <span class="user-nav_icon">
+                <a class="target1 " href="/#/carted_dishes"><i class="cart-icon ion-ios-cart-outline"></i></a>  
+              </span> 
+              <span class="user-nav_notification">{{ count_carted }}</span>   
+            </div>
+            <div class="user-nav_icon-box">
+              <a href="/#/orders"   class="btn-2 btn-ghost">Your orders, <br>{{ current_user.first_name }}</a>   
+            </div>         
+          </nav>
 
         </div>
-
-</div>
+      </div>
         
-          
-          
-
-      
-
       <!-- filter -->
-
       <!-- cuisine -->
       <div class="container ">
 
@@ -667,7 +598,7 @@
           </div>
         </div>
       </div>
-    <!-- end  cuisin -->  
+      <!-- end  cuisin -->  
       <!-- end filter -->
 
       <div class="container u-padding-side">
@@ -682,8 +613,7 @@
                   <strong>Chef:</strong> {{ dish.user.first_name }}
                 </div>                
                 <div class="font item-price">${{  dish.price }}</div>
-                <div class="item-btn">
-                   <!-- <button><i class="fa fa-info-circle grid-icon" v-on:click="setCurrentDish(dish)" data-toggle="modal" data-target="#exampleModalCenter"></i></button> -->
+                <div class="u-right-text">
                     <button  v-on:click="setCurrentDish(dish)" class="btn btn-sign" data-toggle="modal" data-target="#exampleModalCenter">More info</button>
                 </div>
               </div>
@@ -697,92 +627,71 @@
 
       </div>
     
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title font-form" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
 
-   <!-- <div class="container">    -->
-    <!-- <div class="row ">
-      <div v-for="dish in dishes" class="col-xl-4 col-md-6" v-if="isValidDish(dish)"> 
-        <div class=" is-gray">                       
-          <div class="ribbon text-uppercase">
-            <a v-on:click="setCurrentDish(dish)"  data-toggle="modal" data-target="#exampleModalCenter">More info</a> 
-          </div>
-          <img :src="dish.image_url" alt="product" class="img-fluid">                          
-          <div class="text-muted cuisine2 text-small">Cuisine: {{ dish.category.title }}</div>
-          <div class="text-muted chef text-small" >Chef: {{ dish.user.first_name }}</div>
-          <h3 class="text-middle" >{{ dish.name }}</h3>
-          <div class=" text-middle price text-muted">${{  dish.price }}</div>
-        </div>
-      </div>
-    </div> -->
-
-
-    <!-- Modal -->
-
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title font-form" id="exampleModalCenterTitle">{{ currentDish.name }}</h5>
-
-            <button type="" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <img class="img-fluid"  :src="currentDish.image_url" alt="Card image cap">
-            <p class="font">{{ currentDish.description }} </p>     
-          </div>
-          <div class="modal-footer">
-            
-            <div class="form-inline">
-              <div v-if="currentDish.user_id === current_user.id">  
-                <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type=""  class="btn btn-sign">Edit Dish</button></a>    
-                <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="" class="btn btn-sign">Delete Dish</button></a>
-              </div>   
-                <div v-if="current_user.provider === false">
-                <input  type="number"  v-model="quantity" class="form-control"  placeholder="Quantity">
-                <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="" data-dismiss="modal" data-backdrop="false" class="btn btn-sign" id="reload">Add to cart</button></a>    
-              </div>                                                     
+              <button type="" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-          </div>
-          <div class="modal-footer">
-            <button type="" class="btn btn-cancel" data-dismiss="modal">Close</button>                
+            <div class="modal-body">
+              <img class="img-fluid"  :src="currentDish.image_url" alt="Card image cap">
+              <p class="font">{{ currentDish.description }} </p>     
+            </div>
+            <div class="modal-footer">
+              
+              <div class="form-inline">
+                <div v-if="currentDish.user_id === current_user.id">  
+                  <a :href="'/#/dishes/' + currentDish.id + '/edit'"><button   type=""  class="btn btn-sign">Edit Dish</button></a>    
+                  <a :href="'/#/dishes/' + currentDish.id + '/delete'"><button type="" class="btn btn-sign">Delete Dish</button></a>
+                </div>   
+                  <div v-if="current_user.provider === false">
+                  <input  type="number"  v-model="quantity" class="form-control"  placeholder="Quantity">
+                  <a href="/#/carted_dishes/new"><button v-on:click="submit()" type="" data-dismiss="modal" data-backdrop="false" class="btn btn-sign" id="reload">Add to cart</button></a>    
+                </div>                                                     
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="" class="btn btn-cancel" data-dismiss="modal">Close</button>                
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- end Modal -->
-  <!-- </div> -->
+      <!-- end Modal --> 
+    </section>
+    
 
-  </section>
-    <!-- </div> -->
-
-  <section class="section-quotes ">
-    <div class="heading u-center-text">
-      <h2 class="heading--main">What famous people say about food</h2>
-    </div>
-    <div class="container u-padding-side ">
-            <div class="row ">
-                <div class="col-4 ">
-                    <blockquote>
-                        I have realize that I`m more important than food is. I love a big slice of pizza, but I love myself more. Being thin is about changing the way you think about youself. It`s about saying that you deserve to be healthy.
-                        <cite>Valerie Bertinelli</cite>
-                    </blockquote>
-                </div>
-                <div class="col-4">
-                    <blockquote>
-                      What I`ve enjoyed most, though, is meeting people who have a real interest in food and sharing ideas with them. Good food is a global thing and I find that there is always something new and amazing to learn - I love it! 
-                        <cite>Jamie Oliver</cite>
-                    </blockquote>
-                </div>
-                <div class="col-4">
-                    <blockquote>
-Most of us have fond memories of food from our childhood. Whether it was our mom`s homemade lasagna or a memorable chocolate birthday cake, food has a way of transporting us back to the past.
-                    <cite>Homaro Cantu</cite>
-                    </blockquote>
-                </div>
-            </div>
-            </div>
-        </section>
+    <section class="section-quotes ">
+      <div class="heading u-center-text">
+        <h2 class="heading--main">What famous people say about food</h2>
+      </div>
+      <div class="container u-padding-side ">
+        <div class="row ">
+          <div class="col-4 ">
+            <blockquote>
+                I have realize that I`m more important than food is. I love a big slice of pizza, but I love myself more. Being thin is about changing the way you think about youself. It`s about saying that you deserve to be healthy.
+                <cite>Valerie Bertinelli</cite>
+            </blockquote>
+          </div>
+          <div class="col-4">
+            <blockquote>
+              What I`ve enjoyed most, though, is meeting people who have a real interest in food and sharing ideas with them. Good food is a global thing and I find that there is always something new and amazing to learn - I love it! 
+                <cite>Jamie Oliver</cite>
+            </blockquote>
+          </div>
+          <div class="col-4">
+            <blockquote>
+              Most of us have fond memories of food from our childhood. Whether it was our mom`s homemade lasagna or a memorable chocolate birthday cake, food has a way of transporting us back to the past.
+            <cite>Homaro Cantu</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
  
 
 
@@ -793,36 +702,35 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
               eating good food — enjoy good food
           </h3>
         </div>
-        <div class="row ">
-         <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-heart-outline icon-big"></i>
-                    <h3>Choose our service</h3>
-                    <p class="font-prefooter">
-                        We care about every client and it is important for us to know that everyone is happy with our service. Do not miss the chance! We offer bonuses if you are a regular customer of our site.
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-stopwatch-outline icon-big"></i>
-                    <h3>Save your time</h3>
-                    <p class="font-prefooter">
-                        Our chefs guarantee the timely preparation of their customer`s orders. They fully prepare your meals, saving you hours of shopping, prepping and cooking each week. Just heat and enjoy your healthy meal ready in minutes. 
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4  ">
-                    <i class="ion-social-euro-outline icon-big"></i>
-                    <h3>Save your money</h3>
-                    <p class="font-prefooter">
-                       Pick and custom tailor your gourmet meals to your desires from our large menu options. You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.
-                    </p>
-                </div>
-                <div class="col-xl-3 col-md-4 ">
-                    <i class="ion-ios-cart-outline icon-big"></i>
-                    <h3>Order anything</h3>
-                    <p class="font-prefooter">
-                        We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
-                    </p>
-                </div>
-       
+        <div class="row">
+          <div class="col-xl-3 col-md-4 ">
+            <i class="ion-ios-heart-outline icon-big"></i>
+            <h3>Choose our service</h3>
+            <p class="font-prefooter">
+                We care about every client and it is important for us to know that everyone is happy with our service. Do not miss the chance! We offer bonuses if you are a regular customer of our site.
+            </p>
+          </div>
+          <div class="col-xl-3 col-md-4 ">
+            <i class="ion-ios-stopwatch-outline icon-big"></i>
+            <h3>Save your time</h3>
+            <p class="font-prefooter">
+              Our chefs guarantee the timely preparation of their customer`s orders. They fully prepare your meals, saving you hours of shopping, prepping and cooking each week. Just heat and enjoy your healthy meal ready in minutes. 
+            </p>
+          </div>
+          <div class="col-xl-3 col-md-4  ">
+            <i class="ion-social-euro-outline icon-big"></i>
+            <h3>Save your money</h3>
+            <p class="font-prefooter">
+               Pick and custom tailor your gourmet meals to your desires from our large menu options. You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.
+            </p>
+          </div>
+          <div class="col-xl-3 col-md-4 ">
+            <i class="ion-ios-cart-outline icon-big"></i>
+            <h3>Order anything</h3>
+            <p class="font-prefooter">
+                We don't limit your creativity, which means you can order whatever you feel like. You can also choose from our menu containing over 100 delicious meals. It's up to you!
+            </p>
+          </div>       
         </div>        
       </div>
     </section>
@@ -930,72 +838,65 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
     <section class="section-cart-header">       
     </section>
     
-      <section class="section-carted-dish">
-        <div class="container u-padding-side">          
-          <div class="heading u-center-text">
-            <h2 class="heading--main">Your shopping cart</h2>
-          </div>      
-        </div>
+    <section class="section-carted-dish">
+      <div class="container u-padding-side">          
+        <div class="heading u-center-text">
+          <h2 class="heading--main">Your shopping cart</h2>
+        </div>      
+      </div>
 
-        <div class="container u-padding-side">
-          <table id="customers">
-            <thead>
-              <tr>
-                <th id="dish">Dish</th>
-                <th id="price">Price</th>
-                <th id="quantity">Quantity</th>
-                <th id="subtotal">Subtotal</th>
-                <th id="remove">Remove</th>
-              </tr>
-            </thead>
-            <tbody >
-              <tr v-for="carted_dish in carted_dishes" class="line">
-                <td class="dish-name item"><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted">
-                  <table class="second-table">
-                    <tr><td class="name-item">{{ carted_dish.dish.name }}</td></tr>
-                    <tr><td>{{ carted_dish.dish.description }}</td></tr>
-                  </table>
-                </td>
-                </td>                  
-                <td class="item">${{ carted_dish.dish.price }}</td>
-                <td class="item">{{ carted_dish.quantity }}</td>
-                <td class="item">{{ carted_dish.subtotal_carted }}</td>
-                <td class="item"><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="" class="feature-shop_icon" ><i class="fa fa-trash"></i></button></a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>        
+      <div class="container u-padding-side">
+        <table id="customers">
+          <thead>
+            <tr>
+              <th id="dish">Dish</th>
+              <th id="price">Price</th>
+              <th id="quantity">Quantity</th>
+              <th id="subtotal">Subtotal</th>
+              <th id="remove">Remove</th>
+            </tr>
+          </thead>
+          <tbody >
+            <tr v-for="carted_dish in carted_dishes" class="line">
+              <td class="dish-name item"><img :src="carted_dish.dish.image_url"  alt="..." class="img-fluid img-carted">
+                <table class="second-table">
+                  <tr><td class="name-item">{{ carted_dish.dish.name }}</td></tr>
+                  <tr><td>{{ carted_dish.dish.description }}</td></tr>
+                </table>
+              </td>
+              </td>                  
+              <td class="item">${{ carted_dish.dish.price }}</td>
+              <td class="item">{{ carted_dish.quantity }}</td>
+              <td class="item">{{ carted_dish.subtotal_carted }}</td>
+              <td class="item"><a :href="'/#/carted_dishes/' + carted_dish.id + '/delete'"><button type="" class="feature-shop_icon" ><i class="fa fa-trash"></i></button></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>        
         
-        <div class="container u-padding-side">
+      <div class="container u-padding-side">
 
-          <div class="row u-margin-bottom-small">
-            <div class="col-6 u-center-text">
-              <img src="payment/order.jpg" alt="order" class="img-order">
-              <!-- <a href="/#/orders" class="btn-text">Your orders &rarr;</a> -->
-              
-            </div>
+        <div class="row u-margin-bottom-small">
+          <div class="col-6 u-center-text">
+            <img src="payment/order.jpg" alt="order" class="img-order">              
+          </div>
 
-            <div class="col-6 ">
-              <div class="total-box">
-                <ul class="order-menu list-unstyled">
-                  <li class="d-flex justify-content-between">
-                    <span class="side-left">Order Subtotal</span>
-                    <strong>${{ order_subtotal }}</strong>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    <span class="side-left">Tax</span>
-                    <strong >${{ tax }}</strong>
-                  </li>
-                  <li class="d-flex justify-content-between">
-                    <span class="side-left">Total</span>
-                    <strong>${{ total }}</strong>
-                  </li>
-                </ul>
-                <!-- <div class="check-box">               
-                  <a href="/#/dishes" class="btn btn-ghost sign">Shopping</a>
-                  <a href="/#/orders" class="btn btn-full"  v-on:click="checkout()" id="reload">Checkout</a>
-                </div>
-              </div> -->       
+          <div class="col-6 ">
+            <div class="total-box">
+              <ul class="order-menu list-unstyled">
+                <li class="d-flex justify-content-between">
+                  <span class="side-left">Order Subtotal</span>
+                  <strong>${{ order_subtotal }}</strong>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <span class="side-left">Tax</span>
+                  <strong >${{ tax }}</strong>
+                </li>
+                <li class="d-flex justify-content-between">
+                  <span class="side-left">Total</span>
+                  <strong>${{ total }}</strong>
+                </li>
+              </ul>     
             </div>
           </div>          
         </div>
@@ -1008,7 +909,7 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
           </div>
 
           <div class="col-6">
-            <div class="check-box u-right-text">               
+            <div class="check-box u-right-text">        
                 <a href="/#/dishes" class="btn btn-ghost sign">Shopping</a>
                 <a href="/#/orders" class="btn btn-full"  v-on:click="checkout()" id="reload">Checkout</a>
             </div>
@@ -1019,121 +920,46 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
     </section>
 
     <section class="section-features-cart ">
-      <div class="container ">
+      <div class="container">
         <div class="heading u-center-text">
           <h3 class="heading-prefooter">
               CHOOSE THE SERVICE THAT'S RIGHT FOR YOU
           </h3>
         </div>
 
-        <!-- <div class="u-center-text">
-        <p class="font-about--main">Our chefs guarantee the quality of products and the timely preparation of their customer`s orders. They fully prepare your meals, saving you hours of shopping, prepping and cooking each week. Just heat and enjoy your healthy meal ready in minutes. Clean-up is simply tossing our tray in your recycling.</p>
-        <div class="u-margin-bottom-big u-margin-top-big">
-          <a href="/#/signup" class="btn btn-ghost">Join Now</a>
-        </div>
-      </div> -->
-      
-      
-     <!--  <div class="row">
-        <div class="col-6 ">
-          <div class="card ">
-            <div class="card-body ">
-            <h3 >Pick up the food at chef`s place.</h3>
-            <p class="font-prefooter">All you have to do to is sign up, sit back, and enjoy the convenience of weekly deliveries. Or you can opt for a flexible bi-weekly or monthly subscription.
-            </p>
-          </div>
-          </div>
-        </div>
-
-        <div class="col-6 ">
-          <div class="card ">
-            <div class="card-body ">
-            <h3 >Get the food at your door.</h3>
-            <p class="font-prefooter">All you have to do to is sign up, sit back, and enjoy the convenience of weekly deliveries. Or you can opt for a flexible bi-weekly or monthly subscription.
-            </p>
-          </div>
-          </div>
-        </div>
-      </div> -->
-    
-
-
-
-
         <div class="row u-margin-bottom-big">
           <div class="col-6">
-          <div class="story ">
-            
-            <div class="story_text">
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                Get the food at your door.
-              </h3>
-              <p>
-                All you have to do to is sign up, sit back, and enjoy the convenience of weekly deliveries. Or you can opt for a flexible bi-weekly or monthly subscription.
-              </p>
+            <div class="story">              
+              <div class="story_text">
+                <h3 class="heading-tertiary u-margin-bottom-small">
+                  Get the food at your door.
+                </h3>
+                <p>
+                  All you have to do to is sign up, sit back, and enjoy the convenience of weekly deliveries. Or you can opt for a flexible bi-weekly or monthly subscription.
+                </p>
+              </div>
             </div>
           </div>
-          </div>
-        <!-- </div>
-
-        <div class="row"> -->
+        
           <div class="col-6">
-          <div class="story">
-            
-            <div class="story_text">
-              <h3 class="heading-tertiary u-margin-bottom-small">
-                Pick up the food at chef`s place.
-              </h3>
-              <p>
-                Pick and custom tailor your gourmet meals to your desires from chefs` large menu options. Place an order online & choose a pickup timeslot. 
-              </p>
+            <div class="story">              
+              <div class="story_text">
+                <h3 class="heading-tertiary u-margin-bottom-small">
+                  Pick up the food at chef`s place.
+                </h3>
+                <p>
+                  Pick and custom tailor your gourmet meals to your desires from chefs` large menu options. Place an order online & choose a pickup timeslot. 
+                </p>
+              </div>
             </div>
-          </div>
           </div>
         </div>
 
-       
       </div>
     </section>
 
 
-      <!-- <section class="section-prefooter-1">
-      <div class="container u-padding-side">
-        <div class="heading u-center-text">
-          <h3 class="heading-prefooter">
-            HOW IT WORKS
-          </h3>
-        </div>
-      
-        <div class="row">
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-truck"></i>
-              <p>You can pick up the food at chef's place or get it delivered. Get Free Shipping over $300.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-shopping-basket"></i>
-              <p>Pick and custom tailor your gourmet meals to your desires from our large menu options.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-clock-o"></i>
-              <p>Our chefs fully prepare your meals, saving you hours of shopping, prepping and cooking each week.</p>      
-            </div>
-          </div>
-          <div class="col-md-3">
-             <div class="feature-box">
-              <i class="feature-box_icon fa fa-leaf"></i>
-              <p>Just heat and enjoy your healthy meal ready in minutes. Clean up is simply tossing our tray in your recycling.</p>      
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
-   
+     
   </div>
 </template>
 
@@ -1148,7 +974,7 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
     <div class="container u-padding-side">
 
       <section class="section-order-header">
-        <div class=" header-menu">
+        <div class="header-menu">
           <div class="payment-box-search ">            
             <div class="recommend-payment">
               <span class="payment-text">
@@ -1250,13 +1076,6 @@ Most of us have fond memories of food from our childhood. Whether it was our mom
             <span >Our chefs deliver almost everywhere in the continental United States.</span>
           </div>
         </div>
-        <!-- <div class="card u-margin-bottom-small">
-          <img src="payment/pick-up-2.png" alt="order" class="card-img-top img-ordered">
-          <div class="gift-text card-body">
-            <span >You can pick up the food at chef`s place.</span><br>
-            <span ><br>Our chefs guarantee the quality of products and the timely preparation of food.</span>
-          </div>
-        </div> -->
       </div>
     </section>
 
